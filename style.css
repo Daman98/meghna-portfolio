@@ -179,10 +179,19 @@ header {
   background: #222;
   border-radius: 2px;
 }
-.hero {
-  text-align: center;
-  padding: 6rem 2rem 4rem 2rem;
+section#home.hero {
+  padding: 6rem 2rem 4rem 2rem !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
 }
+
+/* Hero section - simple single column layout */
+section#home.hero .hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .hero h1 {
   font-size: 3rem;
   font-weight: 900;
@@ -200,7 +209,6 @@ header {
 }
 .social-links {
   display: flex;
-  justify-content: center;
   gap: 1.2rem;
   margin-top: 0.5rem;
 }
@@ -312,27 +320,285 @@ footer {
   font-size: 1rem;
   border-top: 1px solid #eee;
 }
+
+/* Force desktop mode on all devices */
+html {
+  min-width: 1200px;
+}
+
+body {
+  min-width: 1200px;
+  overflow-x: auto;
+}
+
+/* Override mobile styles to maintain desktop layout */
 @media (max-width: 700px) {
+  /* Force desktop navigation layout */
   .navbar {
     flex-direction: row;
-    padding: 1rem 1rem;
+    padding: 1rem 2rem;
+    min-width: 1200px;
   }
+  
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    width: 180px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    border-radius: 0 0 10px 10px;
-    z-index: 200;
+    display: flex !important;
+    position: static !important;
+    background: transparent !important;
+    flex-direction: row !important;
+    width: auto !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
   }
-  .nav-links.open {
-    display: flex;
-  }
+  
   .hamburger {
-    display: flex;
+    display: none !important;
+  }
+  
+  /* Force desktop layout for all content */
+  .project-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem 2rem;
+    min-width: 800px;
+  }
+  
+  section#home.hero {
+    padding: 4rem 2rem !important;
+    min-width: 1200px !important;
+  }
+  
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+    min-width: 800px;
+  }
+  
+  /* Ensure text remains readable but layout stays desktop */
+  .work-card {
+    min-width: 300px;
+  }
+  
+  /* Responsive font scaling for mobile screens */
+  html .hero h1 {
+    font-size: 2.2rem !important;
+  }
+  
+  html .hero h2 {
+    font-size: 1.2rem !important;
+  }
+  
+  html .hero p {
+    font-size: 0.95rem !important;
+  }
+  
+  html .work h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  html .about h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  html .about p {
+    font-size: 0.95rem !important;
+  }
+  
+  html .section-title {
+    font-size: 1.4rem !important;
+  }
+  
+  html .project-title {
+    font-size: 1.8rem !important;
+  }
+  
+  html .work-title {
+    font-size: 1.1rem !important;
+  }
+  
+  html .work-meta {
+    font-size: 0.85rem !important;
+  }
+  
+  html .work-desc {
+    font-size: 0.9rem !important;
+  }
+  
+  html .main-text {
+    font-size: 0.9rem !important;
+  }
+  
+  html .project-intro {
+    font-size: 0.95rem !important;
+  }
+  
+  html .subsection-title {
+    font-size: 0.95rem !important;
+  }
+  
+  html .subsection-title.large {
+    font-size: 1.05rem !important;
+  }
+  
+  /* Override any inline styles with higher specificity */
+  html body .figma-frame-section h2 {
+    font-size: 1.4rem !important;
+  }
+  
+  html body .figma-frame-section p {
+    font-size: 0.9rem !important;
+  }
+  
+  html body .figma-frame-section h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  html body .figma-frame-section h4 {
+    font-size: 1rem !important;
+  }
+  
+  /* Override Amazon Pay project inline styles specifically */
+  html body p[style*="font-size:18px"] {
+    font-size: 0.9rem !important;
+  }
+  
+  html body p[style*="font-size:20px"] {
+    font-size: 1rem !important;
+  }
+  
+  html body h3[style*="font-size:28px"] {
+    font-size: 1.4rem !important;
+  }
+  
+  html body h3[style*="font-size:32px"] {
+    font-size: 1.5rem !important;
+  }
+  
+  html body h3[style*="font-size:24px"] {
+    font-size: 1.2rem !important;
+  }
+  
+  html body h4[style*="font-size:20px"] {
+    font-size: 1rem !important;
+  }
+  
+  html body div[style*="font-size:18px"] {
+    font-size: 0.9rem !important;
+  }
+  
+  html body div[style*="font-size:16px"] {
+    font-size: 0.85rem !important;
+  }
+  
+  html body div[style*="font-size:14px"] {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Additional responsive font scaling for very small screens */
+@media (max-width: 480px) {
+  html .hero h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  html .hero h2 {
+    font-size: 1rem !important;
+  }
+  
+  html .hero p {
+    font-size: 0.85rem !important;
+  }
+  
+  html .work h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  html .about h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  html .about p {
+    font-size: 0.85rem !important;
+  }
+  
+  html .section-title {
+    font-size: 1.2rem !important;
+  }
+  
+  html .project-title {
+    font-size: 1.5rem !important;
+  }
+  
+  html .work-title {
+    font-size: 1rem !important;
+  }
+  
+  html .work-meta {
+    font-size: 0.75rem !important;
+  }
+  
+  html .work-desc {
+    font-size: 0.8rem !important;
+  }
+  
+  html .main-text {
+    font-size: 0.8rem !important;
+  }
+  
+  html .project-intro {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Override Amazon Pay project specific styles */
+  html body .figma-frame-section h2 {
+    font-size: 1.2rem !important;
+  }
+  
+  html body .figma-frame-section p {
+    font-size: 0.8rem !important;
+  }
+  
+  html body .figma-frame-section h3 {
+    font-size: 1rem !important;
+  }
+  
+  html body .figma-frame-section h4 {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Override inline styles for very small screens */
+  html body p[style*="font-size:18px"] {
+    font-size: 0.8rem !important;
+  }
+  
+  html body p[style*="font-size:20px"] {
+    font-size: 0.85rem !important;
+  }
+  
+  html body h3[style*="font-size:28px"] {
+    font-size: 1.2rem !important;
+  }
+  
+  html body h3[style*="font-size:32px"] {
+    font-size: 1.3rem !important;
+  }
+  
+  html body h3[style*="font-size:24px"] {
+    font-size: 1rem !important;
+  }
+  
+  html body h4[style*="font-size:20px"] {
+    font-size: 0.9rem !important;
+  }
+  
+  html body div[style*="font-size:18px"] {
+    font-size: 0.8rem !important;
+  }
+  
+  html body div[style*="font-size:16px"] {
+    font-size: 0.75rem !important;
+  }
+  
+  html body div[style*="font-size:14px"] {
+    font-size: 0.7rem !important;
   }
 }
