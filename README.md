@@ -1,103 +1,56 @@
-# Meghna Portfolio Website
+# Meghna Sahni - UX Designer Portfolio
 
-A static portfolio website built with HTML, CSS, and JavaScript, designed for GitHub Pages deployment.
+A clean, static portfolio website showcasing UX design work and case studies, built with HTML, CSS, and JavaScript for GitHub Pages.
 
-## 🏗 Technical Stack
+## 🚀 Live Site
 
-- **Frontend:** HTML5, CSS3, JavaScript (ES6+)
-- **Styling:** Custom CSS with Google Fonts (Inter)
-- **Icons:** Font Awesome 6.4.0
-- **Deployment:** GitHub Pages ready (static files)
-- **No Build Process:** Direct HTML/CSS/JS files
+[View Portfolio](https://daman98.github.io/meghna-portfolio/)
 
-## � Project Structure
+## 📋 Projects Featured
 
-```
-├── index.html              # Main portfolio homepage
-├── AmazonPayUXResearch.html # Case study page
-├── DataCenterWorkforcePlatform.html # Project page
-├── FixedAssetTransfer.html  # Project page
-├── header.html             # Reusable header component
-├── footer.html             # Reusable footer component
-├── style.css               # Main stylesheet
-├── script.js               # Interactive functionality
-├── include.js              # Header/footer dynamic includes
-└── images/                 # Static assets
-    ├── amazon-pay-ux-research/     # Project images (50+ files)
-    ├── data-center-workforce-platform/
-    ├── fixed-asset-transfer/
-    └── general/
-```
+- **Amazon Pay UX Research** (2021) - Payment platform optimization
+- **One Time Media Handling** (2022) - Data center workflow redesign
+- **Monitoring & Control Swimlane** (2023) - Workforce management UX
+- **Microsoft Edge Extension Revamp** (2024) - Browser extension experience
+- **Fixed Asset Transfer** (2025) - Enterprise workflow optimization
+
+## 🛠 Tech Stack
+
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Typography:** Avenir font family
+- **Icons:** Font Awesome
+- **Deployment:** GitHub Pages
+- **Assets:** Local image storage (no external dependencies)
 
 ## 🎨 Design System
 
-- **Typography:** Inter font family (400, 700, 900 weights)
-- **Color Palette:**
-  - Primary: #6c7062 (purple-gray)
-  - Text: #343333 (dark gray)
-  - Background: #ffffff (white)
-- **Layout:** CSS Grid and Flexbox
-- **Display Mode:** Desktop-only layout (forces desktop view on all devices)
+- **Colors:** Purple theme (#6c63ff primary, #3d2c8d secondary)
+- **Layout:** Responsive CSS Grid and Flexbox
+- **Navigation:** Sticky header with smooth scrolling
 
-## ⚙️ Key Features
-
-- **Modular Components:** Reusable header/footer via include.js
-- **Desktop-Only Layout:** Forces desktop view on all devices including mobile
-- **Image Optimization:** Local asset storage for fast loading
-- **Smooth Navigation:** CSS scroll behavior and anchor links
-- **SEO Ready:** Semantic HTML structure
-
-## 🚀 Deployment
-
-### GitHub Pages
-
-1. Push to `main` branch
-2. Enable GitHub Pages in repository settings
-3. Select "Deploy from branch" → `main` → `/ (root)`
-4. Site will be available at `https://username.github.io/repository-name`
-
-### Local Development
+## 🚀 Local Development
 
 ```bash
-# Clone repository
-git clone https://github.com/username/meghna-portfolio.git
-
-# Navigate to directory
+# Clone and open
+git clone https://github.com/Daman98/meghna-portfolio.git
 cd meghna-portfolio
-
-# Open in browser (no build process needed)
 open index.html
-# or use a local server
+
+# Or use local server
 python -m http.server 8000
 ```
 
-## 📱 Browser Support
+## � Structure
 
-- **Modern Browsers:** Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
-- **CSS Features:** Grid, Flexbox, Custom Properties
-- **JavaScript:** ES6+ features (const/let, arrow functions)
-
-## � Development Notes
-
-- **No Frameworks:** Pure HTML/CSS/JS for simplicity and performance
-- **Asset Management:** All images stored locally in organized folders
-- **Code Style:** Consistent indentation, semantic HTML, organized CSS
-- **Performance:** Optimized images, minimal external dependencies
-
-## 📊 Performance Optimizations
-
-- **Images:** Properly sized and optimized for web
-- **CSS:** Single stylesheet, minimal external fonts
-- **JavaScript:** Lightweight, no heavy libraries
-- **HTML:** Semantic structure, proper meta tags
-
-## 🛠 Maintenance
-
-- **Adding Projects:** Create new HTML file, update navigation in include.js
-- **Image Updates:** Add to appropriate folder in `/images/`
-- **Styling Changes:** Update `style.css` (affects all pages)
-- **Content Updates:** Edit individual HTML files
+```
+├── index.html                          # Homepage
+├── [ProjectName].html                  # Case study pages
+├── style.css                          # Main stylesheet
+├── header.html / footer.html          # Reusable components
+├── script.js / include.js             # Interactive functionality
+└── images/                            # Project assets
+```
 
 ---
 
-_Built as a static website optimized for GitHub Pages deployment with focus on performance and maintainability._
+© 2025 Meghna Sahni
