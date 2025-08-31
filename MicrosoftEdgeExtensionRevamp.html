@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, user-scalable=yes">
+    <title>Microsoft Edge Extension Revamp | Meghna Sahni</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section class="project-hero">
+        <h1 class="project-title">Microsoft Edge Extension Revamp</h1>
+        <div class="project-meta">Microsoft &nbsp;|&nbsp; 2024</div>
+        <p class="project-intro">Redesigning the extension management experience to increase user adoption, improve post-installation journey, and reduce extension interference issues for Microsoft Edge browser users.</p>
+      </section>
+      <section class="project-content" style="padding:0 5px; margin:0 60px; max-width:none;">
+        
+        <!-- Why What & How -->
+        <section class="figma-frame-section" style="margin-top:2rem; position:relative; padding:0 2px;">
+          
+          <h2 class="section-title">Why what & how</h2>
+          
+          <!-- Why are we solving section -->
+          <div style="margin-bottom:3rem;">
+            <h3 style="font-size:24px; color:#4c7062; font-weight:700; margin-bottom:15px;">Why are we solving</h3>
+            <p style="font-size:18px; color:#000; margin-bottom:2rem; max-width:800px;">
+              Users during their web experience on edge face 2 types of problems caused by extension
+            </p>
+            
+            <!-- Two jar illustrations showing user problems -->
+            <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
+              <img src="http://localhost:3845/assets/cd090d66681cfca24b1deba71437c8e04ed8cdb1.png" 
+                   alt="Why what & how - showing two user scenarios with jar illustrations depicting extension problems: users needing to disable extensions and extension interference during browsing" 
+                   style="width:100%; max-width:1200px; height:auto; background:#fff;" />
+            </div>
+          </div>
+
+          <!-- What we are solving section -->
+          <div style="margin-bottom:3rem;">
+            <h3 style="font-size:24px; color:#4c7062; font-weight:700; margin-bottom:15px;">What we are solving</h3>
+            <p style="font-size:18px; color:#000; margin-bottom:2rem;">
+              'Users who struggle with Extension Interference during browsing and come to the Management hub to get to desired solution'
+            </p>
+          </div>
+
+          <!-- Business Objective section -->
+          <div style="margin-bottom:2rem;">
+            <h3 style="font-size:24px; color:#4c7062; font-weight:700; margin-bottom:20px;">Business Objective</h3>
+            <ul style="font-size:18px; color:#000; line-height:1.5; max-width:1000px; padding-left:20px;">
+              <li style="margin-bottom:5px;">Increase the extensions top of the funnel by bringing in more users with intent*</li>
+              <li style="margin-bottom:5px;">Increase extensions conversion and contain seekers within Edge</li>
+              <li style="margin-bottom:3px;">Reduce user dissatisfaction in post extension installation journey</li>
+            </ul>
+            <div style="font-size:8px; color:#000; font-style:italic; margin-top:10px;">
+                <p style="margin-bottom:1px;">*Instances - Refers to the individual counts of feedback or issues reported by users. Each instance represents a single occurrence of feedback</p>
+                <p>Source - ocv.microsoft.com</p>
+            </div>
+        </div>
+        
+        <!-- Footer note -->
+          
+        </section>
+
+        <!-- Experience Audit & User Goals -->
+        <section class="figma-frame-section" style="margin-top:3rem; position:relative; padding:0 2px;">
+          
+          <!-- Design Process Overview -->
+          <div style="margin-bottom:3rem;">
+            <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
+              <img src="http://localhost:3845/assets/73e35b7f0fe80faca2602419d240619f800e731c.png" 
+                   alt="Design process overview showing the spiral workflow from Business Needs through Research and existing Product Analysis to Designs & Prototype with feedback loops" 
+                   style="width:100%; max-width:1200px; height:auto; background:#fff;" />
+            </div>
+          </div>
+
+          <!-- Experience Audit section -->
+          <div style="margin-bottom:3rem;">
+            <h3 style="font-size:24px; color:#4c7062; font-weight:700; margin-bottom:15px;">Experience Audit</h3>
+            <p style="font-size:18px; color:#000; margin-bottom:2rem; max-width:1200px;">
+              An experience audit is a walkthrough of an existing, live experience focusing on a set of core tasks and sub tasks in a feature or a product area.
+            </p>
+            
+            <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
+              <img src="http://localhost:3845/assets/d200b31a19ccdaf93426a97fb39f5e4707ccdd2c.png" 
+                   alt="Experience audit showing three phases: 1) Blocking an extension for particular site, 2) Finding an extension after installing or extension, 3) Removing a set of extensions from the browser" 
+                   style="width:100%; max-width:1200px; height:auto; background:#fff;" />
+            </div>
+          </div>
+
+          <!-- User Goals section -->
+          <div style="margin-bottom:2rem;">
+            <h3 style="font-size:24px; color:#4c7062; font-weight:700; margin-bottom:20px;">User Goals</h3>
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; max-width:1200px;">
+              
+              <!-- Goal 1 -->
+              <div style="background:#ffefd9; border:2px dashed #f19605; border-radius:38px; padding:20px; text-align:center;">
+                <p style="font-size:18px; color:#8d8d8d; font-style:italic; line-height:1.4;">
+                  Wants extensions to be easily accessible when required
+                </p>
+              </div>
+              
+              <!-- Goal 2 -->
+              <div style="background:#ffefd9; border:2px dashed #f19605; border-radius:38px; padding:20px; text-align:center;">
+                <p style="font-size:18px; color:#8d8d8d; font-style:italic; line-height:1.4;">
+                  Wants to deal with any unexpected browsing experience conveniently
+                </p>
+              </div>
+              
+              <!-- Goal 3 -->
+              <div style="background:#ffefd9; border:2px dashed #f19605; border-radius:38px; padding:20px; text-align:center;">
+                <p style="font-size:18px; color:#8d8d8d; font-style:italic; line-height:1.4;">
+                  Wants to deal with their data privacy (around installed extensions) as and when required
+                </p>
+              </div>
+            </div>
+          </div>
+          
+        </section>
+
+        <!-- Design Direction - MVP & Northstar Vision -->
+        <section class="figma-frame-section" style="margin-top:3rem; position:relative; padding:0 2px;">
+          
+          <h2 class="section-title">Design direction - MVP & northstar vision</h2>
+          
+          <!-- Launched Changes section -->
+          <div style="margin-bottom:3rem;">
+            <h3 style="font-size:24px; color:#4c7062; font-weight:700; margin-bottom:20px;">Launched changes</h3>
+            
+            <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
+              <img src="http://localhost:3845/assets/9d0479a39d2754d173ef2867b5df922af7001ce2.png" 
+                   alt="Launched changes showing before and after UI improvements for extension management interface" 
+                   style="width:100%; max-width:1200px; height:auto; background:#fff;" />
+            </div>
+          </div>
+
+          <!-- Northstar Vision section -->
+          <div style="margin-bottom:3rem;">
+            <h3 style="font-size:24px; color:#4c7062; font-weight:700; margin-bottom:20px;">Northstar Vision</h3>
+            
+            <!-- Vision UI Mockups Grid -->
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-bottom:3rem;">
+              
+              <!-- Row 1: Extension Installation Progress -->
+              <div style="margin-bottom:2rem;">
+                <img src="http://localhost:3845/assets/cdae099dc30660ad64a79d617c4719895c7b5d05.png" 
+                     alt="Extension installation progress interface showing loading states and user interaction options" 
+                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
+                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
+                  <p style="font-size:14px; color:#000; line-height:1.4; font-family:'Avenir', sans-serif;">
+                    The user can click on the progress loader incase they want to view the installation of extension or interact with other extensions in hub<br><br>
+                    This gives flexibility to the user to interact with extension hub while the progress bar is downloading
+                  </p>
+                </div>
+              </div>
+              
+              <div style="margin-bottom:2rem;">
+                <img src="http://localhost:3845/assets/f4376fe51f5ce7b84b1365355e299757175ab3cb.png" 
+                     alt="Extension installation success confirmation showing tick mark and completion states" 
+                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
+                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
+                  <p style="font-size:14px; color:#000; line-height:1.4; font-family:'Avenir', sans-serif;">
+                    The success icon i.e the tick mark, appears after each installation, provides users with confirmation and assurance that their extension has been installed successfully.
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Row 2: Hub Surface with Site Context -->
+              <div style="margin-bottom:2rem;">
+                <img src="http://localhost:3845/assets/d7a0db6f81eee29d4523361805cfced3da223597.png" 
+                     alt="Extension hub surface showing site-specific context and enabled extensions with new tags" 
+                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
+                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
+                  <p style="font-size:14px; color:#000; line-height:1.4; font-family:'Avenir', sans-serif;">
+                    The hub surface has a title which talks about site's name and is anchoring the hub surface.<br>
+                    The extensions are enabled on the page and the newly installed extension has a new tag to it.
+                  </p>
+                </div>
+              </div>
+              
+              <div style="margin-bottom:2rem;">
+                <img src="http://localhost:3845/assets/f3f8d3e255115f9fdcb5c216c73e237b0ca7a998.png" 
+                     alt="Extension hub surface alternate view with site context and extension management" 
+                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
+                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
+                  <p style="font-size:14px; color:#000; line-height:1.4; font-family:'Avenir', sans-serif;">
+                    The hub surface has a title which talks about site's name and is anchoring the hub surface.<br>
+                    The extensions are enabled on the page and the newly installed extension has a new tag to it.
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Row 3: Reload Interaction States -->
+              <div style="margin-bottom:2rem;">
+                <img src="http://localhost:3845/assets/e8c566bf798f94873edb1e46cac8f90b77a552a6.png" 
+                     alt="Reload interaction on hub surface - State 1 showing extension management options" 
+                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
+                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
+                  <p style="font-size:14px; color:#000; font-family:'Avenir', sans-serif;">
+                    The reload interaction on the hub surface - State 1
+                  </p>
+                </div>
+              </div>
+              
+              <div style="margin-bottom:2rem;">
+                <img src="http://localhost:3845/assets/81512a8237d89f9a7bf0abe67c11120bbe65000e.png" 
+                     alt="Reload interaction on hub surface - State 1.1 showing advanced interaction patterns" 
+                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
+                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
+                  <p style="font-size:14px; color:#000; font-family:'Avenir', sans-serif;">
+                    The reload interaction on the hub surface - State 1.1
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Footer note -->
+            <div style="border-top:1px solid #ccc; padding-top:20px;">
+              <p style="font-size:16px; color:#4c7062; font-style:italic;">
+                *Will walk through detailed internal presentations and draft work during the interview session
+              </p>
+            </div>
+          </div>
+          
+        </section>
+        
+      </section>
+    </main>
+    <footer>
+      <div class="footer-text">Microsoft Confidential 2024<br>© 2025 Meghna Sahni ❤️</div>
+    </footer>
+    <script src="include.js"></script>
+  </body>
+</html>
