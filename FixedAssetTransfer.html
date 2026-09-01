@@ -1,66 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="case-study-document">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, user-scalable=yes">
-    <title>Fixed Asset Transfer Experience | Meghna Sahni</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A case study redesigning fixed asset transfers in Microsoft Dynamics 365 Finance.">
+    <title>Fixed Asset Transfer | Meghna Sahni</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="case-study-page">
     <header></header>
-    <main>
-      <section class="project-hero">
-        <h1 class="project-title">Fixed Asset Transfer Experience</h1>
-        <div class="project-meta">Microsoft FinanceOps &nbsp;|&nbsp; 2025</div>
-        <p class="project-intro">Redesigning the end-to-end workflow for transferring fixed assets between legal entities, reducing errors and manual effort for accountants.</p>
+    <main class="workforce-case-study fixed-asset-case-study">
+      <section class="case-study-hero">
+        <p class="case-study-eyebrow">Microsoft Finance &amp; Operations | 2025</p>
+        <h1>Fixed Asset Transfer</h1>
+        <p class="case-study-summary">
+          Redesigning the end-to-end workflow for transferring fixed assets between legal entities,
+          reducing errors and manual effort for accountants.
+        </p>
       </section>
-      <section class="project-content">
-        <div style="margin-bottom:2rem;">
-          <h2 class="section-title">Why what & how</h2>
-          <p class="main-text">Currently, transferring fixed assets between legal entities is a manual, time-consuming process. Accountants must dispose of the asset in one company and manually acquire it in another, increasing the risk of errors and data inconsistencies. The process lacks integrated tools for seamless transfers, especially when asset splits are needed.</p>
-          <h3 class="subsection-title">Why are we solving</h3>
-          <ul class="main-list">
-            <li>Manual process that required switching between LE to complete the transfer process.</li>
-            <li>Manual filling in of data results in errors</li>
-            <li>There is no current way to track history of the transfer</li>
-            <li>The current process demands her to calculate the split & change flows which results in errors</li>
-            <li>There is no way currently to transfer assets in bulk and single selection process of transferring assets is time consuming</li>
-          </ul>
-          <h3 class="subsection-title">Who are we solving for</h3>
-          <p class="main-text small">Accountants handling the fixed asset transfer in period end close</p>
-          <h3 class="subsection-title">Customer painpoints</h3>
-          <div style="overflow:auto;">
-            <ul class="main-list floated-list">
-              <li>Manual process that required switching between LE to complete the transfer process.</li>
-              <li>Manual filling in of data results in errors</li>
-              <li>There is no current way to track history of the transfer</li>
-              <li>The current process demands her to calculate the split & change flows which results in errors</li>
-              <li>There is no way currently to transfer assets in bulk and single selection process of transferring assets is time consuming</li>
-            </ul>
+
+      <section class="case-study-chapter" aria-labelledby="asset-transfer-problem">
+        <p class="case-study-label" id="asset-transfer-problem">The Problem</p>
+        <div class="case-study-metrics">
+          <div class="case-study-metric">
+            <strong>02</strong>
+            <span>Legal entities to switch between</span>
+          </div>
+          <span class="metric-divider" aria-hidden="true"></span>
+          <div class="case-study-metric">
+            <strong>02</strong>
+            <span>Separate dispose and acquire transactions</span>
+          </div>
+          <span class="metric-divider" aria-hidden="true"></span>
+          <div class="case-study-metric">
+            <strong>100%</strong>
+            <span>Manual re-entry and split calculations</span>
+          </div>
+          <span class="metric-divider" aria-hidden="true"></span>
+          <div class="case-study-metric">
+            <strong>0</strong>
+            <span>Unified transfer history or bulk transfer capability</span>
           </div>
         </div>
-        <h2 class="section-title" style="margin-top:3rem;">Design direction</h2>
-        <h3 class="subsection-title large">Launched Designs 2025</h3>
-        <div class="designs-gallery">
-          <img src="images/fixed-asset-transfer/launched-design-1.png" alt="Launched Design 1" style="max-width:100%; margin-bottom:2rem;">
-          <img src="images/fixed-asset-transfer/launched-design-2.png" alt="Launched Design 2" style="max-width:100%; margin-bottom:2rem;">
-          <img src="images/fixed-asset-transfer/launched-design-3.png" alt="Launched Design 3" style="max-width:100%;">
-        </div>
-        <div class="main-text" style="margin-bottom:2rem;">The design aims to present users with three clear options for transferring fixed assets, allowing them to choose one at a time. This approach helps users mentally map out their next steps and confidently select the option that best fits their needs.</div>
-        <div class="note">*Will walk through launched build and draft work during the interview session</div>
-        <div style="margin-top:3rem; margin-bottom:2rem;">
-          <h2 class="section-title">Success metric</h2>
-          <h3 class="subsection-title large">Value Improvements</h3>
-          <p class="main-text" style="margin-bottom: 0;">After reviewing user behaviour and feedback, the following improvements were observed</p>
-          <div class="success-metric-bg">
-            <img src="images/fixed-asset-transfer/success-metric.png" alt="Success Metrics" style="max-width:100%; margin-bottom:2rem;">
+
+        <figure class="journey-map fixed-asset-journey">
+          <img src="images/fixed-asset-transfer/current-reality.png"
+               alt="Storyboard showing Priya the accountant's repetitive manual fixed asset transfer process">
+        </figure>
+
+        <p class="case-study-label mapping-label">Design opportunity</p>
+        <section class="fixed-opportunity-carousel" aria-label="Fixed asset design opportunities">
+          <div class="fixed-opportunity-number" aria-hidden="true">01</div>
+          <div class="fixed-opportunity-track" aria-live="polite">
+            <button class="fixed-opportunity-card is-active" type="button" data-card-index="0" aria-selected="true">
+              <span class="fixed-card-number">01</span>
+              <div class="fixed-card-copy">
+                <h2 class="fixed-opportunity-title-primary">Create a seamless<br>cross-legal-entity<br>transfer</h2>
+                <p>Enable accountants to initiate and complete the transfer in one connected flow, without manually switching between source and target legal entities.</p>
+              </div>
+            </button>
+            <button class="fixed-opportunity-card is-next" type="button" data-card-index="1" aria-selected="false">
+              <span class="fixed-card-number">02</span>
+              <div class="fixed-card-copy">
+                <h2>Reduce repetitive manual data entry</h2>
+                <p>Automatically carry forward existing asset information into the receiving legal entity, minimizing re-entry and reducing the risk of errors.</p>
+              </div>
+            </button>
+            <button class="fixed-opportunity-card is-next-far" type="button" data-card-index="2" aria-selected="false">
+              <span class="fixed-card-number">03</span>
+              <div class="fixed-card-copy">
+                <h2>Simplify asset split calculations</h2>
+                <p>Guide accountants through partial transfers and automate calculations for cost, depreciation, NBV, and related financial values.</p>
+              </div>
+            </button>
+            <button class="fixed-opportunity-card is-hidden" type="button" data-card-index="3" aria-selected="false">
+              <span class="fixed-card-number">04</span>
+              <div class="fixed-card-copy">
+                <h2>Enable bulk asset transfers</h2>
+                <p>Allow accountants to select and transfer multiple assets at once, reducing repetitive work during high-volume and period-end activities.</p>
+              </div>
+            </button>
+            <button class="fixed-opportunity-card is-hidden" type="button" data-card-index="4" aria-selected="false">
+              <span class="fixed-card-number">05</span>
+              <div class="fixed-card-copy">
+                <h2>Build transfer history &amp; traceability</h2>
+                <p>Create a connected audit trail showing what was transferred, when, from where, to where, and how asset values changed.</p>
+              </div>
+            </button>
+            <button class="fixed-opportunity-card is-hidden" type="button" data-card-index="5" aria-selected="false">
+              <span class="fixed-card-number">06</span>
+              <div class="fixed-card-copy">
+                <h2>Add validation before transfer</h2>
+                <p>Surface missing information, inconsistencies, and calculation errors before posting, helping accountants complete transfers confidently.</p>
+              </div>
+            </button>
+            <button class="fixed-opportunity-card is-hidden" type="button" data-card-index="6" aria-selected="false">
+              <span class="fixed-card-number">07</span>
+              <div class="fixed-card-copy">
+                <h2>Make a complex process feel guided</h2>
+                <p>Transform disposal, acquisition, and reconciliation into a step-by-step transfer experience with clear progress, status, and next actions.</p>
+              </div>
+            </button>
           </div>
+          <div class="fixed-opportunity-dots" role="tablist" aria-label="Choose a design opportunity">
+            <button class="is-active" type="button" data-dot-index="0" aria-label="Show opportunity 1" aria-selected="true"></button>
+            <button type="button" data-dot-index="1" aria-label="Show opportunity 2" aria-selected="false"></button>
+            <button type="button" data-dot-index="2" aria-label="Show opportunity 3" aria-selected="false"></button>
+            <button type="button" data-dot-index="3" aria-label="Show opportunity 4" aria-selected="false"></button>
+            <button type="button" data-dot-index="4" aria-label="Show opportunity 5" aria-selected="false"></button>
+            <button type="button" data-dot-index="5" aria-label="Show opportunity 6" aria-selected="false"></button>
+            <button type="button" data-dot-index="6" aria-label="Show opportunity 7" aria-selected="false"></button>
+          </div>
+        </section>
+      </section>
+
+      <section class="design-wireframes">
+        <h2>Design screens</h2>
+        <figure class="fixed-asset-video">
+          <div class="desktop-monitor">
+            <div class="desktop-monitor-screen">
+              <video controls autoplay muted loop playsinline preload="metadata" aria-label="Fixed asset transfer design walkthrough">
+                <source src="images/fixed-asset-transfer/final-rec-fa.m4v" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+            </div>
+          </div>
+          <div class="desktop-monitor-stand" aria-hidden="true"></div>
+        </figure>
+      </section>
+
+      <section class="case-study-chapter fixed-asset-impact" aria-labelledby="asset-transfer-impact">
+        <h2 class="fixed-impact-title" id="asset-transfer-impact">Impact</h2>
+        <div class="fixed-impact-grid" tabindex="0" aria-label="Impact highlights">
+          <article class="fixed-impact-card">
+            <svg class="fixed-impact-arrow" viewBox="0 0 52 52" aria-hidden="true">
+              <path d="M24 10 8 26l16 16M8 26h38"></path>
+            </svg>
+            <div class="fixed-impact-copy">
+              <h3>Faster Asset Transfers</h3>
+              <p class="fixed-impact-stat">&darr; 60% transfer completion time</p>
+              <p>Reduce the time accountants spend completing cross-legal-entity transfers through a single guided workflow.</p>
+            </div>
+          </article>
+          <article class="fixed-impact-card">
+            <svg class="fixed-impact-arrow" viewBox="0 0 52 52" aria-hidden="true">
+              <path d="M9 43 43 9M20 9h23v23"></path>
+            </svg>
+            <div class="fixed-impact-copy">
+              <h3>Reduced Manual Entry</h3>
+              <p class="fixed-impact-stat">&darr; 70% manual data entry</p>
+              <p>Auto-populate asset information across legal entities, reducing repetitive inputs and operational effort.</p>
+            </div>
+          </article>
+          <article class="fixed-impact-card">
+            <svg class="fixed-impact-arrow" viewBox="0 0 52 52" aria-hidden="true">
+              <path d="M26 46V8M10 24 26 8l16 16"></path>
+            </svg>
+            <div class="fixed-impact-copy">
+              <h3>Fewer Transfer Errors</h3>
+              <p class="fixed-impact-stat">&darr; 50% transfer errors</p>
+              <p>Reduce errors caused by manual data entry, asset-value calculations, and reconciliation.</p>
+            </div>
+          </article>
+          <article class="fixed-impact-card">
+            <svg class="fixed-impact-arrow" viewBox="0 0 52 52" aria-hidden="true">
+              <path d="M9 43 43 9M20 9h23v23"></path>
+            </svg>
+            <div class="fixed-impact-copy">
+              <h3>Improved Task Completion</h3>
+              <p class="fixed-impact-stat">55% &rarr; 88% task completion rate</p>
+              <p>Enable accountants to successfully complete asset transfers with fewer interruptions and less dependency on manual processes.</p>
+            </div>
+          </article>
+          <article class="fixed-impact-card">
+            <svg class="fixed-impact-arrow" viewBox="0 0 52 52" aria-hidden="true">
+              <path d="M8 26h38M30 10l16 16-16 16"></path>
+            </svg>
+            <div class="fixed-impact-copy">
+              <h3>100% Transfer Traceability</h3>
+              <p class="fixed-impact-stat">100% transfer history captured</p>
+              <p>Provide a traceable record of transfers across source and destination legal entities for easier validation and auditing.</p>
+            </div>
+          </article>
+          <article class="fixed-impact-card">
+            <svg class="fixed-impact-arrow" viewBox="0 0 52 52" aria-hidden="true">
+              <path d="M9 39 25 23l9 9L46 20M35 20h11v11"></path>
+            </svg>
+            <div class="fixed-impact-copy">
+              <h3>Faster Bulk Operations</h3>
+              <p>Allow accountants to process multiple assets together instead of repeating the transfer workflow asset by asset.</p>
+            </div>
+          </article>
+          <article class="fixed-impact-card">
+            <svg class="fixed-impact-arrow" viewBox="0 0 52 52" aria-hidden="true">
+              <path d="M8 26h14M22 26l18-16M22 26l18 16M34 10h6v6M34 36h6v6"></path>
+            </svg>
+            <div class="fixed-impact-copy">
+              <h3>Simplified Asset Splitting</h3>
+              <p>Automate split values, depreciation, and NBV calculations to reduce cognitive load and calculation errors.</p>
+            </div>
+          </article>
+        </div>
+        <div class="fixed-impact-pagination" aria-label="Choose an impact highlight">
+          <button class="is-active" type="button" data-impact-page="0" aria-label="Show impacts 1 through 3" aria-selected="true"></button>
+          <button type="button" data-impact-page="1" aria-label="Show impacts 4 through 6" aria-selected="false"></button>
+          <button type="button" data-impact-page="2" aria-label="Show impact 7" aria-selected="false"></button>
         </div>
       </section>
     </main>
-    <footer>
-      <div class="footer-text">Microsoft Confidential 2025<br>© 2025 Meghna Sahni ❤️</div>
-    </footer>
+    <footer></footer>
     <script src="include.js"></script>
+    <script src="fixed-asset-case-study.js"></script>
   </body>
 </html>
