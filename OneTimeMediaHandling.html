@@ -1,77 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (() => {
+        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        const theme = param === "dark" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, user-scalable=yes">
-    <title>One Time Media Handling (OTMH) | Meghna Sahni</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="One Time Media Handling case study by Meghna Sahni: streamlining secure media destruction workflows in AWS data centers."
+    >
+    <title>One Time Media Handling | Meghna Sahni</title>
+    <link rel="stylesheet" href="one-time-media-handling.css">
   </head>
   <body>
-    <header></header>
-    <main>
-      <section class="project-hero">
-        <h1 class="project-title">One Time Media Handling (OTMH)</h1>
-        <div class="project-meta">AWS &nbsp;|&nbsp; 2022</div>
-        <p class="project-intro">Streamlining secure media handling processes in data centers, reducing workflow complexity from 24 steps to 5 steps for improved technician efficiency and operational excellence.</p>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <a class="logo" href="index.html" aria-label="Meghna Sahni home">
+          <img src="images/general/ms-logo.png" alt="">
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#work">Work</a></li>
+          <li>
+            <a href="https://drive.google.com/file/d/1pkyNme2ZxE1vMiCQPERS_UL776eb-FeD/view?usp=drivesdk">
+              Resume
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="case-hero">
+        <div class="case-shell">
+          <p class="eyebrow">Amazon Web Services <span aria-hidden="true">|</span> 2022</p>
+          <h1>One Time Media Handling</h1>
+          <p class="case-intro">
+            Streamlining secure media handling processes in data centers, reducing workflow
+            complexity from 21 steps to 5 steps for improved technician efficiency and operational
+            excellence.
+          </p>
+        </div>
       </section>
-      <section class="project-content" style="padding:0 5px; margin:0 60px; max-width:none;">
-        
-        <!-- Understanding Current System & New Experience Initiative -->
-        <section class="figma-frame-section" style="margin-top:2rem; position:relative; padding:0 2px;">
-          
-          <!-- Project Overview Image -->
-          <h3 style="font-size:28px; color:#6c63ff; font-weight:700; margin-bottom:20px;">Understanding current system</h3>
-          <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
-            <img src="images/one-time-media-handling/old-system.png" 
-                 alt="Understanding current system - OTMH project overview showing current 24-step process , target audience (data center technicians), launch plan (Dublin data center), and workflow illustrations" 
-                 style="width:100%; max-width:1200px; height:auto; background:#fff;" />
-          </div>
-        </section>
 
-        <!-- Customer Journey Map & Design Screens -->
-        <section class="figma-frame-section" style="margin-top:3rem; position:relative; padding:0 2px;">
-          
-          <!-- Customer Journey Map -->
-          <div style="margin-bottom:3rem;">
-            <h3 style="font-size:28px; color:#6c63ff; font-weight:700; margin-bottom:20px;">Customer journey map (OTMH)</h3>
-            
-            <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
-              <img src="images/one-time-media-handling/customer-journey-map.png" 
-                   alt="Customer journey map (OTMH) showing the complete workflow and design screens prototype for the optimized media handling process" 
-                   style="width:100%; max-width:1200px; height:auto; background:#fff;" />
-            </div>
+      <section class="case-section problem-section" aria-labelledby="problem-title">
+        <div class="case-shell">
+          <h2 class="section-kicker" id="problem-title">The Problem</h2>
+          <div class="metrics" aria-label="Current process metrics">
+            <article class="metric">
+              <strong>6</strong>
+              <span>Media handled by a technician on an average day</span>
+            </article>
+            <article class="metric">
+              <strong>21</strong>
+              <span>Manual steps required to process each media</span>
+            </article>
+            <article class="metric">
+              <strong>45</strong>
+              <span>Minutes spent processing a single media</span>
+            </article>
+            <article class="metric">
+              <strong>24</strong>
+              <span>Physical touches before final destruction</span>
+            </article>
           </div>
 
-          <!-- New Experience Initiative Image -->
-          <h3 style="font-size:28px; color:#6c63ff; font-weight:700; margin-bottom:20px;">New experience initiative</h3>
-          <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
-            <img src="images/one-time-media-handling/new-system.png" 
-                 alt="Understanding new experience initiative - new 5-step process, target audience (data center technicians), launch plan (Dublin data center), and workflow illustrations" 
-                 style="width:100%; max-width:1200px; height:auto; background:#fff;" />
-          </div>
+          <figure class="case-figure">
+            <video
+              class="journey-video"
+              autoplay
+              controls
+              loop
+              muted
+              playsinline
+              poster="images/one-time-media-handling/old-system.png"
+              preload="metadata"
+            >
+              <source
+                src="videos/one-time-media-handling/before-21-step-journey.mp4"
+                type="video/mp4"
+              >
+              Your browser does not support the 21-step journey video.
+            </video>
+            <figcaption>
+              <button
+                class="image-link"
+                type="button"
+                data-lightbox-src="images/one-time-media-handling/old-system.png"
+                data-lightbox-alt="Illustrated 21-step media handling journey before One Time Media Handling"
+              >
+                View Image <span aria-hidden="true">↗</span>
+              </button>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
 
-          <!-- Success Metric Image -->
-          <h3 style="font-size:28px; color:#6c63ff; font-weight:700; margin-bottom:20px;">Success metric</h3>
-          <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
-            <img src="images/one-time-media-handling/success-metric.png" 
-                 alt="Success metric showing before and after UI improvements for media handling process" 
-                 style="width:100%; max-width:1200px; height:auto; background:#fff;" />
+      <section class="why-section" aria-labelledby="why-title">
+        <div class="case-shell why-layout">
+          <h2 class="visually-hidden" id="why-title">Why, what, and who</h2>
+          <div class="question-art" role="tablist" aria-label="Project questions">
+            <button
+              class="question-option"
+              id="question-tab-why"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="question-panel-why"
+              data-question="why"
+              data-position="previous"
+            >
+              <span class="question-initial">W</span><span class="question-suffix">hy</span>
+            </button>
+            <button
+              class="question-option is-active"
+              id="question-tab-what"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="question-panel-what"
+              data-question="what"
+              data-position="active"
+            >
+              <span class="question-initial">W</span><span class="question-suffix">hat</span>
+            </button>
+            <button
+              class="question-option"
+              id="question-tab-who"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="question-panel-who"
+              data-question="who"
+              data-position="next"
+            >
+              <span class="question-initial">W</span><span class="question-suffix">ho</span>
+            </button>
           </div>
-
-          <!-- Design Screens Prototype Note -->
-          <div style="margin-bottom:2rem;">
-            <p style="font-size:18px; color:#4c7062; font-style:italic; margin-top:10px;">
-              *Will walk through the prototype during the interview session
+          <div class="question-copy">
+            <p
+              class="question-panel"
+              id="question-panel-why"
+              role="tabpanel"
+              aria-labelledby="question-tab-why"
+            >
+              The existing media-destruction journey was manual, repetitive, and operationally
+              heavy. A technician could process around 6 media devices per day, with each one
+              requiring 21 steps, 24+ physical touches, and roughly 45 minutes to complete.
+              <br><br>
+              OTMH aimed to reduce that burden by automating identification, tracking, storage, and
+              custody — creating a process that was faster, safer, less error-prone, and
+              dramatically easier for technicians to complete.
+            </p>
+            <p
+              class="question-panel is-active"
+              id="question-panel-what"
+              role="tabpanel"
+              aria-labelledby="question-tab-what"
+            >
+              One Touch Media Handling (OTMH) is a secure, automated media destruction experience
+              designed for data centers. It transforms a 21-step, 24+ touchpoint process into a
+              streamlined workflow where media is removed, identified, securely stored, tracked,
+              and eventually destroyed with minimal human handling.
+            </p>
+            <p
+              class="question-panel"
+              id="question-panel-who"
+              role="tabpanel"
+              aria-labelledby="question-tab-who"
+            >
+              OTMH was designed primarily for data center technicians — the frontline operators
+              responsible for removing, identifying, tracking, and securely handling physical media
+              throughout its destruction lifecycle.
+              <br><br>
+              The experience was initially designed for deployment within a red-zone data center
+              environment in Dublin, where security and operational accuracy are critical.
             </p>
           </div>
-          
-        </section>
-        
+        </div>
+      </section>
+
+      <section class="case-section process-section" aria-label="Streamlined process">
+        <div class="case-shell">
+          <figure class="case-figure">
+            <video
+              class="journey-video"
+              autoplay
+              controls
+              loop
+              muted
+              playsinline
+              poster="images/one-time-media-handling/new-system.png"
+              preload="metadata"
+            >
+              <source
+                src="videos/one-time-media-handling/final-6-step-journey.mp4"
+                type="video/mp4"
+              >
+              Your browser does not support the six-step journey video.
+            </video>
+            <figcaption>
+              <button
+                class="image-link"
+                type="button"
+                data-lightbox-src="images/one-time-media-handling/new-system.png"
+                data-lightbox-alt="Illustrated six-step media handling journey after One Time Media Handling"
+              >
+                View Image <span aria-hidden="true">↗</span>
+              </button>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section solution-section" aria-labelledby="solution-title">
+        <div class="case-shell">
+          <h2 class="section-kicker" id="solution-title">Solution</h2>
+          <div class="metrics" aria-label="Improved process metrics">
+            <article class="metric">
+              <strong>6</strong>
+              <span>Media handled by a technician on an average day</span>
+            </article>
+            <article class="metric">
+              <strong>6</strong>
+              <span>Steps per media from 21 — 71% fewer workflow steps</span>
+            </article>
+            <article class="metric">
+              <strong>5</strong>
+              <span>Minutes of technician handling time — 89% faster processing</span>
+            </article>
+            <article class="metric">
+              <strong>1</strong>
+              <span>Human touchpoint from 24 — approximately 96% less handling</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="impact-section" aria-labelledby="impact-title">
+        <div class="case-shell">
+          <h2 id="impact-title">Impact</h2>
+          <div class="impact-carousel">
+            <button
+              class="impact-control impact-control-previous"
+              type="button"
+              aria-label="Show previous impact cards"
+              aria-controls="impact-track"
+              data-impact-direction="-1"
+            >
+              ←
+            </button>
+            <div class="impact-track" id="impact-track">
+              <article class="impact-card">
+                <span class="impact-icon" aria-hidden="true">←</span>
+                <div>
+                  <h3>Process Efficiency</h3>
+                  <p>Workflow steps reduced from 21 manual steps to 6 streamlined steps.</p>
+                </div>
+              </article>
+              <article class="impact-card">
+                <span class="impact-icon" aria-hidden="true">↗</span>
+                <div>
+                  <h3>Human Touchpoints</h3>
+                  <p>Reduced repeated physical handling to a single-touch media journey.</p>
+                </div>
+              </article>
+              <article class="impact-card">
+                <span class="impact-icon" aria-hidden="true">↑</span>
+                <div>
+                  <h3>Time Savings</h3>
+                  <p>Technician handling time per media reduced from about 45 minutes to under 5 minutes.</p>
+                </div>
+              </article>
+              <article class="impact-card">
+                <span class="impact-icon" aria-hidden="true">↖</span>
+                <div>
+                  <h3>Daily Time Saved</h3>
+                  <p>With approximately 6 media handled daily, automation returned hours of technician time.</p>
+                </div>
+              </article>
+              <article class="impact-card">
+                <span class="impact-icon" aria-hidden="true">→</span>
+                <div>
+                  <h3>Manual Data Entry</h3>
+                  <p>Automated media identification and asset capture eliminated most repetitive input by 80%.</p>
+                </div>
+              </article>
+              <article class="impact-card">
+                <span class="impact-icon" aria-hidden="true">↗</span>
+                <div>
+                  <h3>Chain of Custody</h3>
+                  <p>Media movement is 100% tracked through automated identification, storage, and monitoring.</p>
+                </div>
+              </article>
+            </div>
+            <button
+              class="impact-control impact-control-next"
+              type="button"
+              aria-label="Show next impact cards"
+              aria-controls="impact-track"
+              data-impact-direction="1"
+            >
+              →
+            </button>
+          </div>
+          <div class="impact-dots" aria-label="Impact carousel pages"></div>
+        </div>
+      </section>
+
+      <section class="case-section journey-section" aria-labelledby="journey-title">
+        <div class="case-shell">
+          <h2 class="section-kicker" id="journey-title">Customer Journey Map</h2>
+          <figure class="case-figure journey-figure">
+            <img
+              src="images/one-time-media-handling/customer-journey-map.png"
+              alt="Customer journey map for the One Time Media Handling workflow"
+            >
+          </figure>
+        </div>
       </section>
     </main>
-    <footer>
-      <div class="footer-text">Amazon Confidential 2022<br>© 2025 Meghna Sahni ❤️</div>
+
+    <footer class="site-footer">
+      <p>© 2025 Meghna Sahni <span aria-hidden="true">♥</span></p>
     </footer>
-    <script src="include.js"></script>
+
+    <dialog class="image-dialog" id="image-dialog">
+      <button class="dialog-close" type="button" aria-label="Close image">×</button>
+      <img src="images/one-time-media-handling/old-system.png" alt="">
+    </dialog>
+
+    <script src="one-time-media-handling.js" defer></script>
   </body>
 </html>
