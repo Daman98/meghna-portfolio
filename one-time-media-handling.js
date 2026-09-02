@@ -189,5 +189,7 @@ if (impactTrack && impactCards.length && impactDots) {
 
 window.addEventListener("load", () => {
   const targetId = window.location.hash.slice(1);
-  document.getElementById(targetId)?.scrollIntoView();
+  const target = document.getElementById(targetId);
+  target?.scrollIntoView();
+  window.setTimeout(() => target?.scrollIntoView(), 500);
 });

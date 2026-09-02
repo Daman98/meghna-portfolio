@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="case-study-document">
   <head>
+    <script>
+      (() => {
+        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        const theme = param === "dark" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A case study redesigning fixed asset transfers in Microsoft Dynamics 365 Finance.">
     <title>Fixed Asset Transfer | Meghna Sahni</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="case-study.css">
   </head>
-  <body class="case-study-page">
+  <body class="case-study-page fixed-asset-page">
     <header></header>
     <main class="workforce-case-study fixed-asset-case-study">
       <section class="case-study-hero">
@@ -210,6 +217,7 @@
     </main>
     <footer></footer>
     <script src="include.js"></script>
+    <script src="case-study-shell.js"></script>
     <script src="fixed-asset-case-study.js"></script>
   </body>
 </html>

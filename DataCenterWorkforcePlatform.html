@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" class="case-study-document">
   <head>
+    <script>
+      (() => {
+        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        const theme = param === "dark" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Monitoring &amp; Control | Meghna Sahni</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="case-study.css">
   </head>
-  <body class="case-study-page">
+  <body class="case-study-page workforce-page">
     <header></header>
     <main class="workforce-case-study">
       <section class="case-study-hero">
@@ -231,6 +238,7 @@
     </main>
     <footer></footer>
     <script src="include.js"></script>
+    <script src="case-study-shell.js"></script>
     <script src="workforce-case-study.js"></script>
   </body>
 </html>
