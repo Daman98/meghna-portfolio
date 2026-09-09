@@ -653,6 +653,7 @@ body {
 }
 
 .edge-context {
+  margin-top: clamp(64px, 7vw, 100px);
   border-top: 0;
 }
 
@@ -899,24 +900,31 @@ body {
 
 .edge-impact {
   overflow: hidden;
-  padding: clamp(42px, 6vw, 88px);
+  padding: 66px 0 76px;
   border-top: 0;
   background: #f8f8f8;
 }
 
-.edge-impact > h2 {
-  margin: 0 0 clamp(48px, 6vw, 88px);
-  font-size: clamp(48px, 5vw, 76px);
+.edge-impact-shell {
+  width: min(calc(100% - 64px), 1240px);
+  margin: 0 auto;
+}
+
+.edge-impact h2 {
+  margin: 0 0 42px;
+  font-size: clamp(2.5rem, 4vw, 4rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
-  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.edge-impact-carousel {
+  display: block;
 }
 
 .edge-impact-track {
   display: flex;
-  gap: clamp(18px, 2.4vw, 34px);
+  gap: 38px;
   overflow-x: auto;
-  padding-bottom: 8px;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -928,60 +936,62 @@ body {
 
 .edge-impact-card {
   display: flex;
-  flex: 0 0 calc((100% - clamp(36px, 4.8vw, 68px)) / 3);
-  min-height: clamp(350px, 38vw, 520px);
-  padding: clamp(28px, 3vw, 46px);
-  border-radius: 20px;
+  box-sizing: border-box;
+  flex: 0 0 calc((100% - 76px) / 3);
+  min-height: 340px;
+  padding: 28px 24px;
+  border: 1px solid #dedede;
+  border-radius: 16px;
   background: #fff;
+  box-shadow: 0 1px 2px #dedede;
   scroll-snap-align: start;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .edge-impact-icon {
-  font-size: clamp(72px, 8vw, 120px);
-  font-weight: 300;
-  line-height: 0.8;
+  font-size: 5rem;
+  font-weight: 200;
+  line-height: 1;
 }
 
 .edge-impact-card h3 {
-  margin: 0 0 14px;
-  font-size: clamp(21px, 1.9vw, 30px);
+  margin: 0 0 10px;
+  font-size: 1.45rem;
   font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 1.2;
 }
 
 .edge-impact-card p {
   margin: 0;
-  color: #707070;
-  font-size: clamp(13px, 1vw, 16px);
-  line-height: 1.55;
+  color: #5c5c5c;
+  font-size: 0.88rem;
+  line-height: 1.65;
 }
 
 .edge-impact-card .edge-impact-change {
   margin-bottom: 4px;
 }
 
-.edge-impact-pagination {
+.edge-impact-dots {
   display: flex;
-  justify-content: center;
   gap: 9px;
-  margin-top: clamp(48px, 6vw, 82px);
+  justify-content: center;
+  margin-top: 44px;
 }
 
-.edge-impact-pagination a {
-  width: 12px;
-  height: 12px;
-  border: 1px solid #aaa;
+.edge-impact-dots button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 1px solid #919191;
   border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
 }
 
-.edge-impact-pagination a:hover,
-.edge-impact-pagination a:focus,
-.edge-impact-pagination a.is-active {
-  border-color: #555;
-  background: #555;
+.edge-impact-dots button.is-active {
+  border-color: #5c5c5c;
+  background: #5c5c5c;
 }
 
 .edge-footer {
@@ -1006,11 +1016,21 @@ body {
   }
 
   .edge-impact {
-    padding: 36px 20px 48px;
+    padding: 52px 0 62px;
+  }
+
+  .edge-impact-shell {
+    width: calc(100% - 40px);
+  }
+
+  .edge-impact-track {
+    gap: 16px;
   }
 
   .edge-impact-card {
-    flex-basis: 84%;
+    flex-basis: 100%;
+    min-width: 0;
+    min-height: 340px;
   }
 
   .edge-audit-journeys,
