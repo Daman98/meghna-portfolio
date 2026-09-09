@@ -2,266 +2,181 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Microsoft Edge Extension Revamp | Meghna Sahni</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=44">
   </head>
-  <body>
+  <body class="edge-case-study-page">
     <header></header>
-    <main>
-      <section class="project-hero">
-        <h1 class="project-title">Microsoft Edge Extension Revamp</h1>
-        <div class="project-meta">Microsoft Edge &nbsp;|&nbsp; 2024</div>
-        <p class="project-intro">Redesigning the extension management experience to increase user adoption, improve post-installation journey, and reduce extension interference issues for Microsoft Edge browser users.</p>
-      </section>
-      
-      <!-- YouTube Video Section -->
-      <section style="margin: 3rem 0; text-align: center;">
-        <div style="max-width: 800px; margin: 0 auto;">
-          <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/sDwPi5qUnss?rel=0&modestbranding=1" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen
-            style="width: 100%; max-width: 560px; height: 315px; border-radius: 8px;">
-          </iframe>
+
+    <main class="edge-case-study">
+      <section class="edge-hero">
+        <div class="edge-hero-copy">
+          <h1>Microsoft Edge Extension Revamp</h1>
+          <p class="edge-hero-intro">Redesigning the extension management experience to increase user adoption, improve the post-installation journey, and reduce extension interference for Microsoft Edge users.</p>
         </div>
       </section>
-      
-      <section class="project-content" style="padding:0 5px; margin:0 60px; max-width:none;">
-        
-        <!-- Why What & How -->
-        <section class="figma-frame-section" style="margin-top:2rem; position:relative; padding:0 2px;">
-          
-          <h2 class="section-title">Why what & how</h2>
-          
-          <!-- Why are we solving section -->
-          <div style="margin-bottom:3rem;">
-            <h3 style="font-size:24px; color:#3d2c8d; font-weight:700; margin-bottom:15px;">Why are we solving</h3>
-            <p style="font-size:18px; color:#000; margin-bottom:2rem; max-width:800px;">
-              Users during their web experience on edge face 2 types of problems caused by extension
-            </p>
-            
-            <!-- Two jar illustrations showing user problems -->
-            <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
-              <img src="images/microsoft-edge-extension-revamp/why-what-how.png" 
-                   alt="Why what & how - showing two user scenarios with jar illustrations depicting extension problems: users needing to disable extensions and extension interference during browsing" 
-                   style="width:100%; max-width:1200px; height:auto; background:#fff;" />
-            </div>
-          </div>
 
-          <!-- What we are solving section -->
-          <div style="margin-bottom:3rem;">
-            <h3 style="font-size:24px; color:#3d2c8d; font-weight:700; margin-bottom:15px;">What we are solving</h3>
-            <p style="font-size:18px; color:#000; margin-bottom:2rem;">
-              'Users who struggle with Extension Interference during browsing and come to the Management hub to get to desired solution'
-            </p>
-          </div>
+      <section class="edge-section edge-context">
+        <header class="edge-section-header edge-problem-header">
+          <p class="edge-eyebrow">The Problem</p>
+          <h2>Extensions create friction across the browsing experience.</h2>
+        </header>
 
-          <!-- Business Objective section -->
-          <div style="margin-bottom:2rem;">
-            <h3 style="font-size:24px; color:#3d2c8d; font-weight:700; margin-bottom:20px;">Business Objective</h3>
-            <ul style="font-size:18px; color:#000; line-height:1.5; max-width:1000px; padding-left:20px;">
-              <li style="margin-bottom:5px;">Increase the extensions top of the funnel by bringing in more users with intent*</li>
-              <li style="margin-bottom:5px;">Increase extensions conversion and contain seekers within Edge</li>
-              <li style="margin-bottom:3px;">Reduce user dissatisfaction in post extension installation journey</li>
+        <div class="edge-problem-divider" aria-hidden="true"></div>
+        <p class="edge-problem-intro">Extensions should enhance browsing, but unclear controls and unexpected interference make them difficult to manage.</p>
+        <ul class="edge-problem-list">
+          <li>Installed extensions can unexpectedly interfere with websites.</li>
+          <li>Users struggle to find extensions after installation.</li>
+          <li>The management hub does not clearly guide users to a solution.</li>
+          <li>Post-installation progress and confirmation lack clarity.</li>
+          <li>Privacy and site-access controls are difficult to discover.</li>
+        </ul>
+
+        <div class="edge-customer-voices" aria-label="Customer voices">
+          <p>Customer voices</p>
+          <div class="edge-customer-voices-track">
+            <blockquote>“Extensions get added to my computer without me knowing.”</blockquote>
+            <blockquote>“Add a button to turn an extension off and on.”</blockquote>
+            <blockquote>“I need to disable ad blockers.”</blockquote>
+            <blockquote>“Microsoft is preventing this extension from getting removed.”</blockquote>
+            <blockquote>“I got a virus on my computer because of an ad blocker.”</blockquote>
+            <blockquote>“I can’t disable extensions. Show me how.”</blockquote>
+            <blockquote aria-hidden="true">“Extensions get added to my computer without me knowing.”</blockquote>
+            <blockquote aria-hidden="true">“Add a button to turn an extension off and on.”</blockquote>
+            <blockquote aria-hidden="true">“I need to disable ad blockers.”</blockquote>
+            <blockquote aria-hidden="true">“Microsoft is preventing this extension from getting removed.”</blockquote>
+            <blockquote aria-hidden="true">“I got a virus on my computer because of an ad blocker.”</blockquote>
+            <blockquote aria-hidden="true">“I can’t disable extensions. Show me how.”</blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="edge-section edge-audit">
+        <p class="edge-audit-label">Experience Audit</p>
+        <h2>Three journeys.<br>Recurring friction.</h2>
+
+        <div class="edge-audit-divider" aria-hidden="true"></div>
+
+        <p class="edge-audit-intro">I audited the existing Edge Extensions experience across key post-installation journeys to identify friction, inconsistencies, and opportunities for improvement.</p>
+
+        <div class="edge-audit-journeys">
+          <article>
+            <h3>01 — Site-level extension control</h3>
+            <ul>
+              <li>Block or enable an extension for a specific website</li>
+              <li>Understand which extensions have access to a site</li>
+              <li>Manage extension permissions without leaving the browsing context</li>
             </ul>
-            <div style="font-size:8px; color:#000; font-style:italic; margin-top:10px;">
-                <p style="margin-bottom:1px;">*Instances - Refers to the individual counts of feedback or issues reported by users. Each instance represents a single occurrence of feedback</p>
-                <p>Source - ocv.microsoft.com</p>
-            </div>
+          </article>
+          <article>
+            <h3>02 — Extension discovery &amp; management</h3>
+            <ul>
+              <li>Find an extension after installation</li>
+              <li>Quickly enable or disable an extension</li>
+              <li>Recover extensions after disabling multiple extensions</li>
+            </ul>
+          </article>
+          <article>
+            <h3>03 — Browser &amp; toolbar management</h3>
+            <ul>
+              <li>Remove single or multiple extensions</li>
+              <li>Pin or unpin extensions from the toolbar</li>
+              <li>Disable all extensions when troubleshooting</li>
+            </ul>
+          </article>
         </div>
-        
-        <!-- Footer note -->
-          
-        </section>
 
-        <!-- Experience Audit & User Goals -->
-        <section class="figma-frame-section" style="margin-top:3rem; position:relative; padding:0 2px;">
-          
-          <!-- Design Process Overview -->
-          <div style="margin-bottom:3rem;">
-            <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
-              <img src="images/microsoft-edge-extension-revamp/user-journey-workflow.png" 
-                   alt="Design process overview showing the spiral workflow from Business Needs through Research and existing Product Analysis to Designs & Prototype with feedback loops" 
-                   style="width:100%; max-width:1200px; height:auto; background:#fff;" />
-            </div>
+        <div class="edge-audit-reveal">
+          <p class="edge-audit-statement">The audit revealed three recurring user needs—<span>easy access, quick recovery, and control &amp; privacy.</span></p>
+          <div class="edge-audit-needs">
+            <article>
+              <h3>Easy access</h3>
+              <p>Users need installed extensions to be discoverable and accessible when they need them.</p>
+            </article>
+            <article>
+              <h3>Quick recovery</h3>
+              <p>Users need a simple way to identify and manage extensions when something unexpectedly affects their browsing experience.</p>
+            </article>
+            <article>
+              <h3>Control &amp; privacy</h3>
+              <p>Users need clear visibility and control over what extensions can access, where they are active, and how to disable or remove them.</p>
+            </article>
           </div>
+        </div>
+      </section>
 
-          <!-- Experience Audit section -->
-          <div style="margin-bottom:3rem;">
-            <h3 style="font-size:24px; color:#3d2c8d; font-weight:700; margin-bottom:15px;">Experience Audit</h3>
-            <p style="font-size:18px; color:#000; margin-bottom:2rem; max-width:1200px;">
-              An experience audit is a walkthrough of an existing, live experience focusing on a set of core tasks and sub tasks in a feature or a product area.
-            </p>
-            
-            <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
-              <img src="images/microsoft-edge-extension-revamp/user-goals-experience.png" 
-                   alt="Experience audit showing three phases: 1) Blocking an extension for particular site, 2) Finding an extension after installing or extension, 3) Removing a set of extensions from the browser" 
-                   style="width:100%; max-width:1200px; height:auto; background:#fff;" />
-            </div>
+      <section class="edge-section edge-design-screens">
+        <header class="edge-section-header">
+          <p class="edge-eyebrow">03 / Design</p>
+          <h2>Design screens</h2>
+        </header>
+
+        <div class="edge-video">
+          <div class="edge-desktop-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/sDwPi5qUnss?rel=0&amp;modestbranding=1"
+              title="Microsoft Edge Extension Revamp design screens"
+              loading="lazy"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
           </div>
+          <div class="edge-desktop-stand" aria-hidden="true"></div>
+          <div class="edge-desktop-base" aria-hidden="true"></div>
+        </div>
+      </section>
 
-          <!-- User Goals section -->
-          <div style="margin-bottom:2rem;">
-            <h3 style="font-size:24px; color:#3d2c8d; font-weight:700; margin-bottom:20px;">User Goals</h3>
-            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; max-width:1200px;">
-              
-              <!-- Goal 1 -->
-              <div style="background:#ffefd9; border:2px dashed #f19605; border-radius:38px; padding:20px; text-align:center;">
-                <p style="font-size:18px; color:#8d8d8d; font-style:italic; line-height:1.4;">
-                  Wants extensions to be easily accessible when required
-                </p>
-              </div>
-              
-              <!-- Goal 2 -->
-              <div style="background:#ffefd9; border:2px dashed #f19605; border-radius:38px; padding:20px; text-align:center;">
-                <p style="font-size:18px; color:#8d8d8d; font-style:italic; line-height:1.4;">
-                  Wants to deal with any unexpected browsing experience conveniently
-                </p>
-              </div>
-              
-              <!-- Goal 3 -->
-              <div style="background:#ffefd9; border:2px dashed #f19605; border-radius:38px; padding:20px; text-align:center;">
-                <p style="font-size:18px; color:#8d8d8d; font-style:italic; line-height:1.4;">
-                  Wants to deal with their data privacy (around installed extensions) as and when required
-                </p>
-              </div>
-            </div>
-          </div>
-          
-        </section>
+      <section class="edge-section edge-impact">
+        <h2>Impact</h2>
 
-        <!-- Design Direction - MVP & Northstar Vision -->
-        <section class="figma-frame-section" style="margin-top:3rem; position:relative; padding:0 2px;">
-          
-          <h2 class="section-title">Design direction</h2>
-          
-          <!-- Launched Changes section -->
-          <div style="margin-bottom:3rem;">
-            <h3 style="font-size:24px; color:#3d2c8d; font-weight:700; margin-bottom:20px;">Launched changes</h3>
-            
-            <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
-              <img src="images/microsoft-edge-extension-revamp/launched-changes-overview.png" 
-                   alt="Launched changes showing before and after UI improvements for extension management interface" 
-                   style="width:100%; max-width:1200px; height:auto; background:#fff;" />
-            </div>
-          </div>
-
-          <!-- Northstar Vision section -->
-          <div style="margin-bottom:3rem;">
-            
-            <!-- Vision UI Mockups Grid -->
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-bottom:3rem;">
-              
-              <!-- Row 1: Extension Installation Progress -->
-              <div style="margin-bottom:2rem;">
-                <img src="images/microsoft-edge-extension-revamp/extension-installation-progress.png" 
-                     alt="Extension installation progress interface showing loading states and user interaction options" 
-                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
-                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
-                  <p style="font-size:14px; color:#000; line-height:1.4; font-family:'Avenir', sans-serif;">
-                    The user can click on the progress loader incase they want to view the installation of extension or interact with other extensions in hub<br><br>
-                    This gives flexibility to the user to interact with extension hub while the progress bar is downloading
-                  </p>
-                </div>
-              </div>
-              
-              <div style="margin-bottom:2rem;">
-                <img src="images/microsoft-edge-extension-revamp/extension-success-confirmation.png" 
-                     alt="Extension installation success confirmation showing tick mark and completion states" 
-                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
-                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
-                  <p style="font-size:14px; color:#000; line-height:1.4; font-family:'Avenir', sans-serif;">
-                    The success icon i.e the tick mark, appears after each installation, provides users with confirmation and assurance that their extension has been installed successfully.
-                  </p>
-                </div>
-              </div>
-              
-              <!-- Row 2: Hub Surface with Site Context -->
-              <div style="margin-bottom:2rem;">
-                <img src="images/microsoft-edge-extension-revamp/hub-surface-site-context-1.png" 
-                     alt="Extension hub surface showing site-specific context and enabled extensions with new tags" 
-                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
-                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
-                  <p style="font-size:14px; color:#000; line-height:1.4; font-family:'Avenir', sans-serif;">
-                    The hub surface has a title which talks about site's name and is anchoring the hub surface.<br>
-                    The extensions are enabled on the page and the newly installed extension has a new tag to it.
-                  </p>
-                </div>
-              </div>
-              
-              <div style="margin-bottom:2rem;">
-                <img src="images/microsoft-edge-extension-revamp/hub-surface-site-context-2.png" 
-                     alt="Extension hub surface alternate view with site context and extension management" 
-                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
-                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
-                  <p style="font-size:14px; color:#000; line-height:1.4; font-family:'Avenir', sans-serif;">
-                    The hub surface has a title which talks about site's name and is anchoring the hub surface.<br>
-                    The extensions are enabled on the page and the newly installed extension has a new tag to it.
-                  </p>
-                </div>
-              </div>
-              
-              <!-- Row 3: Reload Interaction States -->
-              <div style="margin-bottom:2rem;">
-                <img src="images/microsoft-edge-extension-revamp/reload-interaction-state-1.png" 
-                     alt="Reload interaction on hub surface - State 1 showing extension management options" 
-                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
-                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
-                  <p style="font-size:14px; color:#000; font-family:'Avenir', sans-serif;">
-                    The reload interaction on the hub surface - State 1
-                  </p>
-                </div>
-              </div>
-              
-              <div style="margin-bottom:2rem;">
-                <img src="images/microsoft-edge-extension-revamp/reload-interaction-state-1-1.png" 
-                     alt="Reload interaction on hub surface - State 1.1 showing advanced interaction patterns" 
-                     style="width:100%; height:auto; background:#fff; border-radius:8px;" />
-                <div style="background:rgba(213, 161, 242, 0.3); border-radius:16px; padding:15px; margin-top:10px;">
-                  <p style="font-size:14px; color:#000; font-family:'Avenir', sans-serif;">
-                    The reload interaction on the hub surface - State 1.1
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Footer note -->
+        <div class="edge-impact-track">
+          <article class="edge-impact-card" id="edge-impact-1">
+            <span class="edge-impact-icon" aria-hidden="true">↗</span>
             <div>
-              <p style="font-size:16px; color:#4c7062; font-style:italic;">
-                *Will walk through detailed internal presentations and draft work during the interview session
-              </p>
+              <h3>91% Task Success Rate</h3>
+              <p class="edge-impact-change">↑ from 62%</p>
+              <p>Clearer hierarchy and improved discoverability helped users successfully find and manage extensions with less friction.</p>
             </div>
-          </div>
-          
-        </section>
-        
-        <section class="figma-frame-section" style="margin-top:3rem; position:relative; padding:0 2px;">
-          
-          <h2 class="section-title">Success Metric</h2>
-          
-          <!-- Launched Changes section -->
-          <div style="margin-bottom:3rem;">            
-            <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
-              <img src="images/microsoft-edge-extension-revamp/success-metric.png" 
-                   alt="Success metric showing before and after UI improvements for extension management interface" 
-                   style="width:100%; max-width:1200px; height:auto; background:#fff;" />
+          </article>
+          <article class="edge-impact-card" id="edge-impact-2">
+            <span class="edge-impact-icon" aria-hidden="true">↗</span>
+            <div>
+              <h3>88% Task Completion Rate</h3>
+              <p class="edge-impact-change">↑ from 55%</p>
+              <p>Simplified workflows enabled more users to complete critical extension-management tasks independently.</p>
             </div>
-            <div style="display:flex; justify-content:center; margin-bottom:2rem; overflow:hidden;">
-              <img src="images/microsoft-edge-extension-revamp/success-metric-numbers.png" 
-                   alt="Success metric in numbers before and after UI improvements for extension management interface" 
-                   style="width:50%; max-width:1200px; height:auto; background:#fff;" />
+          </article>
+          <article class="edge-impact-card" id="edge-impact-3">
+            <span class="edge-impact-icon" aria-hidden="true">←</span>
+            <div>
+              <h3>43% Faster Task Completion</h3>
+              <p class="edge-impact-change">↓ from 1.7 min → 58 sec</p>
+              <p>Reduced steps and clearer interactions lowered cognitive load and made key tasks significantly faster.</p>
             </div>
-          </div>
-        </section>
+          </article>
+          <article class="edge-impact-card" id="edge-impact-4">
+            <span class="edge-impact-icon" aria-hidden="true">↑</span>
+            <div>
+              <h3>4/5 User Confidence</h3>
+              <p class="edge-impact-change">↑ from 3/5</p>
+              <p>Users reported greater confidence and control when managing extensions, permissions, and privacy settings.</p>
+            </div>
+          </article>
+        </div>
+
+        <nav class="edge-impact-pagination" aria-label="Impact metrics">
+          <a class="is-active" href="#edge-impact-1" aria-label="View task success rate"></a>
+          <a href="#edge-impact-2" aria-label="View task completion rate"></a>
+          <a href="#edge-impact-3" aria-label="View faster task completion"></a>
+          <a href="#edge-impact-4" aria-label="View user confidence"></a>
+        </nav>
       </section>
     </main>
-    <footer>
-      <div class="footer-text">Microsoft Confidential 2024<br>© 2025 Meghna Sahni ❤️</div>
+
+    <footer class="edge-footer">
+      <p>Microsoft Confidential 2024</p>
+      <p>© 2025 Meghna Sahni</p>
     </footer>
     <script src="include.js"></script>
   </body>
