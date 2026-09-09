@@ -5440,3 +5440,57 @@ body.fat-page {
     grid-template-columns: 1fr;
   }
 }
+
+/* Homepage typography and neutral case-study palette */
+.home-page,
+.home-page * {
+  font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.home-page {
+  background: #fff;
+  color: #171717;
+}
+
+.home-page header {
+  border-bottom: 1px solid #e6e6e6;
+  box-shadow: none;
+}
+
+.home-page .logo a:hover,
+.home-page .logo a:focus,
+.home-page .nav-links a:hover {
+  color: #5f5f5f;
+}
+
+.home-page .hero h2,
+.home-page .social-links a,
+.home-page .work-meta,
+.home-page .companies {
+  color: #747474;
+}
+
+.home-page .hero p,
+.home-page .work-desc,
+.home-page .about p {
+  color: #555;
+}
+
+.home-page .social-links a:hover,
+.home-page .email-link,
+.home-page .email-link:hover {
+  color: #171717;
+}
+
+.home-page .work,
+.home-page .contact {
+  background: #f8f8f8;
+}
+
+.home-page .work-card {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.home-page .work-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.11);
+}
