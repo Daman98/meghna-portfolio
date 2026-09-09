@@ -222,6 +222,14 @@ main {
   padding: 52px 0;
 }
 
+.journey-brief {
+  max-width: 720px;
+  margin: -8px 0 28px;
+  color: var(--cp-text-soft);
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
+  line-height: 1.6;
+}
+
 .metrics {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
