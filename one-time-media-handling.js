@@ -82,7 +82,6 @@ selectQuestion(activeQuestionIndex);
 const impactTrack = document.querySelector(".impact-track");
 const impactCards = Array.from(document.querySelectorAll(".impact-card"));
 const impactDots = document.querySelector(".impact-dots");
-const impactControls = document.querySelectorAll("[data-impact-direction]");
 
 if (impactTrack && impactCards.length && impactDots) {
   const autoplayDelay = 4500;
@@ -138,13 +137,6 @@ if (impactTrack && impactCards.length && impactDots) {
     }
     updateDots();
   };
-
-  impactControls.forEach((control) => {
-    control.addEventListener("click", () => {
-      goToPage(currentPage + Number(control.dataset.impactDirection));
-      startAutoplay();
-    });
-  });
 
   impactTrack.addEventListener(
     "scroll",

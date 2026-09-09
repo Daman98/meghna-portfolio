@@ -599,6 +599,14 @@ body {
   margin-top: 0;
 }
 
+.edge-section.edge-design-screens {
+  border-top: 0;
+}
+
+.edge-design-screens .edge-section-header {
+  margin-bottom: clamp(32px, 4vw, 56px);
+}
+
 .edge-desktop-frame {
   position: relative;
   overflow: hidden;
@@ -658,8 +666,13 @@ body {
 }
 
 .edge-section-header {
+  position: static;
+  top: auto;
+  z-index: auto;
   max-width: 1040px;
   margin-bottom: clamp(60px, 8vw, 125px);
+  background: transparent;
+  box-shadow: none;
 }
 
 .edge-section-header h2 {
@@ -734,15 +747,76 @@ body {
   margin-top: clamp(100px, 13vw, 190px);
   overflow: hidden;
   padding: clamp(28px, 4vw, 58px) 0 clamp(72px, 9vw, 135px);
-  border-top: 1px solid #d8d8d8;
-  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  border-top: 0;
 }
 
 .edge-customer-voices > p {
-  margin: 0 0 clamp(28px, 3vw, 48px);
+  margin: 0 0 18px;
   color: #777;
   font-size: 12px;
+}
+
+.edge-customer-voices-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 clamp(28px, 3vw, 48px);
+  padding: 8px 14px;
+  border: 1px solid #dedede;
+  border-radius: 999px;
+  background: #fff;
+  color: #707070;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.edge-customer-voices-control:hover {
+  border-color: #bcbcbc;
+  color: #282828;
+}
+
+.edge-customer-voices-control:focus-visible {
+  outline: 3px solid #6c63ff;
+  outline-offset: 3px;
+}
+
+.edge-customer-voices-control:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.edge-customer-voices-control-icon {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid currentColor;
+}
+
+.edge-customer-voices-control.is-playing .edge-customer-voices-control-icon {
+  position: relative;
+  width: 8px;
+  height: 10px;
+  border: 0;
+}
+
+.edge-customer-voices-control.is-playing .edge-customer-voices-control-icon::before,
+.edge-customer-voices-control.is-playing .edge-customer-voices-control-icon::after {
+  position: absolute;
+  top: 0;
+  width: 3px;
+  height: 10px;
+  border-radius: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.edge-customer-voices-control.is-playing .edge-customer-voices-control-icon::before {
+  left: 0;
+}
+
+.edge-customer-voices-control.is-playing .edge-customer-voices-control-icon::after {
+  right: 0;
 }
 
 .edge-customer-voices-track {
@@ -761,6 +835,11 @@ body {
   font-size: clamp(14px, 1.25vw, 19px);
   font-style: italic;
   line-height: 1.45;
+  transition: color 180ms ease;
+}
+
+.edge-customer-voices blockquote.is-speaking {
+  color: #282828;
 }
 
 .edge-customer-voices:hover .edge-customer-voices-track {
@@ -806,6 +885,10 @@ body {
   font-size: clamp(14px, 1.2vw, 19px);
 }
 
+.edge-section.edge-audit {
+  border-top: 0;
+}
+
 .edge-audit > h2 {
   max-width: 1080px;
   margin: 0;
@@ -813,6 +896,13 @@ body {
   font-weight: 400;
   letter-spacing: -0.065em;
   line-height: 0.94;
+}
+
+.edge-problem-header h2,
+.edge-audit > h2 {
+  font-size: clamp(44px, 5.4vw, 76px);
+  letter-spacing: -0.055em;
+  line-height: 1;
 }
 
 .edge-audit-divider {
@@ -996,13 +1086,14 @@ body {
 
 .edge-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: min(calc(100% - 64px), 1280px);
   margin: 0 auto;
   padding: 24px 0 36px;
   border-top: 1px solid #ddd;
   color: #999;
   font-size: 11px;
+  text-align: center;
 }
 
 .edge-footer p {
@@ -4473,7 +4564,7 @@ body.fat-page {
 .amazon-pdf-case-study {
   --amazon-pdf-ink: #2c2c2c;
   --amazon-pdf-muted: #8a8a8a;
-  width: min(calc(100% - clamp(40px, 4.5vw, 88px)), 1760px);
+  width: min(calc(100% - 64px), 1760px);
   padding-top: clamp(56px, 6.8vw, 120px);
   color: var(--amazon-pdf-ink);
 }
@@ -4505,7 +4596,7 @@ body.fat-page {
   width: 100vw;
   margin-top: 0 !important;
   margin-inline: calc(50% - 50vw);
-  padding: clamp(36px, 2.4vw, 44px) max(clamp(20px, 2.4vw, 44px), calc((100vw - 1760px) / 2));
+  padding: clamp(36px, 2.4vw, 44px) max(clamp(40px, 2.4vw, 44px), calc((100vw - 1760px) / 2));
   background: #fafafa;
 }
 
@@ -4554,7 +4645,7 @@ body.fat-page {
 .amazon-pdf-story-cards h2 {
   max-width: 390px;
   margin: clamp(24px, 2.3vw, 40px) 0 0;
-  font-size: clamp(14px, 1.35vw, 24px);
+  font-size: clamp(11px, 0.82vw, 15px);
   font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1.35;
@@ -5513,4 +5604,37 @@ body.fat-page {
 
 .home-page .work-card:hover {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.11);
+}
+
+.amazon-case-study-page > header {
+  display: block;
+}
+
+.amazon-pdf-case-study .amazon-hero {
+  max-width: 980px;
+  min-height: 0;
+  padding-bottom: clamp(48px, 5vw, 80px);
+}
+
+.amazon-pdf-case-study .amazon-hero .case-study-eyebrow {
+  margin: 0;
+  color: #747474;
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+
+.amazon-pdf-case-study .amazon-hero h1 {
+  margin: 18px 0 0;
+  font-size: clamp(3rem, 5.4vw, 5.4rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.amazon-pdf-case-study .amazon-hero .case-study-summary {
+  max-width: 860px;
+  margin: 28px 0 0;
+  color: #9a9a9a;
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
+  line-height: 1.8;
 }
