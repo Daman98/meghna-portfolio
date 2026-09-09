@@ -3694,8 +3694,8 @@ body.fat-page {
 }
 
 .amazon-impact-panel {
-  padding: clamp(48px, 6vw, 96px) clamp(20px, 2.5vw, 40px) clamp(42px, 5vw, 80px);
-  background: #fbfbfc;
+  padding: clamp(58px, 6.5vw, 108px) clamp(34px, 5vw, 84px) clamp(46px, 5.5vw, 92px);
+  background: #f8f7f4;
 }
 
 .amazon-pdf-section .amazon-impact-panel > .fixed-impact-title {
@@ -3718,37 +3718,50 @@ body.fat-page {
   box-sizing: border-box;
   min-width: 0;
   margin: 0;
-  padding-bottom: clamp(24px, 3vw, 40px);
   overflow: hidden;
-  border-radius: clamp(10px, 1.4vw, 22px);
+  border-radius: clamp(16px, 1.6vw, 26px);
   background: #fff;
 }
 
 .amazon-impact-image-grid img {
+  display: block;
   width: 100%;
 }
 
 .amazon-pdf-section .amazon-impact-image-card figcaption {
   position: absolute;
-  z-index: 1;
-  inset: 72% 4% 3%;
+  inset: 74% 6% 3%;
   display: flex;
   flex-direction: column;
   gap: 4px;
   margin: 0;
-  padding-top: 2px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 -14px 0 #fff;
   color: #6f6f6f;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-size: 12px;
   line-height: 1.25;
 }
 
 .amazon-impact-card-meta {
   flex: 0 0 auto;
+}
+
+.amazon-impact-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: clamp(34px, 4vw, 64px);
+}
+
+.amazon-impact-pagination span {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #8f8f8f;
+  border-radius: 50%;
+}
+
+.amazon-impact-pagination .is-active {
+  background: #5f5f5f;
 }
 
 @media (max-width: 1000px) {
@@ -3863,11 +3876,12 @@ body.fat-page {
 }
 
 .amazon-pdf-story {
+  --story-section-gutter: clamp(32px, 6.5vw, 132px);
   box-sizing: border-box;
-  width: 100vw;
+  width: calc(100vw - var(--story-section-gutter));
   margin-top: 0 !important;
-  margin-inline: calc(50% - 50vw);
-  padding: clamp(36px, 2.4vw, 44px) max(clamp(20px, 2.4vw, 44px), calc((100vw - 1760px) / 2));
+  margin-inline: calc(50% - 50vw + (var(--story-section-gutter) / 2));
+  padding: clamp(46px, 4.5vw, 90px) clamp(42px, 4.3vw, 88px) clamp(72px, 6vw, 120px);
   background: #fafafa;
 }
 
@@ -3887,12 +3901,12 @@ body.fat-page {
 .amazon-pdf-story-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(28px, 4.5vw, 86px);
+  gap: clamp(24px, 2.5vw, 50px);
 }
 
 .amazon-pdf-story-cards article {
   min-width: 0;
-  padding: clamp(18px, 1.6vw, 28px) clamp(18px, 2.5vw, 44px) clamp(24px, 2.3vw, 40px);
+  padding: clamp(20px, 2.4vw, 48px) clamp(22px, 2.4vw, 48px) clamp(34px, 3.4vw, 68px);
   overflow: hidden;
   border-radius: clamp(12px, 1.35vw, 24px);
   background: #fff;
@@ -3916,7 +3930,8 @@ body.fat-page {
 .amazon-pdf-story-cards h2 {
   max-width: 390px;
   margin: clamp(24px, 2.3vw, 40px) 0 0;
-  font-size: clamp(14px, 1.35vw, 24px);
+  color: #555;
+  font-size: clamp(12px, 1.05vw, 18px);
   font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1.35;
@@ -4544,6 +4559,21 @@ body.fat-page {
   margin-top: 0;
 }
 
+.amazon-pdf-mapping .amazon-pay-opportunity {
+  --mapping-edge-gap: clamp(24px, 5vw, 90px);
+  box-sizing: border-box;
+  width: min(calc(100% - (2 * var(--mapping-edge-gap))), 1500px);
+  margin-top: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.amazon-pdf-mapping .amazon-pay-opportunity .problem-note.is-active {
+  transform: translate3d(0, -50%, 0);
+}
+
 .amazon-pdf-mapping .problem-note h2 {
   margin: 4px 0 8px;
   font-size: 13px;
@@ -4562,6 +4592,11 @@ body.fat-page {
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 1.05;
+}
+
+.amazon-pdf-mapping .design-opportunity span {
+  max-width: 58ch;
+  text-wrap: balance;
 }
 
 .amazon-pdf-problems {
