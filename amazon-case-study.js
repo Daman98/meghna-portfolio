@@ -16,6 +16,7 @@
     const pagination = carousel.querySelector('.amazon-use-case-pagination');
     const status = carousel.querySelector('.amazon-use-case-status');
     const isWireframeCarousel = carousel.classList.contains('amazon-wireframe-carousel');
+    const wireframeFrameDuration = 3000;
     let activeIndex = 0;
     let autoplayTimer;
     let experienceTimer;
@@ -32,7 +33,7 @@
     });
 
     if (isWireframeCarousel) {
-      slides.forEach((slide) => {
+      slides.forEach((slide, slideIndex) => {
         const screen = slide.querySelector('.amazon-wireframe-phone-screen');
         const layer = document.createElement('div');
 
@@ -58,7 +59,17 @@
           layer.append(particle);
         }
 
-        screen.append(layer);
+        const progress = document.createElement('div');
+        progress.className = 'amazon-wireframe-progress';
+        progress.setAttribute('aria-hidden', 'true');
+
+        wireframeSequences[slideIndex].forEach(() => {
+          const segment = document.createElement('span');
+          segment.className = 'amazon-wireframe-progress-segment';
+          progress.append(segment);
+        });
+
+        screen.append(layer, progress);
       });
     }
 
@@ -148,6 +159,22 @@
       alignSlide(slides[activeIndex], behavior);
     };
 
+    function updateWireframeProgress(slideIndex, frameIndex) {
+      const progress = slides[slideIndex].querySelector('.amazon-wireframe-progress');
+      if (!progress) {
+        return;
+      }
+
+      const segments = [...progress.children];
+      segments.forEach((segment) => segment.classList.remove('is-complete', 'is-active'));
+      void progress.offsetWidth;
+
+      segments.forEach((segment, index) => {
+        segment.classList.toggle('is-complete', index < frameIndex);
+        segment.classList.toggle('is-active', index === frameIndex);
+      });
+    }
+
     function showWireframeFrame(slideIndex, frameIndex) {
       const sequence = wireframeSequences[slideIndex];
       if (!sequence.length) {
@@ -162,6 +189,7 @@
       wireframeFrameIndexes[slideIndex] = frameIndex;
       image.src = `images/amazon-pay-ux-research/${sequence[frameIndex]}`;
       image.alt = `${title} experience screen ${frameIndex + 1}`;
+      updateWireframeProgress(slideIndex, frameIndex);
 
       if (frameIndex === 0) {
         void screen.offsetWidth;
@@ -195,7 +223,7 @@
         } else {
           showWireframeFrame(activeIndex, frameIndex);
         }
-      }, 3000);
+      }, wireframeFrameDuration);
     };
     const startAutoplay = () => {
       stopAutoplay();
@@ -252,6 +280,10 @@
 
         if (nearestIndex !== activeIndex) {
           activeIndex = nearestIndex;
+          if (isWireframeCarousel) {
+            showWireframeFrame(activeIndex, 0);
+            startExperienceAnimation();
+          }
           updateState();
         }
       }, 120);
