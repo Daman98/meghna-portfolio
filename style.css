@@ -5357,6 +5357,22 @@ body.fat-page {
   transform: translate3d(0, -50%, 0);
 }
 
+.amazon-pdf-mapping .amazon-pay-opportunity .problem-list {
+  height: clamp(300px, 22vw, 360px);
+}
+
+.amazon-pdf-mapping .amazon-pay-opportunity .problem-note.is-before {
+  transform: translate3d(0, calc(-50% - clamp(116px, 8vw, 140px)), 0) scale(0.94) rotate(-0.75deg);
+}
+
+.amazon-pdf-mapping .amazon-pay-opportunity .problem-note.is-after {
+  transform: translate3d(0, calc(-50% + clamp(116px, 8vw, 140px)), 0) scale(0.94) rotate(0.75deg);
+}
+
+.amazon-pdf-mapping .problem-note p {
+  font-size: clamp(10px, calc(1vw - 2px), 18px);
+}
+
 .amazon-pdf-mapping .problem-note h2 {
   margin: 4px 0 8px;
   font-size: clamp(14px, 1.15vw, 22px);
@@ -5382,6 +5398,10 @@ body.fat-page {
   max-width: 58ch;
   font-size: clamp(11px, 1vw, 20px);
   text-wrap: balance;
+}
+
+.amazon-pdf-mapping .problem-note span {
+  font-size: clamp(10px, calc(1vw - 2px), 18px);
 }
 
 .amazon-pdf-problems {
@@ -5521,8 +5541,8 @@ body.fat-page {
 .amazon-design-direction-principles {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(10px, 1vw, 18px);
-  margin-top: clamp(68px, 8vw, 140px);
+  gap: clamp(4px, 0.5vw, 8px);
+  margin-top: clamp(36px, 4vw, 64px);
 }
 
 .amazon-design-direction-principles article {
@@ -5535,7 +5555,7 @@ body.fat-page {
   margin: 0;
   color: #171717;
   font-size: clamp(18px, 1.6vw, 28px);
-  line-height: 1.4;
+  line-height: 1.25;
 }
 
 .amazon-design-direction-principles h3 span {
