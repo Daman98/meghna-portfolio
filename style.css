@@ -4645,11 +4645,11 @@ body.fat-page {
 .amazon-pdf-story-cards h2 {
   max-width: 390px;
   margin: clamp(24px, 2.3vw, 40px) 0 0;
-  color: #555;
-  font-size: clamp(12px, 1.05vw, 18px);
+  color: #9a9a9a;
+  font-size: 14px;
   font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.35;
+  letter-spacing: normal;
+  line-height: 1.8;
 }
 
 .amazon-pdf-kicker {
@@ -4696,7 +4696,7 @@ body.fat-page {
   gap: 12px;
   margin: 0;
   padding: 3px 0;
-  color: #777;
+  color: #9a9a9a;
   font-size: clamp(15px, 1.2vw, 17px);
   line-height: 1.45;
   counter-increment: insight;
@@ -4710,7 +4710,7 @@ body.fat-page {
   background: #111;
   color: #fff;
   content: counter(insight, decimal-leading-zero);
-  font-size: 12px;
+  font-size: inherit;
   margin-top: 1px;
   place-items: center;
 }
@@ -5359,10 +5359,10 @@ body.fat-page {
 
 .amazon-pdf-mapping .problem-note h2 {
   margin: 4px 0 8px;
-  font-size: 13px;
+  font-size: clamp(14px, 1.15vw, 22px);
   font-weight: 500;
   letter-spacing: -0.02em;
-  line-height: normal;
+  line-height: 1.25;
 }
 
 .amazon-pdf-mapping .problem-note.is-active h2 {
@@ -5377,8 +5377,10 @@ body.fat-page {
   line-height: 1.05;
 }
 
+.amazon-pdf-mapping .problem-note span,
 .amazon-pdf-mapping .design-opportunity span {
   max-width: 58ch;
+  font-size: clamp(11px, 1vw, 20px);
   text-wrap: balance;
 }
 
@@ -5478,6 +5480,9 @@ body.fat-page {
 }
 
 .amazon-design-direction {
+  box-sizing: border-box;
+  padding-right: 32px;
+  padding-left: 64px;
   padding-block: clamp(24px, 2vw, 38px);
 }
 
@@ -5492,16 +5497,16 @@ body.fat-page {
   max-width: 1120px;
   margin: 0;
   color: #111;
-  font-size: clamp(48px, 6vw, 106px);
+  font-size: clamp(3rem, 5.4vw, 5.4rem);
   font-weight: 400;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.055em;
   line-height: 1.02;
 }
 
 .amazon-design-direction-divider {
   width: 100%;
   height: 1px;
-  margin: clamp(42px, 5vw, 88px) 0;
+  margin: clamp(22px, 2.5vw, 40px) 0;
   background: #d9d9d9;
 }
 
@@ -5509,7 +5514,7 @@ body.fat-page {
   max-width: 800px;
   margin: 0;
   color: #9a9a9a;
-  font-size: clamp(20px, 1.8vw, 32px);
+  font-size: clamp(18px, 1.6vw, 28px);
   line-height: 1.4;
 }
 
@@ -5529,8 +5534,8 @@ body.fat-page {
   gap: 10px;
   margin: 0;
   color: #171717;
-  font-size: clamp(19px, 1.55vw, 28px);
-  line-height: 1.35;
+  font-size: clamp(18px, 1.6vw, 28px);
+  line-height: 1.4;
 }
 
 .amazon-design-direction-principles h3 span {
@@ -5737,6 +5742,10 @@ body.fat-page {
 
 @media (max-width: 700px) {
   .amazon-pdf-case-study .amazon-hero {
+    padding-inline: 20px;
+  }
+
+  .amazon-design-direction {
     padding-inline: 20px;
   }
 }
