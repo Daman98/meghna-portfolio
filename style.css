@@ -5329,6 +5329,10 @@ body.fat-page {
   margin-top: clamp(28px, 3vw, 52px);
 }
 
+.amazon-pdf-case-study .amazon-rewards-mapping {
+  margin-top: clamp(64px, 6vw, 104px);
+}
+
 .amazon-pdf-mapping .amazon-pay-opportunity {
   box-sizing: border-box;
   grid-template-columns: minmax(280px, 380px) minmax(420px, 620px);
@@ -5518,7 +5522,7 @@ body.fat-page {
   margin: 0;
   color: #111;
   font-size: clamp(3rem, 5.4vw, 5.4rem);
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: -0.055em;
   line-height: 1.02;
 }
