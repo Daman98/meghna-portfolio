@@ -82,8 +82,18 @@ selectQuestion(activeQuestionIndex);
 const impactTrack = document.querySelector(".impact-track");
 const impactCards = Array.from(document.querySelectorAll(".impact-card"));
 const impactDots = document.querySelector(".impact-dots");
+const impactNavigation = document.querySelector(".impact-section .impact-carousel-navigation");
+const impactPrevious = document.querySelector(".impact-previous");
+const impactNext = document.querySelector(".impact-next");
 
-if (impactTrack && impactCards.length && impactDots) {
+if (
+  impactTrack &&
+  impactCards.length &&
+  impactDots &&
+  impactNavigation &&
+  impactPrevious &&
+  impactNext
+) {
   const autoplayDelay = 4500;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let currentPage = 0;
@@ -98,6 +108,11 @@ if (impactTrack && impactCards.length && impactDots) {
       dot.classList.toggle("is-active", index === currentPage);
       dot.setAttribute("aria-current", index === currentPage ? "true" : "false");
     });
+
+    const lastPage = getPageCount() - 1;
+    impactNavigation.hidden = lastPage <= 0;
+    impactPrevious.disabled = currentPage === 0;
+    impactNext.disabled = currentPage === lastPage;
   };
 
   const goToPage = (page, behavior = "smooth") => {
@@ -174,6 +189,15 @@ if (impactTrack && impactCards.length && impactDots) {
 
   document.addEventListener("visibilitychange", startAutoplay);
   reducedMotion.addEventListener("change", startAutoplay);
+
+  impactPrevious.addEventListener("click", () => {
+    goToPage(currentPage - 1);
+    startAutoplay();
+  });
+  impactNext.addEventListener("click", () => {
+    goToPage(currentPage + 1);
+    startAutoplay();
+  });
 
   renderDots();
   startAutoplay();

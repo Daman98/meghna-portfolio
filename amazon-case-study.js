@@ -608,3 +608,85 @@
 
   updateControl();
 })();
+
+(() => {
+  const track = document.querySelector('.amazon-impact-image-grid');
+  const cards = [...document.querySelectorAll('.amazon-impact-image-card')];
+  const navigation = document.querySelector('.amazon-impact-navigation');
+  const pagination = document.querySelector('.amazon-impact-pagination');
+  const previousButton = document.querySelector('.amazon-impact-previous');
+  const nextButton = document.querySelector('.amazon-impact-next');
+
+  if (!track || !cards.length || !navigation || !pagination || !previousButton || !nextButton) {
+    return;
+  }
+
+  let currentPage = 0;
+  let scrollFrame;
+
+  const getVisibleCardCount = () => (window.matchMedia('(max-width: 700px)').matches ? 1 : cards.length);
+  const getPageCount = () => Math.ceil(cards.length / getVisibleCardCount());
+  const getPageOffset = (page) => {
+    const cardIndex = Math.min(page * getVisibleCardCount(), cards.length - 1);
+    return cards[cardIndex].offsetLeft - cards[0].offsetLeft;
+  };
+
+  const updateControls = () => {
+    const lastPage = getPageCount() - 1;
+    navigation.hidden = lastPage <= 0;
+    previousButton.disabled = currentPage === 0;
+    nextButton.disabled = currentPage === lastPage;
+
+    pagination.querySelectorAll('button').forEach((dot, index) => {
+      const isActive = index === currentPage;
+      dot.classList.toggle('is-active', isActive);
+      dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  };
+
+  const goToPage = (page, behavior = 'smooth') => {
+    currentPage = Math.max(0, Math.min(getPageCount() - 1, page));
+    track.scrollTo({ left: getPageOffset(currentPage), behavior });
+    updateControls();
+  };
+
+  const renderPagination = () => {
+    pagination.replaceChildren();
+
+    for (let page = 0; page < getPageCount(); page += 1) {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Show impact page ${page + 1}`);
+      dot.addEventListener('click', () => goToPage(page));
+      pagination.append(dot);
+    }
+
+    updateControls();
+  };
+
+  track.addEventListener('scroll', () => {
+    window.cancelAnimationFrame(scrollFrame);
+    scrollFrame = window.requestAnimationFrame(() => {
+      const pagePositions = Array.from({ length: getPageCount() }, (_, page) => getPageOffset(page));
+      currentPage = pagePositions.reduce(
+        (closest, position, index) =>
+          Math.abs(position - track.scrollLeft) < Math.abs(pagePositions[closest] - track.scrollLeft)
+            ? index
+            : closest,
+        0,
+      );
+      updateControls();
+    });
+  }, { passive: true });
+
+  previousButton.addEventListener('click', () => goToPage(currentPage - 1));
+  nextButton.addEventListener('click', () => goToPage(currentPage + 1));
+
+  window.addEventListener('resize', () => {
+    currentPage = 0;
+    renderPagination();
+    goToPage(0, 'auto');
+  });
+
+  renderPagination();
+})();

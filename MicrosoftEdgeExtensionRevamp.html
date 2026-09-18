@@ -12,6 +12,7 @@
     <main class="edge-case-study">
       <section class="edge-hero">
         <div class="edge-hero-copy">
+          <p class="edge-hero-eyebrow">Microsoft Edge | 2024</p>
           <h1>Microsoft Edge Extension Revamp</h1>
           <p class="edge-hero-intro">Redesigning the extension management experience to increase user adoption, improve the post-installation journey, and reduce extension interference for Microsoft Edge users.</p>
         </div>
@@ -137,32 +138,40 @@
           <div class="edge-impact-carousel">
             <div class="edge-impact-track" id="edge-impact-track">
               <article class="edge-impact-card" id="edge-impact-1">
-                <span class="edge-impact-icon" aria-hidden="true">↗</span>
-                <div>
+                <svg class="edge-impact-icon" viewBox="0 0 52 52" aria-hidden="true">
+                  <path d="M9 43 43 9M20 9h23v23"></path>
+                </svg>
+                <div class="edge-impact-copy">
                   <h3>91% Task Success Rate</h3>
                   <p class="edge-impact-change">↑ from 62%</p>
                   <p>Clearer hierarchy and improved discoverability helped users successfully find and manage extensions with less friction.</p>
                 </div>
               </article>
               <article class="edge-impact-card" id="edge-impact-2">
-                <span class="edge-impact-icon" aria-hidden="true">↗</span>
-                <div>
+                <svg class="edge-impact-icon" viewBox="0 0 52 52" aria-hidden="true">
+                  <path d="M9 43 43 9M20 9h23v23"></path>
+                </svg>
+                <div class="edge-impact-copy">
                   <h3>88% Task Completion Rate</h3>
                   <p class="edge-impact-change">↑ from 55%</p>
                   <p>Simplified workflows enabled more users to complete critical extension-management tasks independently.</p>
                 </div>
               </article>
               <article class="edge-impact-card" id="edge-impact-3">
-                <span class="edge-impact-icon" aria-hidden="true">←</span>
-                <div>
+                <svg class="edge-impact-icon" viewBox="0 0 52 52" aria-hidden="true">
+                  <path d="M24 10 8 26l16 16M8 26h38"></path>
+                </svg>
+                <div class="edge-impact-copy">
                   <h3>43% Faster Task Completion</h3>
                   <p class="edge-impact-change">↓ from 1.7 min → 58 sec</p>
                   <p>Reduced steps and clearer interactions lowered cognitive load and made key tasks significantly faster.</p>
                 </div>
               </article>
               <article class="edge-impact-card" id="edge-impact-4">
-                <span class="edge-impact-icon" aria-hidden="true">↑</span>
-                <div>
+                <svg class="edge-impact-icon" viewBox="0 0 52 52" aria-hidden="true">
+                  <path d="M26 46V8M10 24 26 8l16 16"></path>
+                </svg>
+                <div class="edge-impact-copy">
                   <h3>4/5 User Confidence</h3>
                   <p class="edge-impact-change">↑ from 3/5</p>
                   <p>Users reported greater confidence and control when managing extensions, permissions, and privacy settings.</p>
@@ -171,7 +180,19 @@
             </div>
           </div>
 
-          <div class="edge-impact-dots" aria-label="Impact carousel pages"></div>
+          <div class="impact-carousel-navigation" aria-label="Impact carousel controls">
+            <button class="impact-carousel-button edge-impact-previous" type="button" aria-label="Show previous impact page" aria-controls="edge-impact-track">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m15 18-6-6 6-6"></path>
+              </svg>
+            </button>
+            <div class="edge-impact-dots" aria-label="Impact carousel pages"></div>
+            <button class="impact-carousel-button edge-impact-next" type="button" aria-label="Show next impact page" aria-controls="edge-impact-track">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m9 6 6 6-6 6"></path>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
     </main>

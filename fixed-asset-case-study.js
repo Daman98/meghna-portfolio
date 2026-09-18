@@ -160,6 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const impactTrack = document.querySelector('.fixed-impact-grid');
   const impactCards = [...document.querySelectorAll('.fixed-impact-card')];
   const impactDots = [...document.querySelectorAll('[data-impact-page]')];
+  const impactPrevious = document.querySelector('.fixed-impact-previous');
+  const impactNext = document.querySelector('.fixed-impact-next');
   const impactPageStarts = [0, 3, 6];
   let impactScrollFrame;
 
@@ -169,6 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
       dot.classList.toggle('is-active', isActive);
       dot.setAttribute('aria-selected', String(isActive));
     });
+
+    if (impactPrevious && impactNext) {
+      impactPrevious.disabled = index === 0;
+      impactNext.disabled = index === impactPageStarts.length - 1;
+    }
   }
 
   function getImpactOffset(card) {
@@ -213,6 +220,18 @@ document.addEventListener('DOMContentLoaded', () => {
     impactDots.forEach((dot) => {
       dot.addEventListener('click', () => scrollToImpact(Number(dot.dataset.impactPage)));
     });
+
+    impactPrevious?.addEventListener('click', () => {
+      const activePage = impactDots.findIndex((dot) => dot.classList.contains('is-active'));
+      scrollToImpact(Math.max(0, activePage - 1));
+    });
+
+    impactNext?.addEventListener('click', () => {
+      const activePage = impactDots.findIndex((dot) => dot.classList.contains('is-active'));
+      scrollToImpact(Math.min(impactPageStarts.length - 1, activePage + 1));
+    });
+
+    setActiveImpact(0);
   }
 
   const wireframeTabs = [...document.querySelectorAll('.wireframe-tab')];

@@ -1,8 +1,18 @@
 const edgeImpactTrack = document.querySelector(".edge-impact-track");
 const edgeImpactCards = Array.from(document.querySelectorAll(".edge-impact-card"));
 const edgeImpactDots = document.querySelector(".edge-impact-dots");
+const edgeImpactNavigation = document.querySelector(".edge-impact .impact-carousel-navigation");
+const edgeImpactPrevious = document.querySelector(".edge-impact-previous");
+const edgeImpactNext = document.querySelector(".edge-impact-next");
 
-if (edgeImpactTrack && edgeImpactCards.length && edgeImpactDots) {
+if (
+  edgeImpactTrack &&
+  edgeImpactCards.length &&
+  edgeImpactDots &&
+  edgeImpactNavigation &&
+  edgeImpactPrevious &&
+  edgeImpactNext
+) {
   let currentPage = 0;
   let scrollFrame;
 
@@ -19,6 +29,11 @@ if (edgeImpactTrack && edgeImpactCards.length && edgeImpactDots) {
       dot.classList.toggle("is-active", index === currentPage);
       dot.setAttribute("aria-current", index === currentPage ? "true" : "false");
     });
+
+    const lastPage = getPageCount() - 1;
+    edgeImpactNavigation.hidden = lastPage <= 0;
+    edgeImpactPrevious.disabled = currentPage === 0;
+    edgeImpactNext.disabled = currentPage === lastPage;
   };
 
   const goToPage = (page, behavior = "smooth") => {
@@ -72,6 +87,9 @@ if (edgeImpactTrack && edgeImpactCards.length && edgeImpactDots) {
     renderDots();
     goToPage(0, "auto");
   });
+
+  edgeImpactPrevious.addEventListener("click", () => goToPage(currentPage - 1));
+  edgeImpactNext.addEventListener("click", () => goToPage(currentPage + 1));
 
   renderDots();
 }

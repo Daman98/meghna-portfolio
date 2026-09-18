@@ -545,6 +545,11 @@ body {
 }
 
 /* Microsoft Edge Extension Revamp */
+.edge-case-study-page,
+.edge-case-study-page * {
+  font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
 .edge-case-study-page {
   background: #fff;
   color: #171717;
@@ -569,24 +574,33 @@ body {
 }
 
 .edge-hero-copy {
-  max-width: 1040px;
+  box-sizing: border-box;
+  max-width: 980px;
+  padding: 0 32px clamp(48px, 5vw, 80px) 0;
+}
+
+.edge-hero-eyebrow {
+  margin: 0;
+  color: #747474;
+  font-size: 0.82rem;
+  font-weight: 400;
 }
 
 .edge-hero h1 {
   max-width: 980px;
-  margin: 0;
-  font-size: clamp(34px, 3.05vw, 54px);
+  margin: 18px 0 0;
+  font-size: clamp(3rem, 5.4vw, 5.4rem);
   font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 1.05;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
 }
 
 .edge-hero-intro {
-  max-width: 680px;
-  margin: clamp(30px, 3.6vw, 58px) 0 0;
-  color: #858585;
-  font-size: clamp(16px, 1.4vw, 22px);
-  line-height: 1.55;
+  max-width: 860px;
+  margin: 28px 0 0;
+  color: #9a9a9a;
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
+  line-height: 1.8;
 }
 
 .edge-video {
@@ -600,6 +614,8 @@ body {
 }
 
 .edge-section.edge-design-screens {
+  margin-top: clamp(20px, 3vw, 44px);
+  padding-top: 0;
   border-top: 0;
 }
 
@@ -661,7 +677,8 @@ body {
 }
 
 .edge-context {
-  margin-top: clamp(64px, 7vw, 100px);
+  margin-top: clamp(20px, 3vw, 44px);
+  padding-top: 0;
   border-top: 0;
 }
 
@@ -886,6 +903,8 @@ body {
 }
 
 .edge-section.edge-audit {
+  margin-top: clamp(20px, 3vw, 44px);
+  padding-top: 0;
   border-top: 0;
 }
 
@@ -989,10 +1008,19 @@ body {
 }
 
 .edge-impact {
+  box-sizing: border-box;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   overflow: hidden;
   padding: 66px 0 76px;
   border-top: 0;
-  background: #f8f8f8;
+  background: #fcfbf8;
+  color: #242424;
+}
+
+.edge-impact,
+.edge-impact * {
+  font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .edge-impact-shell {
@@ -1001,10 +1029,11 @@ body {
 }
 
 .edge-impact h2 {
-  margin: 0 0 42px;
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  margin: 0 0 clamp(36px, 4vw, 64px);
+  font-size: clamp(2.25rem, 4vw, 4rem);
   font-weight: 400;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.045em;
+  line-height: 1;
 }
 
 .edge-impact-carousel {
@@ -1013,7 +1042,7 @@ body {
 
 .edge-impact-track {
   display: flex;
-  gap: 38px;
+  gap: clamp(18px, 2.5vw, 40px);
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
@@ -1027,46 +1056,115 @@ body {
 .edge-impact-card {
   display: flex;
   box-sizing: border-box;
-  flex: 0 0 calc((100% - 76px) / 3);
-  min-height: 340px;
-  padding: 28px 24px;
-  border: 1px solid #dedede;
-  border-radius: 16px;
+  flex: 0 0 calc((100% - (2 * clamp(18px, 2.5vw, 40px))) / 3);
+  min-height: clamp(330px, 35vw, 430px);
+  padding: clamp(24px, 3vw, 40px);
+  border: 0;
+  border-radius: clamp(10px, 1.4vw, 22px);
   background: #fff;
-  box-shadow: 0 1px 2px #dedede;
+  box-shadow: none;
   scroll-snap-align: start;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .edge-impact-icon {
-  font-size: 5rem;
-  font-weight: 200;
-  line-height: 1;
+  width: clamp(76px, 8vw, 112px);
+  height: clamp(76px, 8vw, 112px);
+  flex: 0 0 clamp(76px, 8vw, 112px);
+  overflow: visible;
+  fill: none;
+  stroke: #242424;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.edge-impact-copy {
+  margin-top: clamp(54px, 6vw, 88px);
 }
 
 .edge-impact-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.45rem;
+  margin: 0 0 12px;
+  font-size: clamp(1.2rem, 1.8vw, 2rem);
   font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  white-space: nowrap;
 }
 
 .edge-impact-card p {
   margin: 0;
-  color: #5c5c5c;
+  color: #6f6f6f;
   font-size: 0.88rem;
-  line-height: 1.65;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
 }
 
 .edge-impact-card .edge-impact-change {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+}
+
+.impact-carousel-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 44px;
+}
+
+.impact-carousel-navigation[hidden] {
+  display: none;
+}
+
+.impact-carousel-button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #919191;
+  border-radius: 50%;
+  background: #fff;
+  color: #242424;
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.impact-carousel-button:hover:not(:disabled) {
+  border-color: #242424;
+  transform: translateY(-1px);
+}
+
+.impact-carousel-button:focus-visible {
+  outline: 2px solid #0078d4;
+  outline-offset: 3px;
+}
+
+.impact-carousel-button:disabled {
+  cursor: default;
+  opacity: 0.3;
+}
+
+.impact-carousel-button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.75;
 }
 
 .edge-impact-dots {
   display: flex;
   gap: 9px;
   justify-content: center;
-  margin-top: 44px;
+  margin-top: 0;
 }
 
 .edge-impact-dots button {
@@ -1136,8 +1234,12 @@ body {
 }
 
 @media (max-width: 480px) {
+  .edge-hero-copy {
+    padding-right: 20px;
+  }
+
   .edge-hero h1 {
-    font-size: 34px;
+    font-size: 3rem;
   }
 
   .edge-section-header h2 {
@@ -4474,16 +4576,25 @@ body.fat-page {
 }
 
 .amazon-impact-pagination {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
 }
 
+.amazon-impact-pagination button,
 .amazon-impact-pagination span {
   width: 10px;
   height: 10px;
+  box-sizing: border-box;
+  padding: 0;
   border: 1px solid #8f8f8f;
   border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
 }
 
+.amazon-impact-pagination button.is-active,
 .amazon-impact-pagination .is-active {
   background: #5f5f5f;
 }
