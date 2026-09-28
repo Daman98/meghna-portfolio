@@ -412,7 +412,7 @@ footer {
 
 .org-statement {
   margin: 0;
-  font-size: clamp(2.7rem, 5vw, 5.2rem);
+  font-size: clamp(calc(2.7rem - 5px), calc(5vw - 5px), calc(5.2rem - 5px));
   font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 1.16;
@@ -6885,6 +6885,10 @@ body.fat-page {
 }
 
 .amazon-case-study-page > header {
+  display: block;
+}
+
+.org-reporting-page > header {
   display: block;
 }
 
