@@ -546,7 +546,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   margin-top: 44px;
 }
 
@@ -556,14 +556,14 @@ main {
 
 .impact-carousel-button {
   display: grid;
-  width: 44px;
-  height: 44px;
-  flex: 0 0 44px;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
   place-items: center;
   padding: 0;
-  border: 1px solid var(--cp-border-strong);
-  border-radius: 50%;
-  background: var(--cp-surface);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--cp-text);
   cursor: pointer;
   transition:
@@ -573,8 +573,7 @@ main {
 }
 
 .impact-carousel-button:hover:not(:disabled) {
-  border-color: var(--cp-text);
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .impact-carousel-button:focus-visible {
@@ -584,7 +583,7 @@ main {
 
 .impact-carousel-button:disabled {
   cursor: default;
-  opacity: 0.3;
+  opacity: 1;
 }
 
 .impact-carousel-button svg {
@@ -594,29 +593,29 @@ main {
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.75;
+  stroke-width: 1.8;
 }
 
 .impact-dots {
   display: flex;
-  gap: 9px;
+  gap: 8px;
   justify-content: center;
   margin-top: 0;
 }
 
 .impact-dots button {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   padding: 0;
-  border: 1px solid var(--cp-border-strong);
+  border: 1px solid #9b9b9b;
   border-radius: 50%;
   background: var(--cp-surface);
   cursor: pointer;
 }
 
 .impact-dots button.is-active {
-  border-color: var(--cp-text-muted);
-  background: var(--cp-text-muted);
+  border-color: #3a3a3a;
+  background: #3a3a3a;
 }
 
 .journey-section {

@@ -1687,7 +1687,7 @@ body {
 .edge-problem-divider {
   width: 100%;
   height: 1px;
-  margin: clamp(48px, 6vw, 90px) 0;
+  margin: clamp(20px, 2.5vw, 32px) 0 clamp(16px, 1.8vw, 24px);
   background: #d8d8d8;
 }
 
@@ -1703,7 +1703,7 @@ body {
 .edge-problem-list {
   display: grid;
   gap: 8px;
-  margin: clamp(76px, 10vw, 155px) 0 0;
+  margin: clamp(32px, 4vw, 56px) 0 0;
   padding: 0;
   list-style: none;
 }
@@ -5488,6 +5488,9 @@ body.fat-page {
 }
 
 .amazon-impact-panel {
+  box-sizing: border-box;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
   padding: clamp(58px, 6.5vw, 108px) clamp(34px, 5vw, 84px) clamp(46px, 5.5vw, 92px);
   background: #f8f7f4;
 }
@@ -5504,38 +5507,61 @@ body.fat-page {
 .amazon-impact-image-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
   gap: clamp(24px, 3vw, 48px);
 }
 
 .amazon-impact-image-card {
   position: relative;
+  display: flex;
   box-sizing: border-box;
   min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: clamp(24px, 3vw, 40px);
   margin: 0;
   overflow: hidden;
-  border-radius: clamp(16px, 1.6vw, 26px);
+  border-radius: clamp(10px, 1.4vw, 22px);
   background: #fff;
 }
 
-.amazon-impact-image-grid img {
-  display: block;
-  width: 100%;
-  height: auto;
+.amazon-impact-arrow {
+  flex: 0 0 auto;
+  width: clamp(76px, 8vw, 112px);
+  height: clamp(76px, 8vw, 112px);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 7;
 }
 
 .amazon-pdf-section .amazon-impact-image-card figcaption {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
+  display: flex;
+  min-height: 0;
+  height: clamp(136px, 14.5vw, 180px);
+  flex-direction: column;
+  margin-top: auto;
+  color: #5c5c5c;
+  font-size: 0.88rem;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+.amazon-pdf-section .amazon-impact-image-card figcaption h3 {
+  margin: 0 0 12px;
+  color: #2c2c2c;
+  font-size: clamp(1.35rem, 1.8vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
 }
 
 .amazon-impact-card-meta {
   flex: 0 0 auto;
+  margin-bottom: 4px;
 }
 
 .amazon-impact-pagination {
@@ -6138,6 +6164,60 @@ body.fat-page {
 .amazon-wireframe-carousel .amazon-use-case-pagination button.is-active {
   width: 24px;
   border-radius: 999px;
+}
+
+.amazon-inline-carousel-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.amazon-inline-carousel-navigation .amazon-use-case-control {
+  position: static;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #303030;
+  transform: none;
+}
+
+.amazon-inline-carousel-navigation .amazon-use-case-control:hover {
+  background: transparent;
+  transform: none;
+}
+
+.amazon-inline-carousel-navigation .amazon-use-case-control svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.amazon-inline-carousel-navigation .amazon-use-case-pagination {
+  gap: 8px;
+  margin-top: 0;
+}
+
+.amazon-inline-carousel-navigation .amazon-use-case-pagination button,
+.amazon-inline-carousel-navigation .amazon-use-case-pagination button.is-active {
+  width: 8px;
+  height: 8px;
+  border-color: #9b9b9b;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.amazon-inline-carousel-navigation .amazon-use-case-pagination button.is-active {
+  border-color: #3a3a3a;
+  background: #3a3a3a;
 }
 
 .amazon-use-case-status {

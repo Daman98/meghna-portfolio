@@ -502,9 +502,9 @@ main {
   width: 100%;
   margin: 36px auto 0;
   padding: 64px 72px 108px;
-  border: 1px solid var(--cp-border);
+  border: 0;
   border-radius: 16px;
-  background: var(--cp-surface-soft);
+  background: transparent;
 }
 
 .desktop-monitor {
