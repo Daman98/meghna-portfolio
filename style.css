@@ -1201,6 +1201,7 @@ footer {
 }
 
 .org-impact .fixed-impact-card {
+  flex-basis: calc((100% / 3) + 3px);
   min-height: 0;
   aspect-ratio: 1;
   justify-content: flex-start;
