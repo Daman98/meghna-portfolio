@@ -1890,7 +1890,7 @@ body {
 .edge-audit-divider {
   width: 100%;
   height: 1px;
-  margin: clamp(50px, 6vw, 92px) 0;
+  margin: 8px 0 10px;
   background: #d8d8d8;
 }
 
@@ -1907,7 +1907,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(30px, 5vw, 74px);
-  margin-top: clamp(70px, 9vw, 140px);
+  margin-top: clamp(20px, 2.5vw, 32px);
 }
 
 .edge-audit-journeys h3 {
@@ -2072,7 +2072,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   margin-top: 44px;
 }
 
@@ -2082,14 +2082,14 @@ body {
 
 .impact-carousel-button {
   display: grid;
-  width: 44px;
-  height: 44px;
-  flex: 0 0 44px;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
   place-items: center;
   padding: 0;
-  border: 1px solid #919191;
-  border-radius: 50%;
-  background: #fff;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: #242424;
   cursor: pointer;
   transition:
@@ -2099,8 +2099,7 @@ body {
 }
 
 .impact-carousel-button:hover:not(:disabled) {
-  border-color: #242424;
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .impact-carousel-button:focus-visible {
@@ -2110,7 +2109,7 @@ body {
 
 .impact-carousel-button:disabled {
   cursor: default;
-  opacity: 0.3;
+  opacity: 1;
 }
 
 .impact-carousel-button svg {
@@ -2120,29 +2119,29 @@ body {
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.75;
+  stroke-width: 1.8;
 }
 
 .edge-impact-dots {
   display: flex;
-  gap: 9px;
+  gap: 8px;
   justify-content: center;
   margin-top: 0;
 }
 
 .edge-impact-dots button {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   padding: 0;
-  border: 1px solid #919191;
+  border: 1px solid #9b9b9b;
   border-radius: 50%;
   background: #fff;
   cursor: pointer;
 }
 
 .edge-impact-dots button.is-active {
-  border-color: #5c5c5c;
-  background: #5c5c5c;
+  border-color: #3a3a3a;
+  background: #3a3a3a;
 }
 
 .edge-footer {
