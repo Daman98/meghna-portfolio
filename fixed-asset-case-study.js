@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = [...opportunityCarousel.querySelectorAll('[data-card-index]')];
     const dots = [...opportunityCarousel.querySelectorAll('[data-dot-index]')];
     const activeNumber = opportunityCarousel.querySelector('.fixed-opportunity-number');
+    const opportunityPrevious = opportunityCarousel.querySelector('.org-opportunity-previous');
+    const opportunityNext = opportunityCarousel.querySelector('.org-opportunity-next');
     let transitionTimer;
     let isTransitioning = false;
 
@@ -155,6 +157,16 @@ document.addEventListener('DOMContentLoaded', () => {
         activateOpportunity(targetIndex, forwardDistance <= backwardDistance ? 1 : -1);
       });
     });
+
+    opportunityPrevious?.addEventListener('click', () => {
+      const activeIndex = cards.findIndex((card) => card.classList.contains('is-active'));
+      activateOpportunity((activeIndex - 1 + cards.length) % cards.length, -1);
+    });
+
+    opportunityNext?.addEventListener('click', () => {
+      const activeIndex = cards.findIndex((card) => card.classList.contains('is-active'));
+      activateOpportunity((activeIndex + 1) % cards.length, 1);
+    });
   }
 
   const impactTrack = document.querySelector('.fixed-impact-grid');
@@ -162,24 +174,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const impactDots = [...document.querySelectorAll('[data-impact-page]')];
   const impactPrevious = document.querySelector('.fixed-impact-previous');
   const impactNext = document.querySelector('.fixed-impact-next');
-  const impactPageStarts = [0, 3, 6];
+  const impactPageStarts = impactCards.reduce((pages, _card, index) => {
+    if (index % 3 === 0) {
+      pages.push(index);
+    }
+    return pages;
+  }, []);
   let impactScrollFrame;
+  let impactSettleTimer;
+  let activeImpactPage = 0;
+  let targetImpactPage = null;
 
   function setActiveImpact(index) {
+    activeImpactPage = index;
     impactDots.forEach((dot, dotIndex) => {
       const isActive = dotIndex === index;
       dot.classList.toggle('is-active', isActive);
       dot.setAttribute('aria-selected', String(isActive));
     });
 
-    if (impactPrevious && impactNext) {
-      impactPrevious.disabled = index === 0;
-      impactNext.disabled = index === impactPageStarts.length - 1;
-    }
   }
 
   function getImpactOffset(card) {
     return card.offsetLeft - impactCards[0].offsetLeft;
+  }
+
+  function getImpactPageOffset(card) {
+    return Math.min(getImpactOffset(card), impactTrack.scrollWidth - impactTrack.clientWidth);
+  }
+
+  function getClosestImpactPage() {
+    return impactPageStarts.reduce((closestPage, cardIndex, pageIndex) => {
+      const currentDistance = Math.abs(getImpactPageOffset(impactCards[cardIndex]) - impactTrack.scrollLeft);
+      const closestDistance = Math.abs(getImpactPageOffset(impactCards[impactPageStarts[closestPage]]) - impactTrack.scrollLeft);
+      return currentDistance < closestDistance ? pageIndex : closestPage;
+    }, 0);
   }
 
   function scrollToImpact(pageIndex) {
@@ -188,20 +217,25 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    impactTrack.scrollTo({ left: getImpactOffset(card), behavior: 'smooth' });
+    targetImpactPage = pageIndex;
     setActiveImpact(pageIndex);
+    impactTrack.scrollTo({ left: getImpactPageOffset(card), behavior: 'smooth' });
   }
 
   if (impactTrack && impactCards.length) {
     impactTrack.addEventListener('scroll', () => {
+      if (targetImpactPage !== null) {
+        window.clearTimeout(impactSettleTimer);
+        impactSettleTimer = window.setTimeout(() => {
+          targetImpactPage = null;
+          setActiveImpact(getClosestImpactPage());
+        }, 120);
+        return;
+      }
+
       window.cancelAnimationFrame(impactScrollFrame);
       impactScrollFrame = window.requestAnimationFrame(() => {
-        const activePage = impactPageStarts.reduce((closestPage, cardIndex, pageIndex) => {
-          const currentDistance = Math.abs(getImpactOffset(impactCards[cardIndex]) - impactTrack.scrollLeft);
-          const closestDistance = Math.abs(getImpactOffset(impactCards[impactPageStarts[closestPage]]) - impactTrack.scrollLeft);
-          return currentDistance < closestDistance ? pageIndex : closestPage;
-        }, 0);
-        setActiveImpact(activePage);
+        setActiveImpact(getClosestImpactPage());
       });
     }, { passive: true });
 
@@ -209,11 +243,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') {
         return;
       }
-
       event.preventDefault();
-      const activePage = impactDots.findIndex((dot) => dot.classList.contains('is-active'));
+      event.preventDefault();
       const direction = event.key === 'ArrowRight' ? 1 : -1;
-      const nextPage = Math.max(0, Math.min(impactDots.length - 1, activePage + direction));
+      const nextPage = (activeImpactPage + direction + impactDots.length) % impactDots.length;
       scrollToImpact(nextPage);
     });
 
@@ -222,13 +255,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     impactPrevious?.addEventListener('click', () => {
-      const activePage = impactDots.findIndex((dot) => dot.classList.contains('is-active'));
-      scrollToImpact(Math.max(0, activePage - 1));
+      scrollToImpact((activeImpactPage - 1 + impactPageStarts.length) % impactPageStarts.length);
     });
 
     impactNext?.addEventListener('click', () => {
-      const activePage = impactDots.findIndex((dot) => dot.classList.contains('is-active'));
-      scrollToImpact(Math.min(impactPageStarts.length - 1, activePage + 1));
+      scrollToImpact((activeImpactPage + 1) % impactPageStarts.length);
     });
 
     setActiveImpact(0);
@@ -277,4 +308,81 @@ document.addEventListener('DOMContentLoaded', () => {
       wireframeTabs[nextIndex].focus();
     });
   });
+
+  const voicesSection = document.querySelector('.org-voices');
+  const voicesControl = voicesSection?.querySelector('.org-voices-control');
+  const voicesLabel = voicesControl?.querySelector('.org-voices-control-label');
+
+  if (voicesSection && voicesControl && voicesLabel) {
+    const visibleQuotes = [...voicesSection.querySelectorAll('blockquote:not([aria-hidden="true"])')];
+    const allQuotes = [...voicesSection.querySelectorAll('blockquote')];
+    let currentQuote = 0;
+    let isPlaying = false;
+    let isPaused = false;
+
+    const updateVoicesControl = () => {
+      voicesControl.classList.toggle('is-playing', isPlaying && !isPaused);
+      voicesControl.setAttribute('aria-pressed', String(isPlaying));
+      voicesLabel.textContent = !isPlaying
+        ? 'Play customer voices'
+        : isPaused
+          ? 'Resume customer voices'
+          : 'Pause customer voices';
+      allQuotes.forEach((quote, index) => {
+        quote.classList.toggle('is-speaking', isPlaying && index % visibleQuotes.length === currentQuote);
+      });
+    };
+
+    const finishVoices = () => {
+      isPlaying = false;
+      isPaused = false;
+      currentQuote = 0;
+      updateVoicesControl();
+    };
+
+    const speakQuote = () => {
+      if (!isPlaying || currentQuote >= visibleQuotes.length) {
+        finishVoices();
+        return;
+      }
+
+      updateVoicesControl();
+      const utterance = new SpeechSynthesisUtterance(visibleQuotes[currentQuote].textContent.trim());
+      utterance.lang = 'en-US';
+      utterance.onend = () => {
+        currentQuote += 1;
+        speakQuote();
+      };
+      utterance.onerror = finishVoices;
+      window.speechSynthesis.speak(utterance);
+    };
+
+    if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
+      voicesControl.disabled = true;
+      voicesLabel.textContent = 'Voiceover unavailable';
+    } else {
+      voicesControl.addEventListener('click', () => {
+        if (!isPlaying) {
+          window.speechSynthesis.cancel();
+          currentQuote = 0;
+          isPlaying = true;
+          isPaused = false;
+          speakQuote();
+          return;
+        }
+
+        if (isPaused) {
+          window.speechSynthesis.resume();
+          isPaused = false;
+        } else {
+          window.speechSynthesis.pause();
+          isPaused = true;
+        }
+        updateVoicesControl();
+      });
+
+      window.addEventListener('pagehide', () => window.speechSynthesis.cancel());
+      updateVoicesControl();
+    }
+  }
 });

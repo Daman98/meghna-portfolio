@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="case-study-document">
+  <head>
+    <script>
+      (() => {
+        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        const theme = param === "dark" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A case study designing centralized organization-level reporting for Microsoft AI Skill Navigator."
+    >
+    <title>Org Reporting | Meghna Sahni</title>
+    <link rel="stylesheet" href="style.css?v=202609281501">
+    <link rel="stylesheet" href="case-study.css">
+  </head>
+  <body class="case-study-page fixed-asset-page org-reporting-page">
+    <header></header>
+    <main class="workforce-case-study fixed-asset-case-study org-reporting-case-study">
+      <section class="case-study-hero">
+        <p class="case-study-eyebrow">Microsoft Skills | 2024</p>
+        <h1>Org Reporting</h1>
+        <p class="case-study-summary">
+          Designing a centralized organization-level reporting experience to help Learning and
+          Skill Development admins track learning adoption, engagement, completion, skills, and
+          certification outcomes across AI Skill Navigator.
+        </p>
+      </section>
+
+      <section class="case-study-chapter org-scenario" aria-labelledby="org-scenario-title">
+        <p class="case-study-label" id="org-scenario-title">User scenario</p>
+        <figure class="org-scenario-figure">
+          <img
+            src="images/org-reporting/user-scenario.png"
+            alt="Three-part journey showing Maya receiving a leadership question about AI skilling, searching playlist-level reporting, and struggling to assemble an organization-wide story across learners, skills, engagement, certifications, and completions"
+          >
+        </figure>
+      </section>
+
+      <section class="case-study-chapter org-current-system" aria-labelledby="org-current-title">
+        <h2 class="org-statement" id="org-current-title">
+          The data exists.<br>
+          The organisational story doesn&rsquo;t.
+        </h2>
+        <p class="case-study-label org-section-label">Current system</p>
+        <div class="org-current-layout">
+          <div class="org-issue-list">
+            <ol>
+              <li>
+                <strong>Playlist-level visibility</strong>
+                <span>Insights are primarily centered around individual playlists rather than overall organizational learning.</span>
+              </li>
+              <li>
+                <strong>No centralized organizational view</strong>
+                <span>Admins lack one place to understand overall AI Skill adoption and engagement.</span>
+              </li>
+              <li>
+                <strong>Limited learner visibility</strong>
+                <span>Understanding how learners are progressing across learning experiences is difficult.</span>
+              </li>
+              <li>
+                <strong>Limited skill visibility</strong>
+                <span>Admins cannot easily connect learning activity with the skills being developed.</span>
+              </li>
+              <li>
+                <strong>Certification outcomes are disconnected</strong>
+                <span>Certification information is not easily connected to the broader learning story.</span>
+              </li>
+              <li>
+                <strong>Difficult to answer leadership questions</strong>
+                <span>Admins have to piece together information before understanding overall program performance.</span>
+              </li>
+            </ol>
+          </div>
+
+          <figure class="org-product-image">
+            <div class="desktop-monitor">
+              <div class="desktop-monitor-screen">
+                <img
+                  src="images/org-reporting/current-reporting.png"
+                  alt="AI Skills Navigator playlist reporting screen showing assigned, active, and completed playlists with progress for each playlist"
+                >
+              </div>
+            </div>
+            <div class="desktop-monitor-stand" aria-hidden="true"></div>
+          </figure>
+        </div>
+
+        <div class="org-voices" aria-label="Customer voices">
+          <p class="case-study-label">Customer voices</p>
+          <button class="org-voices-control" type="button" aria-pressed="false">
+            <span class="org-voices-control-icon" aria-hidden="true"></span>
+            <span class="org-voices-control-label">Play customer voices</span>
+          </button>
+          <div class="org-voices-track">
+            <blockquote>&ldquo;What are employees actually using AI for?&rdquo;</blockquote>
+            <blockquote>&ldquo;Are learners engaging with the programs we created?&rdquo;</blockquote>
+            <blockquote>&ldquo;How many learners are completing their learning?&rdquo;</blockquote>
+            <blockquote>&ldquo;Which skills are employees developing?&rdquo;</blockquote>
+            <blockquote aria-hidden="true">&ldquo;What are employees actually using AI for?&rdquo;</blockquote>
+            <blockquote aria-hidden="true">&ldquo;Are learners engaging with the programs we created?&rdquo;</blockquote>
+            <blockquote aria-hidden="true">&ldquo;How many learners are completing their learning?&rdquo;</blockquote>
+            <blockquote aria-hidden="true">&ldquo;Which skills are employees developing?&rdquo;</blockquote>
+          </div>
+        </div>
+
+        <div class="org-challenge">
+          <h2>The challenge wasn&rsquo;t a lack of data.</h2>
+          <p>It was turning fragmented data into meaningful organizational insight.</p>
+        </div>
+
+        <p class="case-study-label mapping-label">Design opportunity</p>
+        <section class="fixed-opportunity-carousel" aria-label="Org reporting design opportunities">
+          <div class="fixed-opportunity-number" aria-hidden="true">01</div>
+          <div class="fixed-opportunity-track" aria-live="polite">
+            <button class="fixed-opportunity-card is-active" type="button" data-card-index="0" aria-selected="true">
+              <div class="fixed-card-copy">
+                <span class="fixed-card-number">01</span>
+                <h2>Create one<br>organisational<br>view</h2>
+                <p>Bring critical learning metrics together<br>into a centralized reporting experience.</p>
+              </div>
+            </button>
+            <button class="fixed-opportunity-card is-next" type="button" data-card-index="1" aria-selected="false">
+              <div class="fixed-card-copy">
+                <span class="fixed-card-number">02</span>
+                <h2>Make adoption immediately understandable</h2>
+                <p>Surface high-level adoption indicators so admins can quickly understand the reach of ASN.</p>
+              </div>
+            </button>
+            <button class="fixed-opportunity-card is-next-far" type="button" data-card-index="2" aria-selected="false">
+              <div class="fixed-card-copy">
+                <span class="fixed-card-number">03</span>
+                <h2>Connect engagement with progress</h2>
+                <p>Help admins understand how participation translates into learning completion.</p>
+              </div>
+            </button>
+            <button class="fixed-opportunity-card is-hidden" type="button" data-card-index="3" aria-selected="false">
+              <div class="fixed-card-copy">
+                <span class="fixed-card-number">04</span>
+                <h2>Connect learning to outcomes</h2>
+                <p>Surface skills and certifications alongside learning activity to communicate the broader impact of skilling.</p>
+              </div>
+            </button>
+            <button class="fixed-opportunity-card is-hidden" type="button" data-card-index="4" aria-selected="false">
+              <div class="fixed-card-copy">
+                <span class="fixed-card-number">05</span>
+                <h2>Design for scan → understand → investigate</h2>
+                <p>Prioritize essential KPIs first while allowing users to progressively explore deeper insights.</p>
+              </div>
+            </button>
+          </div>
+          <div class="org-opportunity-navigation" aria-label="Design opportunity carousel controls">
+            <button class="org-opportunity-arrow org-opportunity-previous" type="button" aria-label="Show previous opportunity">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+            </button>
+            <div class="fixed-opportunity-dots" role="tablist" aria-label="Choose a design opportunity">
+              <button class="is-active" type="button" data-dot-index="0" aria-label="Show opportunity 1" aria-selected="true"></button>
+              <button type="button" data-dot-index="1" aria-label="Show opportunity 2" aria-selected="false"></button>
+              <button type="button" data-dot-index="2" aria-label="Show opportunity 3" aria-selected="false"></button>
+              <button type="button" data-dot-index="3" aria-label="Show opportunity 4" aria-selected="false"></button>
+              <button type="button" data-dot-index="4" aria-label="Show opportunity 5" aria-selected="false"></button>
+            </div>
+            <button class="org-opportunity-arrow org-opportunity-next" type="button" aria-label="Show next opportunity">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg>
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <section class="case-study-chapter org-design-direction" aria-label="Design direction">
+        <p class="case-study-label">Design direction</p>
+        <div class="org-design-direction-desktop">
+          <div class="desktop-monitor">
+            <div class="desktop-monitor-screen">
+              <video autoplay muted loop playsinline controls aria-label="Org reporting design direction walkthrough">
+                <source src="images/org-reporting/org-reporting-desktop.mov" type="video/quicktime">
+                Your browser does not support embedded video.
+              </video>
+            </div>
+          </div>
+          <div class="desktop-monitor-stand" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="case-study-chapter org-testing" aria-label="User testing">
+        <p class="case-study-label">User testing</p>
+        <div class="org-testing-intro">
+          <div>
+            <p>I conducted remote usability testing through the UserTesting platform to evaluate how effectively the reporting experience communicated complex learning data to L&amp;D administrators.</p>
+            <p>Participants completed two realistic scenarios using interactive prototypes while thinking aloud. I used an A/B testing approach to compare two design directions and understand which version offered clearer information hierarchy, stronger data comprehension, and more intuitive interactions.</p>
+          </div>
+        </div>
+        <div class="org-testing-grid">
+          <article>
+            <span>01</span>
+            <h3>What I Evaluated</h3>
+            <ul>
+              <li>Clarity and usefulness of the reporting metrics</li>
+              <li>Ability to identify important insights quickly</li>
+              <li>Comprehension of charts, labels, and terminology</li>
+              <li>Discoverability of key actions</li>
+              <li>Expectations around the completion interaction</li>
+              <li>Understanding of empty states and messages</li>
+              <li>Overall preference between Design A and Design B</li>
+            </ul>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Research Approach</h3>
+            <p>Participants explored both concepts, completed the assigned tasks, and explained what they expected to happen at each stage. I observed their behavior, captured areas of hesitation or confusion, and followed up with questions to understand the reasoning behind their choices.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Key Findings</h3>
+            <p>Testing revealed which design made the reporting story easier to scan and understand. Participants responded more positively to the direction with a clearer hierarchy, stronger grouping of related information, and more visible primary actions.</p>
+            <p>The sessions also uncovered opportunities to simplify terminology, strengthen interaction cues, and make empty-state messaging more useful and actionable.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Design Outcome</h3>
+            <p>Based on the findings, I selected the stronger design direction and refined the experience by:</p>
+            <ul>
+              <li>Improving the hierarchy of key metrics</li>
+              <li>Clarifying labels and supporting copy</li>
+              <li>Increasing the visibility of important actions</li>
+              <li>Refining the completion interaction</li>
+              <li>Making empty states clearer and more informative</li>
+              <li>Reducing the effort required to interpret reporting insights</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-study-chapter fixed-asset-impact org-impact" aria-labelledby="org-impact-title">
+        <div class="org-impact-shell">
+          <h2 class="fixed-impact-title" id="org-impact-title">Impact</h2>
+          <div class="fixed-impact-grid" id="fixed-impact-track" tabindex="0" aria-label="Org reporting impact highlights">
+            <article class="fixed-impact-card">
+              <svg class="fixed-impact-arrow" viewBox="0 0 120 120" aria-hidden="true"><path d="M20 60h80M48 32 20 60l28 28"></path></svg>
+              <div class="fixed-impact-copy">
+                <h3>Organizational Visibility</h3>
+                <p>From individual playlist insights → centralized organization-level reporting</p>
+              </div>
+            </article>
+            <article class="fixed-impact-card">
+              <svg class="fixed-impact-arrow" viewBox="0 0 120 120" aria-hidden="true"><path d="m24 96 72-72M50 24h46v46"></path></svg>
+              <div class="fixed-impact-copy">
+                <h3>Decision Clarity</h3>
+                <p>From disconnected metrics → structured adoption, engagement, completion and outcome insights</p>
+              </div>
+            </article>
+            <article class="fixed-impact-card">
+              <svg class="fixed-impact-arrow" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 100V20M32 48l28-28 28 28"></path></svg>
+              <div class="fixed-impact-copy">
+                <h3>Outcome Visibility</h3>
+                <p>From primarily learning activity → skills and certification visibility</p>
+              </div>
+            </article>
+            <article class="fixed-impact-card">
+              <svg class="fixed-impact-arrow" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 20v80M32 72l28 28 28-28"></path></svg>
+              <div class="fixed-impact-copy">
+                <h3>Unified Reporting Experience</h3>
+                <p>Brought previously separate insights together into one connected reporting experience</p>
+              </div>
+            </article>
+          </div>
+          <div class="impact-carousel-navigation" aria-label="Impact carousel controls">
+            <button class="impact-carousel-button fixed-impact-previous" type="button" aria-label="Show previous impact page" aria-controls="fixed-impact-track">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+            </button>
+            <div class="fixed-impact-pagination" aria-label="Choose an impact highlight">
+              <button class="is-active" type="button" data-impact-page="0" aria-label="Show impacts 1 through 3" aria-selected="true"></button>
+              <button type="button" data-impact-page="1" aria-label="Show impact 4" aria-selected="false"></button>
+            </div>
+            <button class="impact-carousel-button fixed-impact-next" type="button" aria-label="Show next impact page" aria-controls="fixed-impact-track">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="include.js"></script>
+    <script src="case-study-shell.js"></script>
+    <script src="fixed-asset-case-study.js?v=202609281446"></script>
+  </body>
+</html>
