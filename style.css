@@ -1641,6 +1641,11 @@ body {
   margin-bottom: clamp(32px, 4vw, 56px);
 }
 
+.edge-design-screens .edge-eyebrow {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
 .edge-desktop-frame {
   position: relative;
   overflow: hidden;
@@ -1987,7 +1992,7 @@ body {
 }
 
 .edge-audit-reveal {
-  margin-top: calc(clamp(105px, 13vw, 200px) - 20px);
+  margin-top: calc(clamp(105px, 13vw, 200px) - 80px);
 }
 
 .edge-audit-statement {
@@ -2006,7 +2011,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(30px, 5vw, 74px);
-  margin-top: clamp(52px, 6vw, 90px);
+  margin-top: calc(clamp(52px, 6vw, 90px) - 20px);
 }
 
 .edge-audit-needs article {
@@ -2033,6 +2038,7 @@ body {
 .edge-impact {
   box-sizing: border-box;
   width: 100vw;
+  margin-top: calc(clamp(120px, 14vw, 220px) - 60px);
   margin-left: calc(50% - 50vw);
   overflow: hidden;
   padding: clamp(58px, 6.5vw, 108px) max(32px, calc((100vw - 1240px) / 2)) clamp(46px, 5.5vw, 92px);
@@ -6941,7 +6947,10 @@ body.fat-page {
   color: #171717;
 }
 
-.home-page .work,
+.home-page .work {
+  background: #fcfbf8;
+}
+
 .home-page .contact {
   background: #f8f8f8;
 }

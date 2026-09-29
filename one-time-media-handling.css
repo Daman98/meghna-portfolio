@@ -664,7 +664,7 @@ main {
 }
 
 .desktop-monitor-screen {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 69 / 40;
   overflow: hidden;
   border-radius: 0.625rem 0.625rem 0 0;
   background: var(--cp-text);
