@@ -1689,7 +1689,7 @@ body {
 .edge-problem-divider {
   width: 100%;
   height: 1px;
-  margin: 8px 0 10px;
+  margin: 24px 0;
   background: #d8d8d8;
 }
 
@@ -1705,7 +1705,7 @@ body {
 .edge-problem-list {
   display: grid;
   gap: 8px;
-  margin: 14px 0 0;
+  margin: clamp(120px, 14vw, 160px) 0 0;
   padding: 0;
   list-style: none;
 }
