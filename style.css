@@ -443,7 +443,7 @@ footer {
 .org-issue-list ol {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: clamp(28px, 3vw, 40px);
+  gap: clamp(20px, 2.2vw, 30px);
   margin: 0;
   padding: 0;
   counter-reset: org-issues;
@@ -494,6 +494,12 @@ footer {
   justify-content: center;
   width: 100%;
   margin: 0 auto;
+}
+
+@media (min-width: 901px) {
+  .org-product-image {
+    transform: scale(1.06);
+  }
 }
 
 .org-product-image .desktop-monitor {
