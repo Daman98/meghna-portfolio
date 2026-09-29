@@ -1233,16 +1233,20 @@ footer {
 }
 
 .org-impact .fixed-impact-copy {
-  min-height: 97px;
+  width: 100%;
+  min-width: 0;
+  min-height: clamp(124px, 12vw, 160px);
   margin-top: auto;
 }
 
 .org-impact .fixed-impact-copy h3 {
+  min-height: 2.24em;
   margin-bottom: 12px;
   font-size: clamp(1.35rem, 1.8vw, 2rem);
   font-weight: 400;
   letter-spacing: -0.04em;
   line-height: 1.12;
+  overflow-wrap: anywhere;
 }
 
 .org-impact .fixed-impact-copy p {
