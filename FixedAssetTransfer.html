@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A case study redesigning fixed asset transfers in Microsoft Dynamics 365 Finance.">
     <title>Fixed Asset Transfer | Meghna Sahni</title>
-    <link rel="stylesheet" href="case-study.css">
+    <link rel="stylesheet" href="case-study.css?v=202609281712">
   </head>
   <body class="case-study-page fixed-asset-page">
     <header></header>
@@ -109,14 +109,22 @@
               </div>
             </button>
           </div>
-          <div class="fixed-opportunity-dots" role="tablist" aria-label="Choose a design opportunity">
-            <button class="is-active" type="button" data-dot-index="0" aria-label="Show opportunity 1" aria-selected="true"></button>
-            <button type="button" data-dot-index="1" aria-label="Show opportunity 2" aria-selected="false"></button>
-            <button type="button" data-dot-index="2" aria-label="Show opportunity 3" aria-selected="false"></button>
-            <button type="button" data-dot-index="3" aria-label="Show opportunity 4" aria-selected="false"></button>
-            <button type="button" data-dot-index="4" aria-label="Show opportunity 5" aria-selected="false"></button>
-            <button type="button" data-dot-index="5" aria-label="Show opportunity 6" aria-selected="false"></button>
-            <button type="button" data-dot-index="6" aria-label="Show opportunity 7" aria-selected="false"></button>
+          <div class="fixed-opportunity-navigation" aria-label="Design opportunity carousel controls">
+            <button class="fixed-opportunity-arrow org-opportunity-previous" type="button" aria-label="Show previous opportunity">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+            </button>
+            <div class="fixed-opportunity-dots" role="tablist" aria-label="Choose a design opportunity">
+              <button class="is-active" type="button" data-dot-index="0" aria-label="Show opportunity 1" aria-selected="true"></button>
+              <button type="button" data-dot-index="1" aria-label="Show opportunity 2" aria-selected="false"></button>
+              <button type="button" data-dot-index="2" aria-label="Show opportunity 3" aria-selected="false"></button>
+              <button type="button" data-dot-index="3" aria-label="Show opportunity 4" aria-selected="false"></button>
+              <button type="button" data-dot-index="4" aria-label="Show opportunity 5" aria-selected="false"></button>
+              <button type="button" data-dot-index="5" aria-label="Show opportunity 6" aria-selected="false"></button>
+              <button type="button" data-dot-index="6" aria-label="Show opportunity 7" aria-selected="false"></button>
+            </div>
+            <button class="fixed-opportunity-arrow org-opportunity-next" type="button" aria-label="Show next opportunity">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg>
+            </button>
           </div>
         </section>
       </section>

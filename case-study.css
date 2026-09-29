@@ -275,6 +275,12 @@ main {
   line-height: 1.55;
 }
 
+@media (min-width: 981px) {
+  .fixed-asset-page .case-study-metric {
+    align-items: center;
+  }
+}
+
 .metric-divider {
   display: none;
 }
@@ -758,6 +764,151 @@ main {
   background: var(--cp-text-muted);
 }
 
+.fixed-opportunity-navigation {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+  z-index: 5;
+  margin-top: 16px;
+}
+
+.fixed-opportunity-navigation .fixed-opportunity-dots {
+  position: static;
+  display: flex;
+  grid-column: auto;
+  justify-self: auto;
+  margin: 0;
+}
+
+.fixed-opportunity-arrow {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cp-text);
+  cursor: pointer;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.fixed-opportunity-arrow:hover,
+.fixed-opportunity-arrow:focus-visible {
+  opacity: 0.55;
+  transform: translateX(var(--opportunity-arrow-shift, 0));
+}
+
+.fixed-opportunity-arrow:focus-visible {
+  outline: 2px solid var(--cp-link);
+  outline-offset: 3px;
+}
+
+.fixed-opportunity-arrow svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.fixed-opportunity-navigation .org-opportunity-previous {
+  --opportunity-arrow-shift: -2px;
+}
+
+.fixed-opportunity-navigation .org-opportunity-next {
+  --opportunity-arrow-shift: 2px;
+}
+
+@media (min-width: 981px) {
+  .fixed-asset-page .fixed-opportunity-carousel {
+    grid-template-columns: 24% minmax(0, 73%);
+    grid-template-rows: 430px auto;
+    gap: 0 3%;
+    min-height: 486px;
+    margin-top: 18px;
+  }
+
+  .fixed-asset-page .fixed-opportunity-track {
+    height: 430px;
+  }
+
+  .fixed-asset-page .fixed-opportunity-number {
+    color: #efefef;
+    font-size: clamp(145px, 18vw, 290px);
+    letter-spacing: calc(-0.08em + 5px);
+  }
+
+  .fixed-asset-page .fixed-opportunity-card.is-active,
+  .fixed-asset-page .fixed-opportunity-card.is-exiting {
+    width: 54%;
+    min-height: 0;
+    aspect-ratio: 1.15;
+    padding: clamp(30px, 3.5vw, 46px);
+    justify-content: center;
+  }
+
+  .fixed-asset-page .fixed-opportunity-card.is-active .fixed-card-copy,
+  .fixed-asset-page .fixed-opportunity-card.is-exiting .fixed-card-copy {
+    transform: translateY(32px);
+  }
+
+  .fixed-asset-page .fixed-opportunity-card.is-active h2,
+  .fixed-asset-page .fixed-opportunity-card.is-exiting h2 {
+    margin-bottom: clamp(22px, 2.4vw, 30px);
+    font-size: clamp(2.3125rem, calc(3vw + 5px), 3.1125rem);
+    line-height: 1.15;
+  }
+
+  .fixed-asset-page .fixed-opportunity-card.is-active p,
+  .fixed-asset-page .fixed-opportunity-card.is-exiting p {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .fixed-asset-page .fixed-opportunity-card.is-next-far,
+  .fixed-asset-page .fixed-opportunity-card.is-exiting-far {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .fixed-asset-page .fixed-opportunity-card.is-next {
+    left: 58%;
+    width: 35%;
+    min-height: 0;
+    aspect-ratio: 1.08;
+    padding: clamp(18px, 2vw, 28px);
+  }
+
+  .fixed-asset-page .fixed-opportunity-card.is-next h2 {
+    margin-bottom: 8px;
+    font-size: clamp(1.15rem, 1.55vw, 1.45rem);
+    line-height: 1.25;
+  }
+
+  .fixed-asset-page .fixed-opportunity-card.is-next p {
+    display: block;
+    color: #6f6f6f;
+    font-size: 10px;
+    line-height: 1.45;
+    filter: blur(0.45px);
+    opacity: 0.72;
+  }
+
+  .fixed-asset-page .fixed-opportunity-navigation {
+    width: 54%;
+  }
+}
+
 .fixed-asset-video .desktop-monitor-screen {
   overflow: hidden;
   background: var(--cp-text);
@@ -916,6 +1067,50 @@ main {
   gap: 9px;
   justify-content: center;
   margin-top: 0;
+}
+
+.fixed-asset-impact .impact-carousel-navigation {
+  gap: 12px;
+}
+
+.fixed-asset-impact .impact-carousel-button {
+  width: 24px;
+  height: 24px;
+  flex-basis: 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.fixed-asset-impact .impact-carousel-button:hover:not(:disabled) {
+  border-color: transparent;
+  transform: none;
+}
+
+.fixed-asset-impact .impact-carousel-button:disabled {
+  opacity: 1;
+}
+
+.fixed-asset-impact .impact-carousel-button svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+}
+
+.fixed-asset-impact .fixed-impact-pagination {
+  gap: 8px;
+}
+
+.fixed-asset-impact .fixed-impact-pagination button {
+  width: 8px;
+  height: 8px;
+  border-color: #9b9b9b;
+  background: var(--cp-surface);
+}
+
+.fixed-asset-impact .fixed-impact-pagination button.is-active {
+  border-color: #3a3a3a;
+  background: #3a3a3a;
 }
 
 footer {
