@@ -148,7 +148,7 @@
       const y2 = cy + r * Math.sin(end);
       const largeArc = slice > Math.PI ? 1 : 0;
       const path = `M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${largeArc} 1 ${x2} ${y2} Z`;
-      el("path", { d: path, fill: d.color }, svg);
+      el("path", { d: path, fill: d.color, stroke: "rgba(0,0,0,0.08)", "stroke-width": "1" }, svg);
 
       const midAngle = angle + slice / 2;
       const labelR = r + labelPad * 0.6;
@@ -168,15 +168,15 @@
     labels: ["May 20", "May 27", "June 03", "June 10", "June 17", "June 24", "Jul 01"],
     values: [12300, 10200, 6800, 8300, 6800, 11400, 19500],
     yMax: 20000,
-    barColor: "#5b6ef5",
+    barColor: "#637CEF",
   };
 
   const learnerActivity = {
     labels: ["May 20", "May 27", "June 03", "June 10", "June 17", "June 24", "Jun 30"],
     yMax: 20000,
     series: [
-      { name: "Active learners", color: "#5b6ef5", values: [7000, 8000, 4500, 6000, 7000, 7500, 11000] },
-      { name: "Engaged learners", color: "#d6249a", values: [5000, 5500, 1000, 6000, 3000, 2000, 2000] },
+      { name: "Active learners", color: "#637CEF", values: [7000, 8000, 4500, 6000, 7000, 7500, 11000] },
+      { name: "Engaged learners", color: "#E3008C", values: [5000, 5500, 1000, 6000, 3000, 2000, 2000] },
     ],
   };
 
@@ -184,20 +184,20 @@
     labels: ["May 20", "May 25", "May 30", "June 5", "June 10", "Jun 15", "Jun 25", "Jun 30"],
     yMax: 20000,
     series: [
-      { name: "Playlist created", color: "#d6249a", values: [8000, 9200, 12500, 700, 9800, 7000, 3000, 1300] },
-      { name: "Active playlist", color: "#5b6ef5", values: [7000, 8300, 8600, 4300, 6300, 6700, 8500, 10800] },
-      { name: "Inactive playlist", color: "#e08a1e", values: [11300, 12000, 12700, 9000, 9800, 11300, 13300, 15500] },
+      { name: "Playlist created", color: "#E3008C", values: [8000, 9200, 12500, 700, 9800, 7000, 3000, 1300] },
+      { name: "Active playlist", color: "#637CEF", values: [7000, 8300, 8600, 4300, 6300, 6700, 8500, 10800] },
+      { name: "Inactive playlist", color: "#eaa300", values: [11300, 12000, 12700, 9000, 9800, 11300, 13300, 15500] },
     ],
   };
 
   const skillsPie = [
-    { label: "36%", value: 36, color: "#5b6ef5" },
-    { label: "20%", value: 20, color: "#d6249a" },
-    { label: "14%", value: 14, color: "#1f9e9e" },
-    { label: "9%", value: 9, color: "#8a5fd6" },
-    { label: "6%", value: 6, color: "#6d7a1e" },
-    { label: "16%", value: 16, color: "#d8d3c6" },
-    { label: "20%", value: 20, color: "#e0c928" },
+    { label: "36%", value: 36, color: "#637CEF" },
+    { label: "20%", value: 20, color: "#E3008C" },
+    { label: "14%", value: 14, color: "#2AA0A4" },
+    { label: "9%", value: 9, color: "#9373C0" },
+    { label: "6%", value: 6, color: "#699920" },
+    { label: "16%", value: 16, color: "#F5F5F5" },
+    { label: "20%", value: 20, color: "#E4E40C" },
   ];
 
   const assignedPlaylists = [
