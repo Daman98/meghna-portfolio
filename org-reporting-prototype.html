@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Interactive clickable prototype recreating the AI Skills Navigator — Reporting Figma flow: assigned playlist insights, unlocking organization reporting, and the Learners, Playlists, Skills, and Certifications tabs."
+    >
+    <title>AI Skills Navigator — Reporting Prototype | Meghna Sahni</title>
+    <link rel="stylesheet" href="org-reporting-prototype.css">
+  </head>
+  <body>
+    <a class="asn-back-link" href="OrgReporting.html">&larr; Back to case study</a>
+
+    <div class="asn-app">
+      <aside class="asn-sidebar">
+        <div class="asn-sidebar-top">
+          <div class="asn-sidebar-header">
+            <span class="asn-wordmark">AI Skills Navigator</span>
+            <button type="button" class="asn-collapse-btn" aria-label="Collapse sidebar">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M10 4v16M6 9l-2 3 2 3"></path></svg>
+            </button>
+          </div>
+          <nav class="asn-nav" aria-label="Primary">
+            <a href="#" class="asn-nav-item" data-nav="for-you">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4l3 2"></path></svg>
+              For you
+            </a>
+            <a href="#" class="asn-nav-item" data-nav="explore">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+              Explore content
+            </a>
+            <a href="#" class="asn-nav-item" data-nav="skilling-playlists">
+              <svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"></path><circle cx="3.5" cy="6" r="1.2"></circle><circle cx="3.5" cy="12" r="1.2"></circle><circle cx="3.5" cy="18" r="1.2"></circle></svg>
+              Skilling playlists
+            </a>
+            <a href="#" class="asn-nav-item" data-nav="credentials">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M7 10h10M7 14h6"></path></svg>
+              Credentials
+            </a>
+            <a href="#" class="asn-nav-item is-active" data-nav="reporting">
+              <svg viewBox="0 0 24 24"><path d="M4 20V10M12 20V4M20 20v-7"></path></svg>
+              Reporting
+            </a>
+            <a href="#" class="asn-nav-item" data-nav="training">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"></path></svg>
+              Training Services Partners
+            </a>
+          </nav>
+        </div>
+        <div class="asn-sidebar-bottom">
+          <div class="asn-help">
+            <span class="asn-help-icon">?</span>
+            Feedback and help
+          </div>
+          <div class="asn-user">
+            <span class="asn-avatar" aria-hidden="true"></span>
+            John Smith
+          </div>
+        </div>
+      </aside>
+
+      <main class="asn-main">
+        <!-- Screen 1: locked / empty state -->
+        <section id="screen-locked" class="asn-screen">
+          <div class="asn-page-header">
+            <h1>Insights into your assigned skilling playlists</h1>
+          </div>
+          <div class="asn-card asn-empty-card">
+            <svg class="asn-empty-icon" viewBox="0 0 78 68" aria-hidden="true">
+              <circle cx="30" cy="24" r="20" fill="#f4c9d6"></circle>
+              <path d="M30 4a20 20 0 0 1 20 20h-20z" fill="#5b6ef5"></path>
+              <path d="M30 24 12 34a20 20 0 0 1-2-10z" fill="#e0c928"></path>
+              <rect x="34" y="26" width="40" height="30" rx="4" fill="#fff" stroke="#e5e0d4" stroke-width="2"></rect>
+              <path d="M42 48v-8M52 48V32M62 48v-14" stroke="#5b6ef5" stroke-width="3" stroke-linecap="round"></path>
+              <circle cx="42" cy="40" r="2.4" fill="#d6249a"></circle>
+              <circle cx="52" cy="32" r="2.4" fill="#1f9e9e"></circle>
+              <circle cx="62" cy="34" r="2.4" fill="#e0c928"></circle>
+            </svg>
+            <h2>Turn activity into insights</h2>
+            <p>Create a skilling playlist or get access to organization reporting to start tracking progress, engagement, and skilling outcomes.</p>
+            <button type="button" id="goToPlaylists" class="asn-btn-outline">Go to skilling playlists</button>
+          </div>
+        </section>
+
+        <!-- Screen 2: assigned playlists insights (no org reporting yet) -->
+        <section id="screen-assigned" class="asn-screen" hidden>
+          <div class="asn-page-header">
+            <h1>Insights into your assigned skilling playlists</h1>
+            <button type="button" id="unlockOrgReportingLink" class="asn-link-btn">View organization reporting</button>
+          </div>
+
+          <div class="asn-kpi-row">
+            <div class="asn-card asn-kpi-card">
+              <div class="asn-kpi-top">
+                <span class="asn-kpi-label">Total assigned playlists</span>
+                <span class="asn-kpi-icon"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"></path><circle cx="3.5" cy="6" r="1.2"></circle><circle cx="3.5" cy="12" r="1.2"></circle><circle cx="3.5" cy="18" r="1.2"></circle></svg></span>
+              </div>
+              <div>
+                <span class="asn-kpi-value">12</span>
+                <p class="asn-kpi-caption">Playlists you've created and assigned</p>
+              </div>
+            </div>
+            <div class="asn-card asn-kpi-card">
+              <div class="asn-kpi-top">
+                <span class="asn-kpi-label">Active playlists</span>
+                <span class="asn-kpi-icon"><svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"></path></svg></span>
+              </div>
+              <div>
+                <span class="asn-kpi-value">10</span>
+                <p class="asn-kpi-caption">Playlists with progress in the last 30 days</p>
+              </div>
+            </div>
+            <div class="asn-card asn-kpi-card">
+              <div class="asn-kpi-top">
+                <span class="asn-kpi-label">Completed playlists</span>
+                <span class="asn-kpi-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="m8.5 12 2.3 2.3L16 9.5"></path></svg></span>
+              </div>
+              <div>
+                <span class="asn-kpi-value">1</span>
+                <p class="asn-kpi-caption">Playlists with all content completed</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="asn-toolbar">
+            <div class="asn-search">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+              <input type="search" class="asn-search-input" placeholder="Search playlists" aria-label="Search playlists">
+            </div>
+          </div>
+
+          <div class="asn-playlist-list" id="assignedPlaylistList"></div>
+        </section>
+
+        <!-- Screens 3-7: organization reporting (unlocked) -->
+        <section id="screen-org" class="asn-screen" hidden>
+          <div class="asn-page-header">
+            <h1>Insights into your organization's skilling activity</h1>
+            <button type="button" class="asn-btn-primary">Export as CSV</button>
+          </div>
+
+          <div class="asn-tabs" role="tablist" aria-label="Organization reporting sections">
+            <button type="button" class="asn-tab is-active" data-tab="learners">Learners</button>
+            <button type="button" class="asn-tab" data-tab="playlists">Playlists</button>
+            <button type="button" class="asn-tab" data-tab="skills">Skills</button>
+            <button type="button" class="asn-tab" data-tab="certifications">Certifications</button>
+          </div>
+
+          <!-- Learners tab -->
+          <div class="asn-tab-panel is-active" data-panel="learners">
+            <div class="asn-kpi-row" style="grid-template-columns: minmax(220px, 320px);">
+              <div class="asn-card asn-kpi-card">
+                <div class="asn-kpi-top">
+                  <span class="asn-kpi-label">Total learners</span>
+                  <span class="asn-kpi-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"></path><circle cx="18" cy="9" r="2.4"></circle><path d="M15.5 14.5c2.5.2 4.5 2 4.5 5.5"></path></svg></span>
+                </div>
+                <div>
+                  <span class="asn-kpi-value">120</span>
+                  <p class="asn-kpi-caption">Learners of your organization</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="asn-field-label">Date range</p>
+            <button type="button" class="asn-daterange">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg>
+              May 20 - Jun 30 2026
+              <svg class="asn-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+
+            <div class="asn-card asn-chart-card">
+              <h3 class="asn-chart-title">
+                Onboarding growth
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8v.01"></path></svg>
+              </h3>
+              <div class="asn-chart-scroll" id="chartOnboardingGrowth"></div>
+            </div>
+
+            <div class="asn-card asn-chart-card">
+              <h3 class="asn-chart-title">
+                Learner activity and engagement
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8v.01"></path></svg>
+              </h3>
+              <div class="asn-chart-scroll" id="chartLearnerActivity"></div>
+              <div class="asn-chart-legend">
+                <span class="asn-chart-legend-item"><span class="asn-chart-legend-dot" style="background:#5b6ef5;"></span>Active learners</span>
+                <span class="asn-chart-legend-item"><span class="asn-chart-legend-dot" style="background:#d6249a;"></span>Engaged learners</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Playlists tab -->
+          <div class="asn-tab-panel" data-panel="playlists">
+            <div class="asn-toggle-group">
+              <button type="button" class="asn-toggle is-active" data-toggle="org">Your organization</button>
+              <button type="button" class="asn-toggle" data-toggle="assigned">Your assigned playlists</button>
+            </div>
+
+            <!-- Toggle: Your organization -->
+            <div class="asn-toggle-panel is-active" data-toggle-panel="org">
+              <div class="asn-kpi-row">
+                <div class="asn-card asn-kpi-card">
+                  <div class="asn-kpi-top">
+                    <span class="asn-kpi-label">Total playlists</span>
+                    <span class="asn-kpi-icon"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"></path><circle cx="3.5" cy="6" r="1.2"></circle><circle cx="3.5" cy="12" r="1.2"></circle><circle cx="3.5" cy="18" r="1.2"></circle></svg></span>
+                  </div>
+                  <div>
+                    <span class="asn-kpi-value">12</span>
+                    <p class="asn-kpi-caption">Playlists created</p>
+                  </div>
+                </div>
+                <div class="asn-card asn-kpi-card">
+                  <div class="asn-kpi-top">
+                    <span class="asn-kpi-label">Assigned playlists</span>
+                    <span class="asn-kpi-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h10"></path><path d="M17 15l2 2 3-3"></path></svg></span>
+                  </div>
+                  <div>
+                    <span class="asn-kpi-value">10</span>
+                    <p class="asn-kpi-caption">Playlists with learners joined</p>
+                  </div>
+                </div>
+                <div class="asn-card asn-kpi-card">
+                  <div class="asn-kpi-top">
+                    <span class="asn-kpi-label">Active playlists</span>
+                    <span class="asn-kpi-icon"><svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"></path></svg></span>
+                  </div>
+                  <div>
+                    <span class="asn-kpi-value">10</span>
+                    <p class="asn-kpi-caption">Playlists with progress (last 30 days)</p>
+                  </div>
+                </div>
+                <div class="asn-card asn-kpi-card">
+                  <div class="asn-kpi-top">
+                    <span class="asn-kpi-label">Completed playlists</span>
+                    <span class="asn-kpi-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="m8.5 12 2.3 2.3L16 9.5"></path></svg></span>
+                  </div>
+                  <div>
+                    <span class="asn-kpi-value">1</span>
+                    <p class="asn-kpi-caption">Playlists with all content completed</p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="asn-field-label">Date range</p>
+              <button type="button" class="asn-daterange">
+                <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg>
+                May 20 - Jun 30 2026
+                <svg class="asn-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+
+              <div class="asn-card asn-table-card">
+                <h3 class="asn-chart-title">
+                  Top performing playlists
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8v.01"></path></svg>
+                </h3>
+                <table class="asn-table">
+                  <thead>
+                    <tr><th>Title</th><th>Owner name</th><th>Total learner</th><th>Avg playlist progress</th><th>Learners joined</th></tr>
+                  </thead>
+                  <tbody id="topPerformingBody"></tbody>
+                </table>
+              </div>
+
+              <div class="asn-card asn-chart-card">
+                <h3 class="asn-chart-title">
+                  Playlist activity
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8v.01"></path></svg>
+                </h3>
+                <div class="asn-chart-scroll" id="chartPlaylistActivity"></div>
+                <div class="asn-chart-legend">
+                  <span class="asn-chart-legend-item"><span class="asn-chart-legend-dot" style="background:#d6249a;"></span>Playlist created</span>
+                  <span class="asn-chart-legend-item"><span class="asn-chart-legend-dot" style="background:#5b6ef5;"></span>Active playlist</span>
+                  <span class="asn-chart-legend-item"><span class="asn-chart-legend-dot" style="background:#e08a1e;"></span>Inactive playlist</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Toggle: Your assigned playlists -->
+            <div class="asn-toggle-panel" data-toggle-panel="assigned">
+              <div class="asn-kpi-row">
+                <div class="asn-card asn-kpi-card">
+                  <div class="asn-kpi-top">
+                    <span class="asn-kpi-label">Total assigned playlists</span>
+                    <span class="asn-kpi-icon"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"></path><circle cx="3.5" cy="6" r="1.2"></circle><circle cx="3.5" cy="12" r="1.2"></circle><circle cx="3.5" cy="18" r="1.2"></circle></svg></span>
+                  </div>
+                  <div>
+                    <span class="asn-kpi-value">12</span>
+                    <p class="asn-kpi-caption">Playlists you've created and assigned</p>
+                  </div>
+                </div>
+                <div class="asn-card asn-kpi-card">
+                  <div class="asn-kpi-top">
+                    <span class="asn-kpi-label">Active playlists</span>
+                    <span class="asn-kpi-icon"><svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"></path></svg></span>
+                  </div>
+                  <div>
+                    <span class="asn-kpi-value">10</span>
+                    <p class="asn-kpi-caption">Playlists in progress in the last 30 days</p>
+                  </div>
+                </div>
+                <div class="asn-card asn-kpi-card">
+                  <div class="asn-kpi-top">
+                    <span class="asn-kpi-label">Completed playlists</span>
+                    <span class="asn-kpi-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="m8.5 12 2.3 2.3L16 9.5"></path></svg></span>
+                  </div>
+                  <div>
+                    <span class="asn-kpi-value">1</span>
+                    <p class="asn-kpi-caption">Playlists with all content completed</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="asn-toolbar">
+                <div class="asn-search">
+                  <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                  <input type="search" class="asn-search-input" placeholder="Search playlists" aria-label="Search assigned playlists">
+                </div>
+              </div>
+
+              <div class="asn-playlist-list" id="nestedAssignedPlaylistList"></div>
+            </div>
+          </div>
+
+          <!-- Skills tab -->
+          <div class="asn-tab-panel" data-panel="skills">
+            <p class="asn-field-label">Date range</p>
+            <button type="button" class="asn-daterange">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg>
+              May 20 - Jun 30 2026
+              <svg class="asn-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+
+            <div class="asn-card asn-table-card">
+              <h3 class="asn-chart-title">
+                Top learning content
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8v.01"></path></svg>
+              </h3>
+              <table class="asn-table">
+                <thead><tr><th>Title</th><th>Content type</th><th>Total learner</th></tr></thead>
+                <tbody id="topLearningBody"></tbody>
+              </table>
+            </div>
+
+            <div class="asn-card asn-pie-card">
+              <h3 class="asn-chart-title">
+                Top skills from learning content
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8v.01"></path></svg>
+              </h3>
+              <div class="asn-pie-layout">
+                <div class="asn-pie-legend">
+                  <span class="asn-pie-legend-item"><span class="asn-pie-swatch" style="background:#5b6ef5;"></span>AI learning</span>
+                  <span class="asn-pie-legend-item"><span class="asn-pie-swatch" style="background:#d6249a;"></span>Figma</span>
+                  <span class="asn-pie-legend-item"><span class="asn-pie-swatch" style="background:#1f9e9e;"></span>Azure</span>
+                  <span class="asn-pie-legend-item"><span class="asn-pie-swatch" style="background:#8a5fd6;"></span>Excel</span>
+                  <span class="asn-pie-legend-item"><span class="asn-pie-swatch" style="background:#6d7a1e;"></span>Powerpoint</span>
+                  <span class="asn-pie-legend-item"><span class="asn-pie-swatch" style="background:#d8d3c6;"></span>Python</span>
+                  <span class="asn-pie-legend-item"><span class="asn-pie-swatch" style="background:#e0c928;"></span>Sketch</span>
+                </div>
+                <div class="asn-pie-chart-wrap" id="chartSkillsPie"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications tab (no reference screenshot: lightweight placeholder) -->
+          <div class="asn-tab-panel" data-panel="certifications">
+            <!-- Placeholder: no Figma screen was provided for Certifications, so this
+                 is a simple, visually-consistent empty state rather than real data. -->
+            <div class="asn-card asn-placeholder-card">
+              <h2>Certification insights</h2>
+              <p>Certification reporting isn't part of this prototype flow yet. Once available, this tab will surface certifications earned, in progress, and expiring across your organization.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Unlock modal (Screen 3) -->
+    <div id="unlockModal" class="asn-modal-overlay" hidden>
+      <div class="asn-modal" role="dialog" aria-modal="true" aria-labelledby="unlockModalTitle">
+        <button type="button" class="asn-modal-close" id="modalCloseBtn" aria-label="Close">&times;</button>
+        <svg class="asn-modal-icon" viewBox="0 0 56 56" aria-hidden="true">
+          <path d="M12 30 22 40 46 14" fill="none" stroke="#1f9e9e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+          <circle cx="42" cy="12" r="3" fill="#6d7a1e"></circle>
+        </svg>
+        <h2 id="unlockModalTitle">You now have access to organization reporting</h2>
+        <p>Track skilling progress, engagement, and outcomes across your organization.</p>
+        <button type="button" id="modalViewOrgReportingBtn" class="asn-btn-outline">View organization reporting</button>
+      </div>
+    </div>
+
+    <script src="org-reporting-prototype.js"></script>
+  </body>
+</html>
