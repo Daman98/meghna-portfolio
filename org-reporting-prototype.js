@@ -347,7 +347,7 @@
         if (orgUnlocked) {
           showScreen("org");
         } else if (hasVisitedAssigned) {
-          showScreen("assigned");
+          requestUnlockWithLoading();
         } else {
           showScreen("locked");
         }
@@ -360,28 +360,39 @@
       item.addEventListener("click", (event) => event.preventDefault());
     });
 
-    const goToPlaylistsBtn = document.getElementById("goToPlaylists");
-    if (goToPlaylistsBtn) {
-      goToPlaylistsBtn.addEventListener("click", () => {
-        hasVisitedAssigned = true;
-        showScreen("assigned");
-      });
-    }
-
     function openUnlockFlow() {
       // Reveal the org-reporting shell underneath, defaulted to the Learners
       // tab, then present the "access granted" modal on top of it.
       orgUnlocked = true;
       showScreen("org");
-      activateTab("learners");
       if (modalOverlay) modalOverlay.hidden = false;
+      activateTab("learners");
     }
 
-    const unlockLink = document.getElementById("unlockOrgReportingLink");
-    if (unlockLink) unlockLink.addEventListener("click", openUnlockFlow);
+    const loadingOverlay = document.getElementById("asnLoadingOverlay");
+    function requestUnlockWithLoading() {
+      // Show a brief loading widget before revealing org reporting access.
+      if (loadingOverlay) loadingOverlay.hidden = false;
+      setTimeout(() => {
+        if (loadingOverlay) loadingOverlay.hidden = true;
+        openUnlockFlow();
+      }, 3000);
+    }
+
+    const goToPlaylistsBtn = document.getElementById("goToPlaylists");
+    if (goToPlaylistsBtn) {
+      goToPlaylistsBtn.addEventListener("click", () => {
+        hasVisitedAssigned = true;
+        showScreen("assigned");
+        // Auto-unlock org reporting a couple seconds after landing here.
+        setTimeout(requestUnlockWithLoading, 2000);
+      });
+    }
+
 
     function closeModal() {
       if (modalOverlay) modalOverlay.hidden = true;
+      startLearnersSpinner();
     }
 
     const modalCloseBtn = document.getElementById("modalCloseBtn");
@@ -398,9 +409,30 @@
     const tabButtons = Array.from(document.querySelectorAll(".asn-tab"));
     const tabPanels = Array.from(document.querySelectorAll(".asn-tab-panel"));
 
+    const learnersSpinner = document.getElementById("learnersSpinner");
+    const learnersContent = document.getElementById("learnersContent");
+    let learnersLoaded = false;
+
     function activateTab(name) {
       tabButtons.forEach((btn) => btn.classList.toggle("is-active", btn.dataset.tab === name));
       tabPanels.forEach((panel) => panel.classList.toggle("is-active", panel.dataset.panel === name));
+
+      // Only kick off the Learners spinner once the tab is actually visible
+      // (i.e. not while the access-granted modal still covers it).
+      if (name === "learners" && !learnersLoaded && (!modalOverlay || modalOverlay.hidden)) {
+        startLearnersSpinner();
+      }
+    }
+
+    function startLearnersSpinner() {
+      if (learnersLoaded) return;
+      learnersLoaded = true;
+      if (learnersContent) learnersContent.hidden = true;
+      if (learnersSpinner) learnersSpinner.hidden = false;
+      setTimeout(() => {
+        if (learnersSpinner) learnersSpinner.hidden = true;
+        if (learnersContent) learnersContent.hidden = false;
+      }, 3000);
     }
 
     tabButtons.forEach((btn) => {

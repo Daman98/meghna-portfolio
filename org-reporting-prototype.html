@@ -13,6 +13,11 @@
   <body>
     <a class="asn-back-link" href="OrgReporting.html">&larr; Back to case study</a>
 
+    <div class="asn-loading-overlay" id="asnLoadingOverlay" hidden>
+      <div class="asn-loading-spinner" aria-hidden="true"></div>
+      <p class="asn-loading-text">Loading organization reporting…</p>
+    </div>
+
     <div class="asn-app">
       <aside class="asn-sidebar">
         <div class="asn-sidebar-top">
@@ -97,7 +102,6 @@
         <section id="screen-assigned" class="asn-screen" hidden>
           <div class="asn-page-header">
             <h1>Insights into your assigned skilling playlists</h1>
-            <button type="button" id="unlockOrgReportingLink" class="asn-link-btn">View organization reporting</button>
           </div>
 
           <div class="asn-kpi-row">
@@ -159,6 +163,11 @@
 
           <!-- Learners tab -->
           <div class="asn-tab-panel is-active" data-panel="learners">
+            <div class="asn-inline-spinner" id="learnersSpinner" hidden>
+              <div class="asn-loading-spinner" aria-hidden="true"></div>
+              <p class="asn-loading-text">Collecting your insights..</p>
+            </div>
+            <div class="asn-tab-content" id="learnersContent" hidden>
             <div class="asn-kpi-row" style="grid-template-columns: minmax(220px, 320px);">
               <div class="asn-card asn-kpi-card">
                 <div class="asn-kpi-top">
@@ -197,6 +206,7 @@
                 <span class="asn-chart-legend-item"><span class="asn-chart-legend-dot" style="background:#637CEF;"></span>Active learners</span>
                 <span class="asn-chart-legend-item"><span class="asn-chart-legend-dot" style="background:#E3008C;"></span>Engaged learners</span>
               </div>
+            </div>
             </div>
           </div>
 
