@@ -17,8 +17,7 @@
   }
 
   function niceTicks(max) {
-    // Fixed tick sets matching the reference screenshots' y-axes.
-    if (max <= 20000) return [0, 1000, 5000, 10000, 15000, 20000];
+    // Evenly spaced ticks so labels never crowd together near the baseline.
     return [0, max / 4, max / 2, (max * 3) / 4, max];
   }
 
@@ -26,7 +25,7 @@
   function renderBarChart(container, { labels, values, yMax, barColor }) {
     container.innerHTML = "";
     const ticks = niceTicks(yMax);
-    const width = Math.max(720, labels.length * 108 + 80);
+    const width = 980;
     const height = 320;
     const padLeft = 56;
     const padBottom = 34;
@@ -36,8 +35,8 @@
 
     const svg = el("svg", {
       viewBox: `0 0 ${width} ${height}`,
-      width: String(width),
-      height: String(height),
+      preserveAspectRatio: "none",
+      class: "asn-chart-svg",
       role: "img",
     });
 
@@ -51,7 +50,7 @@
     });
 
     const bandW = plotW / labels.length;
-    const barW = Math.min(46, bandW * 0.42);
+    const barW = Math.min(64, bandW * 0.42);
 
     values.forEach((v, i) => {
       const cx = padLeft + bandW * i + bandW / 2;
@@ -79,7 +78,7 @@
   function renderLineChart(container, { labels, series, yMax }) {
     container.innerHTML = "";
     const ticks = niceTicks(yMax);
-    const width = Math.max(680, labels.length * 96 + 60);
+    const width = 980;
     const height = 320;
     const padLeft = 56;
     const padBottom = 34;
@@ -89,8 +88,8 @@
 
     const svg = el("svg", {
       viewBox: `0 0 ${width} ${height}`,
-      width: String(width),
-      height: String(height),
+      preserveAspectRatio: "none",
+      class: "asn-chart-svg",
       role: "img",
     });
 
@@ -320,6 +319,42 @@
 
     const skillsPieEl = document.getElementById("chartSkillsPie");
     if (skillsPieEl) renderPieChart(skillsPieEl, skillsPie);
+
+    /* ---------- Chart info tooltips ---------- */
+    const infoButtons = Array.from(document.querySelectorAll(".asn-info-btn"));
+    infoButtons.forEach((btn) => {
+      const tooltip = document.createElement("div");
+      tooltip.className = "asn-info-tooltip";
+      if (btn.dataset.tooltipHtml) {
+        tooltip.innerHTML = btn.dataset.tooltipHtml;
+      } else {
+        tooltip.textContent = btn.dataset.tooltip || "";
+      }
+      tooltip.hidden = true;
+      btn.appendChild(tooltip);
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const isOpen = !tooltip.hidden;
+        infoButtons.forEach((other) => {
+          const otherTooltip = other.querySelector(".asn-info-tooltip");
+          if (otherTooltip) otherTooltip.hidden = true;
+          other.setAttribute("aria-expanded", "false");
+          other.classList.remove("is-active");
+        });
+        tooltip.hidden = isOpen;
+        btn.setAttribute("aria-expanded", String(!isOpen));
+        btn.classList.toggle("is-active", !isOpen);
+      });
+    });
+    document.addEventListener("click", () => {
+      infoButtons.forEach((other) => {
+        const otherTooltip = other.querySelector(".asn-info-tooltip");
+        if (otherTooltip) otherTooltip.hidden = true;
+        other.setAttribute("aria-expanded", "false");
+        other.classList.remove("is-active");
+      });
+    });
 
     /* ---------- Screen / flow state ---------- */
     const screenLocked = document.getElementById("screen-locked");
