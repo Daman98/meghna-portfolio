@@ -78,14 +78,22 @@
           </div>
 
           <figure class="org-product-image">
-            <div class="desktop-monitor">
-              <div class="desktop-monitor-screen">
-                <img
-                  src="images/org-reporting/current-reporting.png"
-                  alt="AI Skills Navigator playlist reporting screen showing assigned, active, and completed playlists with progress for each playlist"
-                >
+            <button
+              type="button"
+              class="org-monitor-lightbox-trigger"
+              data-lightbox-src="images/org-reporting/current-reporting.png"
+              data-lightbox-alt="AI Skills Navigator playlist reporting screen showing assigned, active, and completed playlists with progress for each playlist"
+              aria-label="View larger screenshot of current reporting screen"
+            >
+              <div class="desktop-monitor">
+                <div class="desktop-monitor-screen">
+                  <img
+                    src="images/org-reporting/current-reporting.png"
+                    alt="AI Skills Navigator playlist reporting screen showing assigned, active, and completed playlists with progress for each playlist"
+                  >
+                </div>
               </div>
-            </div>
+            </button>
             <div class="desktop-monitor-stand" aria-hidden="true"></div>
           </figure>
         </div>
@@ -298,6 +306,17 @@
       </section>
     </main>
     <footer></footer>
+    <dialog class="image-dialog org-monitor-popup-dialog" id="org-monitor-dialog">
+      <button class="dialog-close" type="button" aria-label="Close image">×</button>
+      <figure class="org-product-image org-monitor-popup">
+        <div class="desktop-monitor">
+          <div class="desktop-monitor-screen">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="desktop-monitor-stand" aria-hidden="true"></div>
+      </figure>
+    </dialog>
     <script src="include.js"></script>
     <script src="case-study-shell.js"></script>
     <script src="fixed-asset-case-study.js?v=202609281446"></script>

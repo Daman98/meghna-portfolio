@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const imageDialog = document.querySelector('#org-monitor-dialog');
+  const dialogImage = imageDialog?.querySelector('img');
+  const closeDialogButton = imageDialog?.querySelector('.dialog-close');
+
+  document.querySelectorAll('[data-lightbox-src]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      if (!imageDialog || !dialogImage) return;
+      dialogImage.src = trigger.dataset.lightboxSrc;
+      dialogImage.alt = trigger.dataset.lightboxAlt || '';
+      imageDialog.showModal();
+    });
+  });
+
+  closeDialogButton?.addEventListener('click', () => imageDialog.close());
+
+  imageDialog?.addEventListener('click', (event) => {
+    if (event.target === imageDialog) {
+      imageDialog.close();
+    }
+  });
+
   const opportunityCarousel = document.querySelector('.fixed-opportunity-carousel');
 
   if (opportunityCarousel) {
