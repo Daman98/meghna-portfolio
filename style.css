@@ -442,7 +442,7 @@ footer {
 
 .org-current-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
   gap: clamp(28px, 3.5vw, 48px);
   align-items: stretch;
   margin-top: 48px;
@@ -558,6 +558,95 @@ footer {
   height: 100%;
   object-fit: cover;
   object-position: top center;
+}
+
+.org-monitor-lightbox-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  text-align: left;
+}
+
+.org-monitor-lightbox-trigger:focus-visible {
+  outline: 2px solid var(--cp-accent, #70579c);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.image-dialog {
+  width: min(95vw, 1500px);
+  max-width: none;
+  max-height: 94vh;
+  padding: 44px 18px 18px;
+  border: 1px solid var(--cp-border);
+  border-radius: 16px;
+  background: var(--cp-panel-strong);
+  box-shadow: var(--cp-shadow);
+}
+
+.image-dialog::backdrop {
+  background: var(--cp-overlay);
+}
+
+.image-dialog img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: calc(94vh - 62px);
+  margin: 0 auto;
+}
+
+.org-monitor-popup-dialog {
+  width: min(92vw, 1100px);
+  padding: 48px 24px 24px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.org-monitor-popup-dialog::backdrop {
+  background: rgba(10, 10, 12, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.org-monitor-popup {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transform: none;
+}
+
+.image-dialog .dialog-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--cp-text);
+  font-size: 1.9rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.org-monitor-popup-dialog .dialog-close {
+  top: 4px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(10, 10, 12, 0.55);
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.org-monitor-popup-dialog .dialog-close:hover {
+  background: rgba(10, 10, 12, 0.75);
 }
 
 .org-product-image .desktop-monitor-stand {

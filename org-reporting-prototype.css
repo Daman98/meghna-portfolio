@@ -417,6 +417,20 @@ body {
   line-height: 20px;
 }
 
+/* Certifications tab reuses .asn-empty-card with a slightly larger
+   heading and body copy. */
+.asn-tab-panel[data-panel="certifications"] .asn-empty-card h2 {
+  font-size: 23px;
+  line-height: 30px;
+}
+
+.asn-tab-panel[data-panel="certifications"] .asn-empty-card p {
+  max-width: 480px;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: -8px;
+}
+
 /* ---------- KPI cards ---------- */
 .asn-kpi-row {
   display: grid;
@@ -1046,27 +1060,6 @@ body {
 .asn-modal .asn-btn-outline {
   font-size: 16px;
   padding: 6px 12px;
-}
-
-/* ---------- Certifications placeholder ---------- */
-.asn-placeholder-card {
-  padding: 40px;
-  text-align: center;
-  max-width: 520px;
-  margin: 8px auto 0;
-}
-
-.asn-placeholder-card h2 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.asn-placeholder-card p {
-  margin: 0;
-  color: var(--asn-ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.5;
 }
 
 /* ---------- Responsive ---------- */
