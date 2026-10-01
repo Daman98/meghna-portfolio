@@ -395,6 +395,20 @@ footer {
   height: auto;
 }
 
+.org-process-figure {
+  width: 100%;
+  margin: 32px 0 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.org-process-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .org-section-heading h2 {
   margin: 0;
   font-size: clamp(2rem, 3.4vw, 3.7rem);
@@ -1059,6 +1073,38 @@ footer {
 
 .org-testing {
   padding-bottom: 0;
+}
+
+.org-prototype-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.org-prototype-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border: 1px solid #6c63ff;
+  border-radius: 999px;
+  background: #6c63ff;
+  color: #fff;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.org-prototype-cta-link:hover {
+  background: #5a51e6;
+  border-color: #5a51e6;
+}
+
+.org-prototype-cta-link:focus-visible {
+  outline: 3px solid #6c63ff;
+  outline-offset: 3px;
 }
 
 .org-design-direction {
