@@ -360,6 +360,56 @@ body {
   transform: translateY(1px);
 }
 
+/* ---------- Export CSV button animation ---------- */
+.asn-export-spinner,
+.asn-export-check {
+  width: 15px;
+  height: 15px;
+  display: none;
+  flex: 0 0 auto;
+  color: #fff;
+}
+
+.asn-btn-primary.is-exporting .asn-export-spinner {
+  display: block;
+  margin-right: 8px;
+  animation: asn-export-spin 0.7s linear infinite;
+}
+
+.asn-btn-primary.is-exported .asn-export-check {
+  display: block;
+  margin-right: 8px;
+  animation: asn-export-pop 0.3s ease;
+}
+
+.asn-btn-primary.is-exporting,
+.asn-btn-primary.is-exported {
+  cursor: default;
+}
+
+@keyframes asn-export-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes asn-export-pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .asn-link-btn {
   border: none;
   background: none;
@@ -931,17 +981,17 @@ body {
 
 /* ---------- Skills tab pie ---------- */
 .asn-pie-card {
-  padding: 22px 24px 26px;
+  padding: 22px 24px 20px;
   border-radius: var(--asn-radius-kpi);
   box-shadow: var(--asn-shadow-kpi);
 }
 
 .asn-pie-layout {
   display: flex;
-  align-items: center;
-  gap: 60px;
+  align-items: flex-start;
+  gap: 156px;
   flex-wrap: wrap;
-  padding-top: 12px;
+  padding-top: 4px;
 }
 
 .asn-pie-legend {
@@ -949,6 +999,8 @@ body {
   flex-direction: column;
   gap: 10px;
   min-width: 140px;
+  align-self: flex-start;
+  margin-top: 22px;
 }
 
 .asn-pie-legend-item {
@@ -969,9 +1021,20 @@ body {
 
 .asn-pie-chart-wrap {
   position: relative;
-  flex: 1 1 320px;
+  flex: 1 1 300px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 440px;
+  max-height: 440px;
+  overflow: hidden;
+}
+
+.asn-pie-chart-wrap svg {
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+  display: block;
 }
 
 .asn-pie-chart-wrap svg text {
