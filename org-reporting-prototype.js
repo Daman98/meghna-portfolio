@@ -411,7 +411,7 @@
       setTimeout(() => {
         if (loadingOverlay) loadingOverlay.hidden = true;
         openUnlockFlow();
-      }, 3000);
+      }, 2000);
     }
 
     const goToPlaylistsBtn = document.getElementById("goToPlaylists");
@@ -419,8 +419,8 @@
       goToPlaylistsBtn.addEventListener("click", () => {
         hasVisitedAssigned = true;
         showScreen("assigned");
-        // Auto-unlock org reporting a couple seconds after landing here.
-        setTimeout(requestUnlockWithLoading, 2000);
+        // Auto-unlock org reporting after a brief delay on this page.
+        setTimeout(requestUnlockWithLoading, 6000);
       });
     }
 
