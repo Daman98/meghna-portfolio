@@ -122,7 +122,7 @@
   /* ---------------- Pie chart ---------------- */
   function renderPieChart(container, data) {
     container.innerHTML = "";
-    const diameter = 240;
+    const diameter = 300;
     const labelPad = 60;
     const size = diameter + labelPad * 2;
     const cx = size / 2;
@@ -154,7 +154,7 @@
       const lx = cx + labelR * Math.cos(midAngle);
       const ly = cy + labelR * Math.sin(midAngle);
       const anchor = Math.cos(midAngle) > 0.15 ? "start" : Math.cos(midAngle) < -0.15 ? "end" : "middle";
-      const label = el("text", { x: lx, y: ly, "text-anchor": anchor, "font-size": "12", fill: "#4b4944" }, svg);
+      const label = el("text", { x: lx, y: ly, "text-anchor": anchor, "font-size": "12", "font-weight": "600", fill: "#4b4944" }, svg);
       label.textContent = d.label;
       angle = end;
     });
@@ -411,7 +411,7 @@
       setTimeout(() => {
         if (loadingOverlay) loadingOverlay.hidden = true;
         openUnlockFlow();
-      }, 3000);
+      }, 2000);
     }
 
     const goToPlaylistsBtn = document.getElementById("goToPlaylists");
@@ -419,8 +419,8 @@
       goToPlaylistsBtn.addEventListener("click", () => {
         hasVisitedAssigned = true;
         showScreen("assigned");
-        // Auto-unlock org reporting a couple seconds after landing here.
-        setTimeout(requestUnlockWithLoading, 2000);
+        // Auto-unlock org reporting after a brief delay on this page.
+        setTimeout(requestUnlockWithLoading, 6000);
       });
     }
 
@@ -502,5 +502,30 @@
 
     // Start on the locked/empty state.
     showScreen("locked");
+
+    /* ---------- Export as CSV button animation ---------- */
+    const exportCsvBtn = document.getElementById("exportCsvBtn");
+    if (exportCsvBtn) {
+      const exportLabel = exportCsvBtn.querySelector(".asn-export-label");
+      let exportTimer1 = null;
+      let exportTimer2 = null;
+      exportCsvBtn.addEventListener("click", () => {
+        if (exportCsvBtn.classList.contains("is-exporting") || exportCsvBtn.classList.contains("is-exported")) return;
+        clearTimeout(exportTimer1);
+        clearTimeout(exportTimer2);
+        exportCsvBtn.classList.remove("is-exported");
+        exportCsvBtn.classList.add("is-exporting");
+        if (exportLabel) exportLabel.textContent = "Exporting...";
+        exportTimer1 = setTimeout(() => {
+          exportCsvBtn.classList.remove("is-exporting");
+          exportCsvBtn.classList.add("is-exported");
+          if (exportLabel) exportLabel.textContent = "Exported!";
+          exportTimer2 = setTimeout(() => {
+            exportCsvBtn.classList.remove("is-exported");
+            if (exportLabel) exportLabel.textContent = "Export as CSV";
+          }, 1500);
+        }, 1800);
+      });
+    }
   });
 })();
