@@ -1,6 +1,48 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
+/* ---------- Journey video controls (before/after process videos) ---------- */
+document.querySelectorAll(".journey-video-frame").forEach((frame) => {
+  const video = frame.querySelector(".journey-video");
+  const playToggle = frame.querySelector(".journey-play-toggle");
+  const fullscreenBtn = frame.querySelector(".journey-fullscreen-btn");
+  if (!video) return;
+
+  if (playToggle) {
+    playToggle.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+    video.addEventListener("play", () => {
+      playToggle.classList.remove("is-paused");
+      playToggle.setAttribute("aria-label", "Pause video");
+    });
+    video.addEventListener("pause", () => {
+      playToggle.classList.add("is-paused");
+      playToggle.setAttribute("aria-label", "Play video");
+    });
+  }
+
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener("click", () => {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      }
+    });
+    const syncFullscreenControls = () => {
+      const isFullscreen = document.fullscreenElement === video || document.webkitFullscreenElement === video;
+      video.controls = isFullscreen;
+    };
+    document.addEventListener("fullscreenchange", syncFullscreenControls);
+    document.addEventListener("webkitfullscreenchange", syncFullscreenControls);
+  }
+});
+
 /* ---------- OTMH walkthrough video controls ---------- */
 const otmhVideo = document.querySelector("#otmhVideo");
 const otmhPlayToggle = document.querySelector("#otmhPlayToggle");
