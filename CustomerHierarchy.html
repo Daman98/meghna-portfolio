@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="case-study-document">
+  <head>
+    <script>
+      (() => {
+        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        const theme = param === "dark" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A case study redesigning Customer Hierarchy for Accounts Receivable teams managing complex parent-child customer relationships in Microsoft FinanceOps."
+    >
+    <title>Customer Hierarchy | Meghna Sahni</title>
+    <link rel="stylesheet" href="style.css?v=202610221005">
+    <link rel="stylesheet" href="case-study.css?v=202610220950">
+  </head>
+  <body class="case-study-page fixed-asset-page customer-hierarchy-page">
+    <header></header>
+    <main class="workforce-case-study fixed-asset-case-study">
+      <section class="case-study-hero">
+        <p class="case-study-eyebrow">Microsoft Finance &amp; Operations | 2025</p>
+        <h1>Customer Hierarchy</h1>
+        <p class="case-study-summary">
+          Redesigning the Customer Hierarchy experience to simplify how Accounts Receivable teams
+          create, visualize, and manage complex parent–child customer relationships.
+        </p>
+        <p class="case-study-summary">
+          The experience focuses on making large customer structures easier to navigate, supporting
+          multiple parent relationships, and enabling users to efficiently organize and publish
+          customer hierarchies at scale.
+        </p>
+      </section>
+
+      <section class="case-study-chapter design-wireframes" aria-labelledby="customer-hierarchy-walkthrough">
+        <p class="case-study-label" id="customer-hierarchy-walkthrough">Experience walkthrough</p>
+        <div class="fixed-asset-video">
+          <video controls autoplay muted loop playsinline preload="metadata" aria-label="Customer Hierarchy experience walkthrough">
+            <source src="videos/customer-hierarchy/customer-hierarchy-walkthrough.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+      </section>
+
+      <section class="case-study-chapter design-wireframes" aria-labelledby="customer-hierarchy-ai-perspective">
+        <p class="case-study-label" id="customer-hierarchy-ai-perspective">AI Perspective</p>
+        <div class="fixed-asset-video">
+          <video controls autoplay muted loop playsinline preload="metadata" aria-label="Customer Hierarchy Copilot demo flow">
+            <source src="videos/customer-hierarchy/copilot-demo-flow.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="include.js"></script>
+    <script src="case-study-shell.js"></script>
+  </body>
+</html>
