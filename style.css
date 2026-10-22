@@ -7189,6 +7189,10 @@ body.fat-page {
   display: block;
 }
 
+.customer-hierarchy-page > header {
+  display: block;
+}
+
 .amazon-pdf-case-study .amazon-hero {
   box-sizing: border-box;
   max-width: 980px;
