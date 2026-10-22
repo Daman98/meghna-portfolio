@@ -502,6 +502,10 @@ footer {
   }
 }
 
+.customer-hierarchy-page .design-wireframes > .fixed-asset-video {
+  margin-top: clamp(28px, 3vw, 40px);
+}
+
 .org-product-image .desktop-monitor {
   position: relative;
   width: 100%;
