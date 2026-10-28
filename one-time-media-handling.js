@@ -1,6 +1,130 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
+/* ---------- Journey video controls (before/after process videos) ---------- */
+document.querySelectorAll(".journey-video-frame").forEach((frame) => {
+  const video = frame.querySelector(".journey-video");
+  const playToggle = frame.querySelector(".journey-play-toggle");
+  const fullscreenBtn = frame.querySelector(".journey-fullscreen-btn");
+  if (!video) return;
+
+  if (playToggle) {
+    playToggle.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+    video.addEventListener("play", () => {
+      playToggle.classList.remove("is-paused");
+      playToggle.setAttribute("aria-label", "Pause video");
+    });
+    video.addEventListener("pause", () => {
+      playToggle.classList.add("is-paused");
+      playToggle.setAttribute("aria-label", "Play video");
+    });
+  }
+
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener("click", () => {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      }
+    });
+    const syncFullscreenControls = () => {
+      const isFullscreen = document.fullscreenElement === video || document.webkitFullscreenElement === video;
+      video.controls = isFullscreen;
+    };
+    document.addEventListener("fullscreenchange", syncFullscreenControls);
+    document.addEventListener("webkitfullscreenchange", syncFullscreenControls);
+  }
+});
+
+/* ---------- OTMH walkthrough video controls ---------- */
+const otmhVideo = document.querySelector("#otmhVideo");
+const otmhPlayToggle = document.querySelector("#otmhPlayToggle");
+const otmhFullscreenBtn = document.querySelector("#otmhFullscreenBtn");
+const otmhMuteToggle = document.querySelector("#otmhMuteToggle");
+const otmhTime = document.querySelector("#otmhTime");
+const otmhSeek = document.querySelector("#otmhSeek");
+
+function formatTime(seconds) {
+  if (!isFinite(seconds)) return "0:00";
+  const total = Math.max(0, Math.floor(seconds));
+  const mins = Math.floor(total / 60);
+  const secs = total % 60;
+  return `${mins}:${String(secs).padStart(2, "0")}`;
+}
+
+if (otmhVideo && otmhPlayToggle) {
+  otmhPlayToggle.addEventListener("click", () => {
+    if (otmhVideo.paused) {
+      otmhVideo.play();
+    } else {
+      otmhVideo.pause();
+    }
+  });
+  otmhVideo.addEventListener("play", () => {
+    otmhPlayToggle.classList.remove("is-paused");
+    otmhPlayToggle.setAttribute("aria-label", "Pause video");
+  });
+  otmhVideo.addEventListener("pause", () => {
+    otmhPlayToggle.classList.add("is-paused");
+    otmhPlayToggle.setAttribute("aria-label", "Play video");
+  });
+}
+
+if (otmhVideo && otmhMuteToggle) {
+  otmhMuteToggle.classList.toggle("is-muted", otmhVideo.muted);
+  otmhMuteToggle.addEventListener("click", () => {
+    otmhVideo.muted = !otmhVideo.muted;
+    otmhMuteToggle.classList.toggle("is-muted", otmhVideo.muted);
+    otmhMuteToggle.setAttribute("aria-label", otmhVideo.muted ? "Unmute video" : "Mute video");
+  });
+}
+
+if (otmhVideo && otmhTime && otmhSeek) {
+  let seeking = false;
+  otmhVideo.addEventListener("loadedmetadata", () => {
+    otmhTime.textContent = `${formatTime(otmhVideo.currentTime)} / ${formatTime(otmhVideo.duration)}`;
+  });
+  otmhVideo.addEventListener("timeupdate", () => {
+    if (seeking) return;
+    otmhTime.textContent = `${formatTime(otmhVideo.currentTime)} / ${formatTime(otmhVideo.duration)}`;
+    if (otmhVideo.duration) {
+      otmhSeek.value = (otmhVideo.currentTime / otmhVideo.duration) * 100;
+    }
+  });
+  otmhSeek.addEventListener("input", () => {
+    seeking = true;
+    if (otmhVideo.duration) {
+      otmhVideo.currentTime = (otmhSeek.value / 100) * otmhVideo.duration;
+    }
+  });
+  otmhSeek.addEventListener("change", () => {
+    seeking = false;
+  });
+}
+
+if (otmhVideo && otmhFullscreenBtn) {
+  otmhFullscreenBtn.addEventListener("click", () => {
+    if (otmhVideo.requestFullscreen) {
+      otmhVideo.requestFullscreen();
+    } else if (otmhVideo.webkitRequestFullscreen) {
+      otmhVideo.webkitRequestFullscreen();
+    }
+  });
+  const syncNativeControls = () => {
+    const isFullscreen = document.fullscreenElement === otmhVideo || document.webkitFullscreenElement === otmhVideo;
+    otmhVideo.controls = isFullscreen;
+  };
+  document.addEventListener("fullscreenchange", syncNativeControls);
+  document.addEventListener("webkitfullscreenchange", syncNativeControls);
+}
+
 menuToggle?.addEventListener("click", () => {
   const isOpen = navLinks.classList.toggle("is-open");
   menuToggle.setAttribute("aria-expanded", String(isOpen));

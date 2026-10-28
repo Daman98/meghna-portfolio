@@ -44,7 +44,7 @@
       <section class="case-study-chapter org-current-system" aria-labelledby="org-current-title">
         <h2 class="org-statement" id="org-current-title">
           The data exists.<br>
-          The organisational story doesn&rsquo;t.
+          The organizational story doesn&rsquo;t.
         </h2>
         <p class="case-study-label org-section-label">Current system</p>
         <div class="org-current-layout">
@@ -78,33 +78,45 @@
           </div>
 
           <figure class="org-product-image">
-            <div class="desktop-monitor">
-              <div class="desktop-monitor-screen">
-                <img
-                  src="images/org-reporting/current-reporting.png"
-                  alt="AI Skills Navigator playlist reporting screen showing assigned, active, and completed playlists with progress for each playlist"
-                >
+            <button
+              type="button"
+              class="org-monitor-lightbox-trigger"
+              data-lightbox-src="images/org-reporting/current-reporting.png"
+              data-lightbox-alt="AI Skills Navigator playlist reporting screen showing assigned, active, and completed playlists with progress for each playlist"
+              aria-label="View larger screenshot of current reporting screen"
+            >
+              <div class="desktop-monitor">
+                <div class="desktop-monitor-screen">
+                  <img
+                    src="images/org-reporting/current-reporting.png"
+                    alt="AI Skills Navigator playlist reporting screen showing assigned, active, and completed playlists with progress for each playlist"
+                  >
+                </div>
               </div>
-            </div>
+            </button>
             <div class="desktop-monitor-stand" aria-hidden="true"></div>
           </figure>
         </div>
 
         <div class="org-voices" aria-label="Customer voices">
-          <p class="case-study-label">Customer voices</p>
-          <button class="org-voices-control" type="button" aria-pressed="false">
-            <span class="org-voices-control-icon" aria-hidden="true"></span>
-            <span class="org-voices-control-label">Play customer voices</span>
-          </button>
-          <div class="org-voices-track">
-            <blockquote>&ldquo;What are employees actually using AI for?&rdquo;</blockquote>
-            <blockquote>&ldquo;Are learners engaging with the programs we created?&rdquo;</blockquote>
-            <blockquote>&ldquo;How many learners are completing their learning?&rdquo;</blockquote>
-            <blockquote>&ldquo;Which skills are employees developing?&rdquo;</blockquote>
-            <blockquote aria-hidden="true">&ldquo;What are employees actually using AI for?&rdquo;</blockquote>
-            <blockquote aria-hidden="true">&ldquo;Are learners engaging with the programs we created?&rdquo;</blockquote>
-            <blockquote aria-hidden="true">&ldquo;How many learners are completing their learning?&rdquo;</blockquote>
-            <blockquote aria-hidden="true">&ldquo;Which skills are employees developing?&rdquo;</blockquote>
+          <div class="org-voices-heading">
+            <p class="case-study-label">Customer voices</p>
+            <button class="org-voices-control" type="button" aria-pressed="false">
+              <span class="org-voices-control-icon" aria-hidden="true"></span>
+              <span class="org-voices-control-label">Play customer voices</span>
+            </button>
+          </div>
+          <div class="org-voices-viewport">
+            <div class="org-voices-track">
+              <blockquote>&ldquo;What are employees actually using AI for?&rdquo;</blockquote>
+              <blockquote>&ldquo;Are learners engaging with the programs we created?&rdquo;</blockquote>
+              <blockquote>&ldquo;How many learners are completing their learning?&rdquo;</blockquote>
+              <blockquote>&ldquo;Which skills are employees developing?&rdquo;</blockquote>
+              <blockquote aria-hidden="true">&ldquo;What are employees actually using AI for?&rdquo;</blockquote>
+              <blockquote aria-hidden="true">&ldquo;Are learners engaging with the programs we created?&rdquo;</blockquote>
+              <blockquote aria-hidden="true">&ldquo;How many learners are completing their learning?&rdquo;</blockquote>
+              <blockquote aria-hidden="true">&ldquo;Which skills are employees developing?&rdquo;</blockquote>
+            </div>
           </div>
         </div>
 
@@ -120,7 +132,7 @@
             <button class="fixed-opportunity-card is-active" type="button" data-card-index="0" aria-selected="true">
               <div class="fixed-card-copy">
                 <span class="fixed-card-number">01</span>
-                <h2>Create one<br>organisational<br>view</h2>
+                <h2>Create one<br>organizational<br>view</h2>
                 <p>Bring critical learning metrics together<br>into a centralized reporting experience.</p>
               </div>
             </button>
@@ -171,6 +183,16 @@
         </section>
       </section>
 
+      <section class="case-study-chapter org-process-exploration" aria-labelledby="org-process-title">
+        <p class="case-study-label" id="org-process-title">Process exploration</p>
+        <figure class="org-process-figure">
+          <img
+            src="images/org-reporting/org-reporting-process-map.png"
+            alt="Org Reporting end-to-end design journey map, from Crawl and Run requirements through discovery, wireframe review, high-fidelity validation, and prototype and engineering handoff"
+          >
+        </figure>
+      </section>
+
       <section class="case-study-chapter org-design-direction" aria-label="Design direction">
         <p class="case-study-label">Design direction</p>
         <div class="org-design-direction-desktop">
@@ -183,6 +205,9 @@
             </div>
           </div>
           <div class="desktop-monitor-stand" aria-hidden="true"></div>
+        </div>
+        <div class="org-prototype-cta">
+          <a class="org-prototype-cta-link" href="org-reporting-prototype.html">View interactive prototype</a>
         </div>
       </section>
 
@@ -665,7 +690,6 @@
           </div>
         </div>
       </section>
-
       <section class="case-study-chapter org-testing" aria-label="User testing">
         <p class="case-study-label">User testing</p>
         <div class="org-testing-intro">
@@ -764,6 +788,17 @@
       </section>
     </main>
     <footer></footer>
+    <dialog class="image-dialog org-monitor-popup-dialog" id="org-monitor-dialog">
+      <button class="dialog-close" type="button" aria-label="Close image">×</button>
+      <figure class="org-product-image org-monitor-popup">
+        <div class="desktop-monitor">
+          <div class="desktop-monitor-screen">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="desktop-monitor-stand" aria-hidden="true"></div>
+      </figure>
+    </dialog>
     <script src="include.js"></script>
     <script src="case-study-shell.js"></script>
     <script src="fixed-asset-case-study.js?v=202609281446"></script>
