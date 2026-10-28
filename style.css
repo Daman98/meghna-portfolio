@@ -3501,17 +3501,11 @@ footer {
   background: #f5f7e9;
 }
 
-.org-ai2-recommendation-note > span {
-  display: grid;
-  width: 25px;
-  height: 25px;
-  flex: 0 0 25px;
-  place-items: center;
-  border-radius: 6px;
-  background: #191916;
-  color: #fff;
-  font-size: 0.52rem;
-  font-weight: 600;
+.org-ai-copilot-agent.org-ai2-recommendation-agent,
+.org-ai-copilot-agent.org-ai2-approval-agent {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
 }
 
 .org-ai2-recommendation-note p {
@@ -4352,7 +4346,7 @@ footer {
 .org-ai2-management-dropdown > button b {
   flex: 1;
   color: currentColor;
-  font-size: 0.58rem;
+  font-size: 11px;
   font-weight: 600;
   text-align: left;
 }
@@ -4808,8 +4802,131 @@ footer {
   background: #65763a;
 }
 
+[data-org-ai-variant="perspective-two"] .org-ai-thinking-orbit {
+  width: 118px;
+  height: 118px;
+  animation: org-ai-agent-float 2.4s ease-in-out infinite;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-thinking-orbit::before {
+  border-color: rgba(63, 114, 232, 0.3);
+  box-shadow: 0 0 22px rgba(63, 114, 232, 0.14);
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-thinking-orbit::after {
+  border-color: #3f72e8;
+  border-style: dashed;
+  animation-duration: 3.2s;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-thinking-orbit strong {
+  width: 88px;
+  height: 88px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 28px;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-thinking-orbit > span {
+  display: none;
+}
+
+.org-ai-copilot-agent {
+  width: 82px;
+  height: 82px;
+}
+
+.org-ai-copilot-scan,
+.org-ai-copilot-goggles,
+.org-ai-copilot-mouth {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.org-ai-copilot-shell {
+  fill: #ded9ff;
+}
+
+.org-ai-copilot-ear {
+  fill: #c9c2ff;
+}
+
+.org-ai-copilot-face {
+  fill: #faf9ff;
+  stroke: #8d84d8;
+  stroke-width: 2.5;
+}
+
+.org-ai-copilot-goggles {
+  stroke: #6f7d91;
+  stroke-width: 3;
+}
+
+.org-ai-copilot-eye {
+  fill: #3f72e8;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: org-ai-agent-blink 3.4s ease-in-out infinite;
+}
+
+.org-ai-copilot-mouth {
+  stroke: #566174;
+  stroke-width: 2.5;
+}
+
+.org-ai-copilot-eye-right {
+  animation-delay: 80ms;
+}
+
+.org-ai-copilot-scan {
+  stroke: #8eb2ff;
+  stroke-width: 2.5;
+  animation: org-ai-agent-scan 1.5s ease-in-out infinite;
+}
+
+@keyframes org-ai-agent-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes org-ai-agent-blink {
+  0%,
+  42%,
+  48%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  45% {
+    transform: scaleY(0.15);
+  }
+}
+
+@keyframes org-ai-agent-scan {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(-3px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(3px);
+  }
+}
+
 .org-ai-status-label {
   color: #52622f;
+  font-size: 12px;
 }
 
 .org-ai-analysis-list li.is-complete span {
@@ -4822,6 +4939,156 @@ footer {
   border-color: #aab682;
   background: #f4f6e8;
   color: var(--org-ai-green);
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list span,
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list li.is-complete span,
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list li.is-active span {
+  border-color: #bcc89c;
+  background: var(--org-ai-green-soft);
+  color: var(--org-ai-green);
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list li:not(.is-complete):not(.is-active) span {
+  color: #8a877f;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list li.is-complete span,
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list li.is-active span {
+  color: #3f7d32;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list span,
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list li.is-complete span,
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list li.is-active span,
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list li:not(.is-complete):not(.is-active) span {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-centered-state {
+  align-items: center;
+  text-align: center;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-centered-state h3 {
+  max-width: none;
+  white-space: nowrap;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-centered-state > p {
+  font-size: 12px;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-centered-state .org-ai-primary-button {
+  font-size: 12px;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list {
+  width: max-content;
+  max-width: 100%;
+  justify-items: stretch;
+  text-align: left;
+  transform: none;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list li {
+  display: grid;
+  grid-template-columns: 23px auto;
+  gap: 5px;
+  align-items: center;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-analysis-list li > span {
+  position: static;
+  transform: none;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-result-heading .org-ai2-method-summary,
+[data-org-ai-variant="perspective-two"] .org-ai2-diagnosis-meta span,
+[data-org-ai-variant="perspective-two"] .org-ai2-diagnosis-meta strong,
+[data-org-ai-variant="perspective-two"] .org-ai2-cause-grid article > span,
+[data-org-ai-variant="perspective-two"] .org-ai2-cause-grid strong,
+[data-org-ai-variant="perspective-two"] .org-ai2-cause-grid p,
+[data-org-ai-variant="perspective-two"] .org-ai2-cause-grid button,
+[data-org-ai-variant="perspective-two"] .org-ai2-primary-action {
+  font-size: 12px;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai2-diagnosis-meta strong,
+[data-org-ai-variant="perspective-two"] .org-ai2-cause-grid strong {
+  font-weight: 400;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai2-option-grid strong,
+[data-org-ai-variant="perspective-two"] .org-ai2-option-grid p,
+[data-org-ai-variant="perspective-two"] .org-ai2-recommendation-note strong,
+[data-org-ai-variant="perspective-two"] .org-ai2-recommendation-note p > span {
+  font-size: 12px;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai2-option-grid strong,
+[data-org-ai-variant="perspective-two"] .org-ai2-recommendation-note strong {
+  font-weight: 400;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai2-launch-confirmation strong,
+[data-org-ai-variant="perspective-two"] .org-ai2-launch-confirmation p {
+  font-size: 12px;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai2-launch-confirmation strong {
+  font-weight: 400;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-action-row .org-ai-primary-button,
+[data-org-ai-variant="perspective-two"] .org-ai-action-row .org-ai-secondary-button {
+  font-size: 12px;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-execution-receipt p,
+[data-org-ai-variant="perspective-two"] .org-ai-execution-receipt strong,
+[data-org-ai-variant="perspective-two"] .org-ai2-first-check-card > p {
+  font-size: 12px;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-execution-receipt strong,
+[data-org-ai-variant="perspective-two"] .org-ai2-first-check-card strong {
+  font-weight: 400;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai-execution-receipt strong {
+  color: #52622f;
+  font-weight: 600;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai2-first-check-card strong {
+  color: #000;
+  font-size: 14px;
+}
+
+[data-org-ai-variant="perspective-two"] .org-ai2-first-check-card span {
+  font-size: 12px;
+}
+
+[data-org-ai-variant="perspective-two"] [data-ai2-launch-receipt] > .org-ai-result-heading > p:first-of-type {
+  transform: translateY(-10px);
+}
+
+@media (max-width: 720px) {
+  [data-org-ai-variant="perspective-two"] .org-ai-centered-state h3 {
+    white-space: normal;
+  }
+
+  [data-org-ai-variant="perspective-two"] .org-ai-analysis-list {
+    transform: none;
+  }
 }
 
 .org-ai-risk-pill {

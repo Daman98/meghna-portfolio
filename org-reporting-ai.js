@@ -88,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
     screens[2].innerHTML = `
       <div class="org-ai-result-heading">
         <h3>Three signals may be contributing to lower completion in Sales.</h3>
-        <p>These are evidence-backed patterns, not confirmed causes. Select a finding to review its supporting evidence.</p>
         <p class="org-ai2-method-summary">AI compared Sales with organization-wide completion, activity, learner-return and playlist-duration patterns. These findings show correlation, not confirmed causation.</p>
       </div>
       <div class="org-ai2-diagnosis-meta">
@@ -134,6 +133,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>AI recommends an option, but nothing is selected until Maya chooses it.</p>
       </div>
       <div class="org-ai2-option-grid" role="radiogroup" aria-label="Intervention options">
+        <button class="is-recommended" type="button" role="radio" data-ai2-option aria-checked="false">
+          <span class="org-ai2-option-label">AI recommendation — review before continuing</span><span class="org-ai2-option-radio" aria-hidden="true"></span>
+          <strong>Create a targeted campaign</strong>
+          <p>Combine supporting content, reminders, and a 30-day completion goal.</p>
+        </button>
         <button type="button" role="radio" data-ai2-option aria-checked="false">
           <span class="org-ai2-option-label">Option 1</span><span class="org-ai2-option-radio" aria-hidden="true"></span>
           <strong>Support learners at Module 3</strong>
@@ -149,14 +153,19 @@ document.addEventListener("DOMContentLoaded", () => {
           <strong>Simplify the assigned playlist</strong>
           <p>Replace content that increases learning time without improving outcomes.</p>
         </button>
-        <button class="is-recommended" type="button" role="radio" data-ai2-option aria-checked="false">
-          <span class="org-ai2-option-label">AI recommendation — review before continuing</span><span class="org-ai2-option-radio" aria-hidden="true"></span>
-          <strong>Create a targeted campaign</strong>
-          <p>Combine supporting content, reminders, and a 30-day completion goal.</p>
-        </button>
       </div>
       <div class="org-ai2-recommendation-note">
-        <span aria-hidden="true">AI</span>
+        <svg class="org-ai-copilot-agent org-ai2-recommendation-agent" viewBox="0 0 96 96" aria-hidden="true">
+          <rect class="org-ai-copilot-ear" x="7" y="38" width="15" height="25" rx="7"></rect>
+          <rect class="org-ai-copilot-ear" x="74" y="38" width="15" height="25" rx="7"></rect>
+          <path class="org-ai-copilot-shell" d="M18 43c0-20 12-31 30-31s30 11 30 31v17c0 16-12 25-30 25S18 76 18 60V43Z"></path>
+          <rect class="org-ai-copilot-face" x="23" y="31" width="50" height="38" rx="17"></rect>
+          <path class="org-ai-copilot-goggles" d="M27 45c3-8 15-9 20-1m2 0c5-8 17-7 20 1"></path>
+          <ellipse class="org-ai-copilot-eye org-ai-copilot-eye-left" cx="38" cy="49" rx="4" ry="5"></ellipse>
+          <ellipse class="org-ai-copilot-eye org-ai-copilot-eye-right" cx="58" cy="49" rx="4" ry="5"></ellipse>
+          <path class="org-ai-copilot-mouth" d="M39 61c5 3 13 3 18 0"></path>
+          <path class="org-ai-copilot-scan" d="M28 56h40"></path>
+        </svg>
         <p>
           <strong>Recommended: Create a targeted support campaign.</strong>
           <span>The campaign addresses the two strongest signals first: Module 3 drop-off and declining engagement. Playlist simplification requires content-owner review and can be considered separately.</span>
@@ -230,7 +239,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <div><span>Owner update</span><strong data-ai2-preview-value="owner">Sales learning owner</strong><small>Receives a weekly progress summary and at-risk learner changes</small></div>
       </div>
       <div class="org-ai-approval-note">
-        <span aria-hidden="true">AI</span>
+        <svg class="org-ai-copilot-agent org-ai2-approval-agent" viewBox="0 0 96 96" aria-hidden="true">
+          <rect class="org-ai-copilot-ear" x="7" y="38" width="15" height="25" rx="7"></rect>
+          <rect class="org-ai-copilot-ear" x="74" y="38" width="15" height="25" rx="7"></rect>
+          <path class="org-ai-copilot-shell" d="M18 43c0-20 12-31 30-31s30 11 30 31v17c0 16-12 25-30 25S18 76 18 60V43Z"></path>
+          <rect class="org-ai-copilot-face" x="23" y="31" width="50" height="38" rx="17"></rect>
+          <path class="org-ai-copilot-goggles" d="M27 45c3-8 15-9 20-1m2 0c5-8 17-7 20 1"></path>
+          <ellipse class="org-ai-copilot-eye org-ai-copilot-eye-left" cx="38" cy="49" rx="4" ry="5"></ellipse>
+          <ellipse class="org-ai-copilot-eye org-ai-copilot-eye-right" cx="58" cy="49" rx="4" ry="5"></ellipse>
+          <path class="org-ai-copilot-mouth" d="M39 61c5 3 13 3 18 0"></path>
+          <path class="org-ai-copilot-scan" d="M28 56h40"></path>
+        </svg>
         <p>Nothing is assigned or communicated until Maya approves the intervention.</p>
       </div>
       <p class="org-ai2-inline-answer" data-ai2-review-feedback hidden></p>
@@ -262,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>The intervention is live.</h3>
             <div class="org-ai2-management-dropdown">
               <button type="button" data-ai2-management-toggle aria-expanded="false">
-                <b>Manage campaign</b>
+                <b>Edit</b>
                 <svg class="org-ai2-management-chevron" viewBox="0 0 20 20" aria-hidden="true">
                   <path d="m5 7.5 5 5 5-5"></path>
                 </svg>
