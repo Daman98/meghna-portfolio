@@ -15,7 +15,7 @@
       content="A case study designing centralized organization-level reporting for Microsoft AI Skill Navigator."
     >
     <title>Org Reporting | Meghna Sahni</title>
-    <link rel="stylesheet" href="style.css?v=202610281132">
+    <link rel="stylesheet" href="style.css?v=202610281441">
     <link rel="stylesheet" href="case-study.css">
   </head>
   <body class="case-study-page fixed-asset-page org-reporting-page">
@@ -412,17 +412,28 @@
               <article class="org-ai-screen" data-ai-screen="1" hidden>
                 <div class="org-ai-centered-state">
                   <div class="org-ai-thinking-orbit" aria-hidden="true">
-                    <span></span><span></span><span></span>
-                    <strong>AI</strong>
+                    <strong>
+                      <svg class="org-ai-copilot-agent" viewBox="0 0 96 96">
+                        <rect class="org-ai-copilot-ear" x="7" y="38" width="15" height="25" rx="7"></rect>
+                        <rect class="org-ai-copilot-ear" x="74" y="38" width="15" height="25" rx="7"></rect>
+                        <path class="org-ai-copilot-shell" d="M18 43c0-20 12-31 30-31s30 11 30 31v17c0 16-12 25-30 25S18 76 18 60V43Z"></path>
+                        <rect class="org-ai-copilot-face" x="23" y="31" width="50" height="38" rx="17"></rect>
+                        <path class="org-ai-copilot-goggles" d="M27 45c3-8 15-9 20-1m2 0c5-8 17-7 20 1"></path>
+                        <ellipse class="org-ai-copilot-eye org-ai-copilot-eye-left" cx="38" cy="49" rx="4" ry="5"></ellipse>
+                        <ellipse class="org-ai-copilot-eye org-ai-copilot-eye-right" cx="58" cy="49" rx="4" ry="5"></ellipse>
+                        <path class="org-ai-copilot-mouth" d="M39 61c5 3 13 3 18 0"></path>
+                        <path class="org-ai-copilot-scan" d="M28 56h40"></path>
+                      </svg>
+                    </strong>
                   </div>
                   <span class="org-ai-status-label">Analyzing organization data</span>
                   <h3>Finding where performance changed and why</h3>
                   <p>Reviewing completion, engagement, activity, skills, and certification signals.</p>
                   <ol class="org-ai-analysis-list">
-                    <li class="is-complete"><span>1</span>Comparing teams with the organization average</li>
-                    <li class="is-complete"><span>2</span>Finding common learner drop-off points</li>
-                    <li class="is-active"><span>3</span>Connecting engagement and completion signals</li>
-                    <li><span>4</span>Preparing recommended actions</li>
+                    <li class="is-complete"><span>✓</span>Comparing teams with the organization average</li>
+                    <li class="is-complete"><span>✓</span>Finding common learner drop-off points</li>
+                    <li class="is-active"><span>✓</span>Connecting engagement and completion signals</li>
+                    <li><span>✓</span>Preparing recommended actions</li>
                   </ol>
                   <button class="org-ai-primary-button" type="button" data-ai-next>View finding</button>
                 </div>
@@ -802,6 +813,6 @@
     <script src="include.js"></script>
     <script src="case-study-shell.js"></script>
     <script src="fixed-asset-case-study.js?v=202609281446"></script>
-    <script src="org-reporting-ai.js?v=202610281130"></script>
+    <script src="org-reporting-ai.js?v=202610281426"></script>
   </body>
 </html>
