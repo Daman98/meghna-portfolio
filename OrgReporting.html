@@ -15,7 +15,7 @@
       content="A case study designing centralized organization-level reporting for Microsoft AI Skill Navigator."
     >
     <title>Org Reporting | Meghna Sahni</title>
-    <link rel="stylesheet" href="style.css?v=202609291216">
+    <link rel="stylesheet" href="style.css?v=202610281132">
     <link rel="stylesheet" href="case-study.css">
   </head>
   <body class="case-study-page fixed-asset-page org-reporting-page">
@@ -211,7 +211,485 @@
         </div>
       </section>
 
+      <section class="case-study-chapter org-ai-user-scenario" id="org-ai-perspective-two" aria-labelledby="org-ai-perspective-two-title">
+        <div class="org-ai-perspective-intro">
+          <p class="case-study-label">AI Perspective</p>
+          <h2 id="org-ai-perspective-two-title">From finding the signal to acting on it</h2>
+          <p>
+            Instead of manually comparing reports, Maya can ask a question in natural language.
+            The AI agent investigates the data, explains the likely cause, recommends an
+            intervention, and prepares the action for her approval.
+          </p>
+        </div>
+        <div data-org-ai-perspective-two></div>
+      </section>
 
+      <section class="case-study-chapter org-ai-perspective" aria-labelledby="org-ai-perspective-title">
+        <div class="org-ai-perspective-intro">
+          <p class="case-study-label">AI Perspective</p>
+          <h2 id="org-ai-perspective-title">From finding the signal to acting on it</h2>
+          <p>
+            Instead of manually comparing reports, Maya can ask a question in natural language.
+            The AI agent investigates the data, explains the likely cause, recommends an
+            intervention, and prepares the action for her approval.
+          </p>
+        </div>
+
+        <div class="org-ai-prototype" data-org-ai-prototype>
+          <aside class="org-ai-sidebar" aria-label="AI Skills Navigator">
+            <div class="org-ai-brand">
+              <span class="org-ai-brand-mark" aria-hidden="true"></span>
+              <span>AI Skills Navigator</span>
+            </div>
+            <nav aria-label="Reporting sections">
+              <span>Overview</span>
+              <span class="is-active">Organization reporting</span>
+              <span>Learning activity</span>
+              <span>Skills</span>
+              <span>Certifications</span>
+            </nav>
+            <div class="org-ai-profile">
+              <span aria-hidden="true">MS</span>
+              <div>
+                <strong>Maya Singh</strong>
+                <small>L&amp;D Admin</small>
+              </div>
+            </div>
+          </aside>
+
+          <div class="org-ai-workspace">
+            <div class="org-ai-stage" aria-live="polite">
+              <article class="org-ai-screen is-active" data-ai-screen="0">
+                <div class="org-ai-overview-heading">
+                  <div>
+                    <h3>Insights into your organization&rsquo;s skilling activity</h3>
+                  </div>
+                </div>
+                <nav class="org-ai-content-tabs" aria-label="Skilling activity views">
+                  <button class="is-active" type="button" aria-current="page">My homepage</button>
+                  <button type="button">Learners</button>
+                  <button type="button">Playlists</button>
+                  <button type="button">Skills</button>
+                  <button type="button">Certifications</button>
+                </nav>
+                <div class="org-ai-home-layout">
+                  <div class="org-ai-home-conversation">
+                    <div class="org-ai-home-greeting">
+                      <h4>Hello Maya</h4>
+                      <button type="button">Explore organization-wide skilling insights.</button>
+                    </div>
+                    <button class="org-ai-home-ask" type="button">
+                      <span>Ask me about your org...</span>
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"></path>
+                        <path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path>
+                      </svg>
+                    </button>
+                    <div class="org-ai-home-prompts">
+                      <button type="button">
+                        <span class="org-ai-home-prompt-icon" aria-hidden="true">◇</span>
+                        <span class="org-ai-home-prompt-category">Organization performance</span>
+                        <strong>How is my organization progressing on AI skilling?</strong>
+                        <small>Summarize completion, engagement, and learning outcomes.</small>
+                      </button>
+                      <button type="button">
+                        <span class="org-ai-home-prompt-icon" aria-hidden="true">↗</span>
+                        <span class="org-ai-home-prompt-category">Trends and changes</span>
+                        <strong>What has changed across my organization recently?</strong>
+                        <small>Highlight meaningful increases, declines, and unusual patterns.</small>
+                      </button>
+                      <button type="button">
+                        <span class="org-ai-home-prompt-icon" aria-hidden="true">⌁</span>
+                        <span class="org-ai-home-prompt-category">Skills and certifications</span>
+                        <strong>Where are our largest skill and certification gaps?</strong>
+                        <small>Connect learning activity with organizational outcomes.</small>
+                      </button>
+                    </div>
+                    <button class="org-ai-home-see-more" type="button" data-ai2-home-more-toggle aria-expanded="false">
+                      <span data-ai2-home-more-label>See more</span>
+                      <span aria-hidden="true">⌄</span>
+                    </button>
+                    <div class="org-ai-home-more-prompts" data-ai2-home-more-prompts hidden>
+                      <button type="button">Which teams are performing best?</button>
+                      <button type="button">Are we on track to meet our learning goals?</button>
+                      <button type="button">Which learning programs are driving the strongest outcomes?</button>
+                      <button type="button">Summarize organizational learning for leadership.</button>
+                    </div>
+                  </div>
+
+                  <div class="org-ai-home-insights">
+                    <article class="org-ai-home-feature">
+                      <div class="org-ai-home-feature-copy">
+                        <span class="org-ai-home-insight-label">Organization insight</span>
+                        <h4>Sales completion is 18 percentage points below the organization average.</h4>
+                        <p class="org-ai-home-risk-summary"><strong>146</strong> Sales learners are currently at risk.</p>
+                      </div>
+                      <div class="org-ai-home-chart" aria-label="Sales and organization completion comparison">
+                        <div class="org-ai-home-chart-heading">
+                          <strong>Completion comparison</strong>
+                          <span>Last 30 days</span>
+                        </div>
+                        <div class="org-ai-home-bars">
+                          <div>
+                            <span style="height: 61%"></span>
+                            <small>61%</small>
+                            <em>Org. average</em>
+                          </div>
+                          <div>
+                            <span class="is-at-risk" style="height: 43%"></span>
+                            <small>43%</small>
+                            <em>Sales</em>
+                          </div>
+                          <div>
+                            <span style="height: 66%"></span>
+                            <small>66%</small>
+                            <em>Product</em>
+                          </div>
+                          <div>
+                            <span style="height: 58%"></span>
+                            <small>58%</small>
+                            <em>Support</em>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="org-ai-home-insight-action" type="button" data-ai-next>
+                        Investigate the cause
+                        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 5 5 5-5 5"></path></svg>
+                      </button>
+                    </article>
+
+                    <article class="org-ai-home-outcomes">
+                      <div>
+                        <span class="org-ai-home-insight-label">Organization-wide learning activity</span>
+                        <span class="org-ai-home-card-period">Last 30 days · Updated Oct 27, 9:00 AM PT</span>
+                        <strong>4,820</strong>
+                        <p>learners assigned to AI-skilling programs</p>
+                      </div>
+                      <dl>
+                        <div>
+                          <dt>61%</dt>
+                          <dd>Completion rate</dd>
+                          <small>Assigned learning completed</small>
+                          <em class="is-positive">+4 points</em>
+                        </div>
+                        <div>
+                          <dt>48%</dt>
+                          <dd>Weekly engagement</dd>
+                          <small>Assigned learners active this week</small>
+                          <em class="is-negative">−3 points</em>
+                        </div>
+                      </dl>
+                    </article>
+
+                    <article class="org-ai-home-skills">
+                      <div class="org-ai-home-card-heading">
+                        <span class="org-ai-home-insight-label">Skills and certification outcomes</span>
+                        <span class="org-ai-home-card-period">Last 30 days</span>
+                      </div>
+                      <dl>
+                        <div>
+                          <dt>1,840</dt>
+                          <dd>Learners developing new skills</dd>
+                        </div>
+                        <div>
+                          <dt>620</dt>
+                          <dd>Certifications earned</dd>
+                        </div>
+                        <div>
+                          <dt>AI Fundamentals</dt>
+                          <dd>Top skill developed</dd>
+                        </div>
+                        <div>
+                          <dt class="is-positive">+12%</dt>
+                          <dd>Certifications vs previous 30 days</dd>
+                        </div>
+                      </dl>
+                    </article>
+                  </div>
+                </div>
+              </article>
+
+              <article class="org-ai-screen" data-ai-screen="1" hidden>
+                <div class="org-ai-centered-state">
+                  <div class="org-ai-thinking-orbit" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                    <strong>AI</strong>
+                  </div>
+                  <span class="org-ai-status-label">Analyzing organization data</span>
+                  <h3>Finding where performance changed and why</h3>
+                  <p>Reviewing completion, engagement, activity, skills, and certification signals.</p>
+                  <ol class="org-ai-analysis-list">
+                    <li class="is-complete"><span>1</span>Comparing teams with the organization average</li>
+                    <li class="is-complete"><span>2</span>Finding common learner drop-off points</li>
+                    <li class="is-active"><span>3</span>Connecting engagement and completion signals</li>
+                    <li><span>4</span>Preparing recommended actions</li>
+                  </ol>
+                  <button class="org-ai-primary-button" type="button" data-ai-next>View finding</button>
+                </div>
+              </article>
+
+              <article class="org-ai-screen" data-ai-screen="2" hidden>
+                <div class="org-ai-result-heading">
+                  <span class="org-ai-risk-pill">High risk</span>
+                  <h3>Sales is at risk of missing its AI-skilling goal.</h3>
+                  <p>Completion is 18 percentage points below the organization average, with engagement declining for three consecutive weeks.</p>
+                </div>
+                <div class="org-ai-evidence-grid">
+                  <article>
+                    <span>Sales completion</span>
+                    <strong>43%</strong>
+                    <small>Organization average: 61%</small>
+                  </article>
+                  <article>
+                    <span>Affected learners</span>
+                    <strong>146</strong>
+                    <small>Assigned but incomplete</small>
+                  </article>
+                  <article>
+                    <span>Primary drop-off</span>
+                    <strong>Module 3</strong>
+                    <small>62% of incomplete learners</small>
+                  </article>
+                </div>
+                <div class="org-ai-explanation-card">
+                  <div class="org-ai-agent-avatar" aria-hidden="true">AI</div>
+                  <div>
+                    <span>Likely cause</span>
+                    <h4>Learners are losing momentum at Module 3.</h4>
+                    <p>The module is 38 minutes longer than the course average and has the lowest return rate after a learner pauses. Sales also has fewer protected learning hours than higher-performing teams.</p>
+                    <div class="org-ai-sources">
+                      <span>Completion data</span>
+                      <span>Weekly activity</span>
+                      <span>Playlist progress</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="org-ai-follow-up-row" aria-label="Suggested follow-up questions">
+                  <button
+                    type="button"
+                    data-ai-follow-up
+                    data-ai-answer="The affected group includes 146 assigned Sales learners: 91 account executives, 34 sales managers, and 21 operations specialists."
+                  >Which learners are affected?</button>
+                  <button
+                    type="button"
+                    data-ai-follow-up
+                    data-ai-answer="Product completion is 66%, 23 points above Sales. Product learners also receive two protected learning hours each month."
+                  >Compare with Product</button>
+                  <button
+                    type="button"
+                    data-ai-follow-up
+                    data-ai-answer="Module 3 is 38 minutes longer than average, contains the most unfamiliar concepts, and has the lowest return rate after learners pause."
+                  >Why is Module 3 difficult?</button>
+                </div>
+                <p class="org-ai-follow-up-answer" data-ai-follow-up-answer hidden></p>
+                <button class="org-ai-primary-button" type="button" data-ai-next>Review possible actions</button>
+              </article>
+
+              <article class="org-ai-screen" data-ai-screen="3" hidden>
+                <div class="org-ai-result-heading">
+                  <span class="org-ai-recommendation-pill">Choose an intervention</span>
+                  <h3>How would you like to support the 146 at-risk Sales learners?</h3>
+                  <p>AI compared the available actions using expected impact, administrator effort, and disruption to learners.</p>
+                </div>
+                <div class="org-ai-option-grid" role="group" aria-label="Available interventions">
+                  <button
+                    class="org-ai-option-card is-selected"
+                    type="button"
+                    data-ai-action-option
+                    data-ai-action-name="Focused 30-day learning campaign"
+                    aria-pressed="true"
+                  >
+                    <span class="org-ai-option-badge">AI recommended</span>
+                    <strong>Focused 30-day learning campaign</strong>
+                    <p>Combine a shorter playlist, Module 3 support, weekly reminders, and manager progress updates.</p>
+                    <small><b>High impact</b> · Medium effort · 146 learners</small>
+                  </button>
+                  <button
+                    class="org-ai-option-card"
+                    type="button"
+                    data-ai-action-option
+                    data-ai-action-name="Shorter foundational playlist"
+                    aria-pressed="false"
+                  >
+                    <span>Learning content</span>
+                    <strong>Assign a shorter foundational playlist</strong>
+                    <p>Reduce the learning load and move affected learners to a focused pathway.</p>
+                    <small><b>Medium impact</b> · Low effort · 146 learners</small>
+                  </button>
+                  <button
+                    class="org-ai-option-card"
+                    type="button"
+                    data-ai-action-option
+                    data-ai-action-name="Manager-supported intervention"
+                    aria-pressed="false"
+                  >
+                    <span>Manager support</span>
+                    <strong>Notify Sales managers</strong>
+                    <p>Ask managers to protect learning time and review learner progress weekly.</p>
+                    <small><b>Medium impact</b> · Medium effort · 18 managers</small>
+                  </button>
+                  <button
+                    class="org-ai-option-card"
+                    type="button"
+                    data-ai-action-option
+                    data-ai-action-name="Monitor without intervention"
+                    aria-pressed="false"
+                  >
+                    <span>Monitor</span>
+                    <strong>Continue monitoring</strong>
+                    <p>Take no immediate action and ask AI to alert Maya if completion falls further.</p>
+                    <small><b>Low impact</b> · No effort · Review in 7 days</small>
+                  </button>
+                </div>
+                <div class="org-ai-option-comparison" data-ai-option-comparison hidden>
+                  <div>
+                    <span>Why AI recommends the campaign</span>
+                    <strong>It addresses both the content drop-off and the lack of protected learning time.</strong>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Projected lift</dt>
+                      <dd>+14–19%</dd>
+                    </div>
+                    <div>
+                      <dt>Confidence</dt>
+                      <dd>High</dd>
+                    </div>
+                    <div>
+                      <dt>Evidence</dt>
+                      <dd>4 signals</dd>
+                    </div>
+                  </dl>
+                </div>
+                <div class="org-ai-action-row">
+                  <button class="org-ai-primary-button" type="button" data-ai-next>Prepare selected intervention</button>
+                  <button class="org-ai-secondary-button" type="button" data-ai-compare-actions>Compare with AI</button>
+                </div>
+              </article>
+
+              <article class="org-ai-screen" data-ai-screen="4" hidden>
+                <div class="org-ai-result-heading">
+                  <span class="org-ai-recommendation-pill">Review intervention</span>
+                  <h3>Review what AI prepared before anything is assigned.</h3>
+                  <p data-ai-review-message>Review the AI-prepared settings and make any final adjustments.</p>
+                </div>
+                <div class="org-ai-review-layout">
+                  <form class="org-ai-review-form">
+                    <label>
+                      Intervention
+                      <input type="text" value="Focused 30-day learning campaign" data-ai-selected-action>
+                    </label>
+                    <div class="org-ai-form-row">
+                      <label>
+                        Audience
+                        <select>
+                          <option>146 at-risk Sales learners</option>
+                          <option>All Sales learners</option>
+                        </select>
+                      </label>
+                      <label>
+                        Completion target
+                        <select>
+                          <option>30 days</option>
+                          <option>45 days</option>
+                          <option>60 days</option>
+                        </select>
+                      </label>
+                    </div>
+                    <fieldset>
+                      <legend>Campaign components</legend>
+                      <label><input type="checkbox" checked> Shorter foundational playlist</label>
+                      <label><input type="checkbox" checked> Module 3 support content</label>
+                      <label><input type="checkbox" checked> Weekly learner reminders</label>
+                      <label><input type="checkbox" checked> Manager progress summary</label>
+                    </fieldset>
+                    <button class="org-ai-message-preview-toggle" type="button" data-ai-preview-toggle>
+                      Preview learner and manager messages
+                    </button>
+                    <div class="org-ai-message-preview" data-ai-message-preview hidden>
+                      <span>Learner message preview</span>
+                      <strong>Your focused AI learning plan is ready</strong>
+                      <p>We&rsquo;ve created a shorter pathway to help you continue from Module 3 and complete your AI-skilling goal within 30 days.</p>
+                    </div>
+                    <div class="org-ai-approval-note">
+                      <span aria-hidden="true">AI</span>
+                      <p>Nothing will be assigned or sent until you approve this intervention.</p>
+                    </div>
+                  </form>
+                  <aside class="org-ai-approval-summary" aria-label="Approval summary">
+                    <span>AI impact estimate</span>
+                    <strong>+14–19%</strong>
+                    <p>Projected completion lift based on comparable campaigns.</p>
+                    <dl>
+                      <div><dt>Learners</dt><dd>146</dd></div>
+                      <div><dt>Managers</dt><dd>18</dd></div>
+                      <div><dt>Duration</dt><dd>30 days</dd></div>
+                      <div><dt>AI confidence</dt><dd>High</dd></div>
+                    </dl>
+                    <small>Changing the audience or timeline may affect this estimate.</small>
+                  </aside>
+                </div>
+                <div class="org-ai-review-actions">
+                  <button class="org-ai-primary-button" type="button" data-ai-next>Approve and assign</button>
+                  <button class="org-ai-secondary-button" type="button" data-ai-prev>Back to options</button>
+                </div>
+              </article>
+
+              <article class="org-ai-screen" data-ai-screen="5" hidden>
+                <div class="org-ai-success-banner">
+                  <span aria-hidden="true">✓</span>
+                  <div>
+                    <strong>Campaign assigned successfully</strong>
+                    <p>146 Sales learners were enrolled in Sales AI Foundations Boost.</p>
+                  </div>
+                </div>
+                <div class="org-ai-result-heading">
+                  <span class="org-ai-status-pill">Action receipt and follow-up</span>
+                  <h3>The intervention is live and AI is tracking whether it works.</h3>
+                  <p>Maya can verify what was executed and review the first AI outcome check-in.</p>
+                </div>
+                <div class="org-ai-execution-receipt">
+                  <div><span aria-hidden="true">✓</span><p><strong>Audience assigned</strong>146 at-risk Sales learners</p></div>
+                  <div><span aria-hidden="true">✓</span><p><strong>Learning pathway</strong>AI Foundations Boost with Module 3 support</p></div>
+                  <div><span aria-hidden="true">✓</span><p><strong>Messages scheduled</strong>Weekly learner reminders</p></div>
+                  <div><span aria-hidden="true">✓</span><p><strong>Monitoring enabled</strong>Completion, engagement, and continuation</p></div>
+                </div>
+                <p class="org-ai-check-in-label">AI check-in · Day 8 of 30</p>
+                <div class="org-ai-tracking-grid">
+                  <article>
+                    <span>Campaign progress</span>
+                    <strong>Day 8 of 30</strong>
+                    <div class="org-ai-progress-bar"><i style="width: 27%"></i></div>
+                    <small>39 learners completed</small>
+                  </article>
+                  <article>
+                    <span>Completion change</span>
+                    <strong class="is-positive">43% &rarr; 50.4%</strong>
+                    <small>Compared with campaign start</small>
+                  </article>
+                  <article>
+                    <span>Module 3 continuation</span>
+                    <strong class="is-positive">38% &rarr; 54%</strong>
+                    <small>Learners returning after pause</small>
+                  </article>
+                </div>
+                <div class="org-ai-next-check">
+                  <div>
+                    <span>Next AI check-in</span>
+                    <strong>In 6 days</strong>
+                  </div>
+                  <p>AI will compare completion lift, reminder engagement, and Module 3 continuation, then recommend whether to continue or adjust.</p>
+                </div>
+                <div class="org-ai-action-row">
+                  <button class="org-ai-primary-button" type="button" data-ai-restart>Return to updated homepage</button>
+                  <button class="org-ai-secondary-button" type="button">Open campaign details</button>
+                </div>
+              </article>
+            </div>
+
+          </div>
+        </div>
+      </section>
       <section class="case-study-chapter org-testing" aria-label="User testing">
         <p class="case-study-label">User testing</p>
         <div class="org-testing-intro">
@@ -324,5 +802,6 @@
     <script src="include.js"></script>
     <script src="case-study-shell.js"></script>
     <script src="fixed-asset-case-study.js?v=202609281446"></script>
+    <script src="org-reporting-ai.js?v=202610281130"></script>
   </body>
 </html>
